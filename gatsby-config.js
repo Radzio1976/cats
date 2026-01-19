@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+console.log("HIGHGRAPH TOKEN ", process.env.HIGHGRAPH_API_TOKEN)
 /**
  * Configure your Gatsby site with this file.
  *
@@ -15,6 +19,17 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "HIGHGRAPH",
+        fieldName: "highgraph",
+        url: "https://eu-west-2.cdn.hygraph.com/content/cmkfev7ol00a107tbl8dmv7ed/master",
+        headers: {
+          Authorization: `Bearer ${process.env.HIGHGRAPH_API_TOKEN}`,
+        },
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

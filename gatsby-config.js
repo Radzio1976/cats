@@ -1,7 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-console.log("HIGHGRAPH TOKEN ", process.env.HIGHGRAPH_API_TOKEN)
 /**
  * Configure your Gatsby site with this file.
  *
@@ -13,8 +12,8 @@ console.log("HIGHGRAPH TOKEN ", process.env.HIGHGRAPH_API_TOKEN)
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Ola ma kota`,
+    description: `Strona hodowli kotów`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },

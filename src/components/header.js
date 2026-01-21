@@ -2,8 +2,10 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <header>
-    <section className="logo"></section>
+  <header style={{ display: "flex", justifyContent: "space-between" }}>
+    <section className="logo">
+      <Link to="/">{siteTitle}</Link>
+    </section>
     <section className="nav">
       <Link to="/">Home</Link>
       <Link to="/o-nas">O nas</Link>

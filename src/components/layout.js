@@ -27,15 +27,17 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
+        className="main-wrapper"
         style={{
           margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
+          // maxWidth: `var(--size-content)`,
+          maxWidth: "1200px",
           padding: `var(--size-gutter)`,
         }}
       >
         <main>{children}</main>
-        <Footer />
       </div>
+      <Footer />
     </>
   )
 }

@@ -1,121 +1,163 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getimage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Netlify. Get started for free!",
-  },
-]
+const IndexPage = ({ data }) => {
+  const oldCats = data?.highgraph?.oldCats || []
+  const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
+  const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
+  const litters = data?.highgraph?.litters || []
+  console.log("DANE ", oldCats)
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
+  return (
+    <Layout>
+      <div
+        className="main-cats-and-litters-section"
+        style={{ display: "flex", justifyContent: "space-between" }}
+      >
+        <div
+          className="male-cats-section"
+          style={{
+            width: "25%",
+            // border: "1px solid black",
+            // borderRadius: "12px",
+          }}
+        >
+          <ul
+            style={{
+              padding: "0 15px",
+            }}
           >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+            {oldMaleCats.map(cat => (
+              <Link to={`/kocury/${cat.slug}`}>
+                <li
+                  className="old-male-cat-card"
+                  key={cat.id}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    textAlign: "center",
+                    border: "1px solid black",
+                    borderRadius: "12px",
+                  }}
+                >
+                  <div className="image-wrapper">
+                    <img
+                      src={cat.images?.[0]?.url || "/placeholder.jpg"}
+                      alt={cat.name}
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        borderRadius: "12px",
+                      }}
+                    ></img>
+                  </div>
+                  <h1>{cat.name}</h1>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+        <div
+          className="litters-section"
+          style={{
+            width: "50%",
+            // border: "1px solid black",
+            // borderRadius: "12px",
+          }}
+        >
+          <ul
+            style={{
+              padding: "0 15px",
+            }}
+          >
+            {litters.map(litter => (
+              <Link to={`/mioty/${litter.slug}`}>
+                <li
+                  className="litter-card"
+                  key={litter.id}
+                  style={{
+                    display: "flex",
+                    textAlign: "center",
+                    border: "1px solid black",
+                    borderRadius: "12px",
+                  }}
+                >
+                  <div className="image-wrapper">
+                    <img
+                      src={litter.images?.[0]?.url || "/placeholder.jpg"}
+                      alt={litter.litterName}
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        borderRadius: "12px",
+                      }}
+                    ></img>
+                  </div>
+                  <h1>{litter.litterName}</h1>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+        <div
+          className="female-cats-section"
+          style={{
+            width: "25%",
+            // border: "1px solid black",
+            // borderRadius: "12px",
+          }}
+        >
+          <ul
+            style={{
+              padding: "0 15px",
+            }}
+          >
+            {oldFemaleCats.map(cat => (
+              <Link to={`/kotki/${cat.slug}`}>
+                <li
+                  className="old-male-cat-card"
+                  key={cat.id}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    textAlign: "center",
+                    border: "1px solid black",
+                    borderRadius: "12px",
+                  }}
+                >
+                  <div className="image-wrapper">
+                    <img
+                      src={cat.images?.[0]?.url || "/placeholder.jpg"}
+                      alt={cat.name}
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        borderRadius: "12px",
+                      }}
+                    ></img>
+                  </div>
+                  <h1>{cat.name}</h1>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
 /**
  * Head export to define metadata for the page
@@ -123,5 +165,39 @@ const IndexPage = () => (
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export const Head = () => <Seo title="Home" />
+
+export const query = graphql`
+  query {
+    highgraph {
+      oldCats {
+        id
+        name
+        slug
+        sex
+        desc {
+          markdown
+        }
+        images {
+          url
+          width
+          height
+        }
+      }
+      litters {
+        id
+        litterName
+        desc {
+          markdown
+        }
+        images {
+          url
+          width
+          height
+        }
+        slug
+      }
+    }
+  }
+`
 
 export default IndexPage

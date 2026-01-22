@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
   oldMaleCats.forEach(cat => {
     console.log("Tworzę stronę kocura:", cat.slug, cat.id)
     createPage({
-      path: `/kocury/${cat.slug}`,
+      path: `/dojrzale-koty/kocury/${cat.slug}`,
       component: catTemplate,
       context: {
         id: cat.id,
@@ -62,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   oldFemaleCats.forEach(cat => {
     createPage({
-      path: `/kotki/${cat.slug}`,
+      path: `/dojrzale-koty/kotki/${cat.slug}`,
       component: catTemplate,
       context: {
         id: cat.id,

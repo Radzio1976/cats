@@ -22,8 +22,6 @@ const IndexPage = ({ data }) => {
           className="male-cats-section"
           style={{
             width: "25%",
-            // border: "1px solid black",
-            // borderRadius: "12px",
           }}
         >
           <ul
@@ -32,7 +30,7 @@ const IndexPage = ({ data }) => {
             }}
           >
             {oldMaleCats.map(cat => (
-              <Link to={`/kocury/${cat.slug}`}>
+              <Link to={`/dojrzale-koty/kocury/${cat.slug}`}>
                 <li
                   className="old-male-cat-card"
                   key={cat.id}
@@ -121,7 +119,7 @@ const IndexPage = ({ data }) => {
             }}
           >
             {oldFemaleCats.map(cat => (
-              <Link to={`/kotki/${cat.slug}`}>
+              <Link to={`/dojrzale-koty/kotki/${cat.slug}`}>
                 <li
                   className="old-male-cat-card"
                   key={cat.id}

@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => {
               aria-expanded={isOpen}
               aria-haspopup="true"
             >
-              Dojrzałe koty
+              <Link to="/dojrzale-koty">Dojrzałe koty</Link>
             </button>
             {isOpen && (
               <ul className="submenu">

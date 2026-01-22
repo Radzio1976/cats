@@ -6,7 +6,7 @@ const OldCat = ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <h1>Testowa strona</h1>
+      <h1>{data.highgraph.oldCat.name}</h1>
     </Layout>
   )
 }

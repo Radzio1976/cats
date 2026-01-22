@@ -152,6 +152,7 @@ th {
   font-weight: bold;
 }
 li {
+  margin-right: 35px;
   margin-bottom: calc(var(--space-4) / 2);
 }
 ol li,

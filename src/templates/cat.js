@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-const OldCat = ({ data }) => {
+const Cat = ({ data }) => {
   console.log(data)
   return (
     <Layout>
@@ -22,4 +22,4 @@ export const query = graphql`
     }
   }
 `
-export default OldCat
+export default Cat

@@ -15,6 +15,11 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
           sex
         }
+        youngCats {
+          id
+          slug
+          sex
+        }
         litters {
           id
           slug
@@ -35,13 +40,19 @@ exports.createPages = async ({ graphql, actions }) => {
   const oldFemaleCats = result.data.highgraph.oldCats.filter(
     cat => cat.sex === "female"
   )
+  const youngMaleCats = result.data.highgraph.youngCats.filter(
+    cat => cat.sex === "male"
+  )
+  const youngFemaleCats = result.data.highgraph.youngCats.filter(
+    cat => cat.sex === "female"
+  )
   const litters = result.data.highgraph.oldCats.litters
 
   /* =======================
      ŚCIEŻKI DO SZABLONÓW
      ======================= */
 
-  const catTemplate = path.resolve("src/templates/old-cat.js")
+  const catTemplate = path.resolve("src/templates/cat.js")
   const litterTemplate = path.resolve("src/templates/litter.js")
 
   /* =======================
@@ -67,6 +78,39 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: cat.id,
         slug: cat.slug,
+      },
+    })
+  })
+
+  youngMaleCats.forEach(cat => {
+    createPage({
+      path: `/mioty/mlode-kocury/${cat.slug}`,
+      component: catTemplate,
+      context: {
+        id: cat.id,
+        slug: cat.slug,
+      },
+    })
+  })
+
+  youngFemaleCats.forEach(cat => {
+    createPage({
+      path: `/mioty/mlode-kotki/${cat.slug}`,
+      component: catTemplate,
+      context: {
+        id: cat.id,
+        slug: cat.slug,
+      },
+    })
+  })
+
+  litters.forEach(litter => {
+    createPage({
+      path: `/mioty/${litter.slug}`,
+      component: litterTemplate,
+      context: {
+        id: litter.id,
+        slug: litter.slug,
       },
     })
   })

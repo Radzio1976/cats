@@ -28,10 +28,7 @@ const Header = ({ siteTitle }) => {
               Dojrzałe koty
             </button>
             {isOpen && (
-              <ul
-                className="submenu"
-                style={{ display: isOpen ? "block" : "none" }}
-              >
+              <ul className="submenu">
                 <li>
                   <Link to="/dojrzale-koty/kocury">Kocury</Link>
                 </li>

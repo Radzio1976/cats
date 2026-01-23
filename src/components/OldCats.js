@@ -2,7 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 
 const OldCats = ({ oldCats }) => {
-  console.log(oldCats)
+  const abc = {}
+  console.log(abc)
   return (
     <div
       className="old-cats-section"

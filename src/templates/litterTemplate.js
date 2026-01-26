@@ -1,9 +1,10 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import LitterPage from "../components/LitterPage"
 
-const Litter = ({ data }) => {
+const LitterTemplate = ({ data, pageContext }) => {
+  console.log(pageContext)
   const litterData = data.highgraph.litter
   return (
     <Layout>
@@ -17,16 +18,37 @@ export const query = graphql`
       litter(where: { id: $id }) {
         id
         litterName
+        slug
         images {
           id
           url
         }
-        child {
-          name
-          images {
-            url
+        parents {
+          ... on HIGHGRAPH_OldCat {
+            id
+            name
+            sex
+            images {
+              id
+              url
+              fileName
+            }
           }
-          parent {
+        }
+        children {
+          id
+          name
+          sex
+          slug
+          desc {
+            markdown
+          }
+          images {
+            id
+            url
+            fileName
+          }
+          parents {
             ... on HIGHGRAPH_OldCat {
               id
               name
@@ -35,6 +57,7 @@ export const query = graphql`
               images {
                 id
                 url
+                fileName
               }
             }
           }
@@ -43,4 +66,4 @@ export const query = graphql`
     }
   }
 `
-export default Litter
+export default LitterTemplate

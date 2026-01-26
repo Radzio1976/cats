@@ -40,6 +40,9 @@ const Header = ({ siteTitle }) => {
             )}
           </li>
           <li>
+            <Link to="/mioty">Mioty</Link>
+          </li>
+          <li>
             <Link to="/kontakt">Kontakt</Link>
           </li>
         </ul>

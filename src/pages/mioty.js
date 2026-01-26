@@ -2,21 +2,18 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import OldCats from "../components/OldCats"
 import Seo from "../components/seo"
 
-const OldCatsPage = ({ data }) => {
-  const oldCats = data?.highgraph?.oldCats || []
-  console.log(oldCats)
+const LittersPage = ({ data }) => {
+  const litters = data?.highgraph?.litters || []
+  console.log(litters)
 
   return (
     <Layout>
       <div
         className="main-cats-and-litters-section"
         style={{ display: "flex", justifyContent: "space-between" }}
-      >
-        <OldCats oldCats={oldCats} />
-      </div>
+      ></div>
     </Layout>
   )
 }
@@ -31,22 +28,17 @@ export const Head = () => <Seo title="Dojrzałe koty" />
 export const query = graphql`
   query {
     highgraph {
-      oldCats {
+      litters {
         id
-        name
-        slug
-        sex
-        desc {
-          markdown
-        }
         images {
+          id
           url
-          width
-          height
         }
+        litterName
+        slug
       }
     }
   }
 `
 
-export default OldCatsPage
+export default LittersPage

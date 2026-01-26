@@ -19,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           slug
           sex
-          parent {
+          parents {
             ... on HIGHGRAPH_Litter {
               id
               slug
@@ -38,89 +38,61 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  const oldMaleCats = result.data.highgraph.oldCats.filter(
-    cat => cat.sex === "male"
-  )
-  const oldFemaleCats = result.data.highgraph.oldCats.filter(
-    cat => cat.sex === "female"
-  )
-  const youngMaleCats = result.data.highgraph.youngCats.filter(
-    cat => cat.sex === "male"
-  )
-  const youngFemaleCats = result.data.highgraph.youngCats.filter(
-    cat => cat.sex === "female"
-  )
+  const oldCats = result.data.highgraph.oldCats
+  const youngCats = result.data.highgraph.youngCats
   const litters = result.data.highgraph.litters
 
   /* =======================
      ŚCIEŻKI DO SZABLONÓW
      ======================= */
 
-  const catTemplate = path.resolve("src/templates/cat.js")
-  const litterTemplate = path.resolve("src/templates/litter.js")
+  const catTemplate = path.resolve("src/templates/catTemplate.js")
+  const litterTemplate = path.resolve("src/templates/litterTemplate.js")
 
   /* =======================
       STRONY KOTÓW
      ======================= */
 
-  oldMaleCats.forEach(cat => {
-    console.log("Tworzę stronę kocura:", cat.slug, cat.id)
+  oldCats.forEach(oldCat =>
     createPage({
-      path: `/dojrzale-koty/kocury/${cat.slug}`,
+      path: `/dojrzale-koty/${oldCat.sex === "male" ? "kocury" : "kotki"}/${
+        oldCat.slug
+      }`,
       component: catTemplate,
       context: {
-        id: cat.id,
-        slug: cat.slug,
+        id: oldCat.id,
+        slug: oldCat.slug,
       },
     })
-  })
+  )
 
-  oldFemaleCats.forEach(cat => {
-    createPage({
-      path: `/dojrzale-koty/kotki/${cat.slug}`,
-      component: catTemplate,
-      context: {
-        id: cat.id,
-        slug: cat.slug,
-      },
-    })
-  })
-
-  youngMaleCats.forEach(cat => {
-    const litter = cat.parent?.find(p => p?.slug)
+  youngCats.forEach(youngCat => {
+    const litter = youngCat.parents?.find(p => p?.slug)
     if (!litter) return
 
     createPage({
-      path: `/mioty/${litter.slug}/mlode-kocury/${cat.slug}`,
+      path: `/mioty/${litter.slug}/${
+        youngCat.sex === "male" ? "mlode-kocury" : "mlode-kotki"
+      }/${youngCat.slug}`,
       component: catTemplate,
       context: {
-        id: cat.id,
-        slug: cat.slug,
+        id: youngCat.id,
+        slug: youngCat.slug,
       },
     })
   })
 
-  youngFemaleCats.forEach(cat => {
-    const litter = cat.parent?.find(p => p?.slug)
-    if (!litter) return
-
-    createPage({
-      path: `/mioty/${litter.slug}/mlode-kotki/${cat.slug}`,
-      component: catTemplate,
-      context: {
-        id: cat.id,
-        slug: cat.slug,
-      },
-    })
-  })
-
-  litters.forEach(litter => {
+  litters.forEach((litter, i, array) => {
     createPage({
       path: `/mioty/${litter.slug}`,
       component: litterTemplate,
       context: {
         id: litter.id,
         slug: litter.slug,
+        prevId: array[i - 1]?.id,
+        prevSlug: array[i - 1]?.slug,
+        nextId: array[i + 1]?.id,
+        nextSlug: array[i + 1]?.slug,
       },
     })
   })

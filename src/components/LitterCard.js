@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const LitterCard = ({ litter, urlBase }) => {
   return (
     <li className="litter-card">
-      <Link to={`${urlBase}/${litter.slug}`}>
+      <Link to={`/mioty/${litter.slug}`}>
         <div className="image-wrapper">
           <img
             src={litter.images?.[0]?.url || "/placeholder.jpg"}

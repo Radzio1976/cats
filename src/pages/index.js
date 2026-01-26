@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import Home from "../components/Home"
+import Home from "../components/Home/Home"
 import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {

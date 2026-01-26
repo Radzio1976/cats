@@ -1,14 +1,15 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
-import LitterPage from "../components/LitterPage"
+import Litter from "../components/Litter/Litter"
+import LitterPagination from "../components/Litter/LitterPagination"
 
 const LitterTemplate = ({ data, pageContext }) => {
-  console.log(pageContext)
   const litterData = data.highgraph.litter
   return (
     <Layout>
-      <LitterPage litterData={litterData} />
+      <Litter litterData={litterData} pageContext={pageContext} />
+      <LitterPagination pageContext={pageContext} />
     </Layout>
   )
 }

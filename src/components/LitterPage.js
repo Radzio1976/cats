@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const LitterPage = ({ litterData }) => {
-  console.log(litterData)
+  console.log(litterData.children)
   const catFather = litterData.parents.filter(
     parent => parent.sex === "male"
   )[0]
@@ -24,7 +24,7 @@ const LitterPage = ({ litterData }) => {
       key={image.id}
     >
       <img
-        src={image || "/placeholder.jpg"}
+        src={image.url || "/placeholder.jpg"}
         alt={image.fileName}
         style={{
           width: "150px",
@@ -43,7 +43,7 @@ const LitterPage = ({ litterData }) => {
         className="litter-card-images-gallery-section"
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        {litterGalleryImages.map(image => LitterImg(image.url))}
+        {litterGalleryImages.map(image => LitterImg(image))}
       </div>
       <div className="litter-card-litter-name-section">
         <h1>{litterData.litterName}</h1>
@@ -88,6 +88,7 @@ const LitterPage = ({ litterData }) => {
       <div className="litter-card-childs-list">
         {litterData.children.map(child => (
           <div
+            key={child.id}
             className="litter-child-card"
             style={{
               display: "flex",

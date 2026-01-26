@@ -19,10 +19,10 @@ const OldCats = ({ oldCats }) => {
             to={`/dojrzale-koty/${cat.sex === "male" ? "kocury" : "kotki"}/${
               cat.slug
             }`}
+            key={cat.id}
           >
             <li
               className="old-cat-card"
-              key={cat.id}
               style={{
                 display: "flex",
                 flexDirection: "column",

@@ -9,7 +9,11 @@ const LitterPage = ({ litterData }) => {
   const catMother = litterData.parents.filter(
     parent => parent.sex === "female"
   )[0]
-  console.log(catFather)
+  const litterImages = litterData.images.map(image => image)
+  const litterYoungCatsFirstImages = litterData.children.map(
+    image => image.images[0]
+  )
+  const litterGalleryImages = litterImages.concat(litterYoungCatsFirstImages)
 
   const LitterImg = image => (
     <div
@@ -39,8 +43,7 @@ const LitterPage = ({ litterData }) => {
         className="litter-card-images-gallery-section"
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        {litterData.images.map(image => LitterImg(image.url))}
-        {litterData.children.map(image => LitterImg(image.images[0].url))}
+        {litterGalleryImages.map(image => LitterImg(image.url))}
       </div>
       <div className="litter-card-litter-name-section">
         <h1>{litterData.litterName}</h1>

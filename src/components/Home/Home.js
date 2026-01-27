@@ -21,7 +21,7 @@ const Home = ({ data }) => {
           {litters.map(litter => (
             <li key={litter.id}>
               {<LitterCard key={litter.id} litter={litter} urlBase="/mioty" />}
-              <h3>{litter.litterName}</h3>
+              <h3>{litter.name}</h3>
             </li>
           ))}
         </ul>

@@ -11,7 +11,6 @@ const LitterCard = ({ litter, urlBase }) => {
             alt={litter.name}
           />
         </div>
-        <h3>{litter.name}</h3>
       </Link>
     </li>
   )

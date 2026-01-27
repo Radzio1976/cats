@@ -44,7 +44,7 @@ export const query = graphql`
       }
       litters {
         id
-        litterName
+        name
         desc {
           markdown
         }

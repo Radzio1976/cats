@@ -6,14 +6,33 @@ const LitterPagination = ({ pageContext }) => {
   const { prevSlug, nextSlug } = pageContext
 
   return (
-    <nav className={styles.pagination}>
+    <div className={styles.pagination}>
+      {/* POPRZEDNI */}
       <div className={styles.prev}>
-        {prevSlug && <Link to={`/mioty/${prevSlug}`}>← Poprzedni</Link>}
+        {prevSlug ? (
+          <Link to={`/mioty/${prevSlug}`}>
+            <button>← Poprzedni</button>
+          </Link>
+        ) : (
+          <button disabled style={{ opacity: 0.5, cursor: "default" }}>
+            ← Poprzedni
+          </button>
+        )}
       </div>
+
+      {/* NASTĘPNY */}
       <div className={styles.next}>
-        {nextSlug && <Link to={`/mioty/${nextSlug}`}>Następny →</Link>}
+        {nextSlug ? (
+          <Link to={`/mioty/${nextSlug}`}>
+            <button>Następny →</button>
+          </Link>
+        ) : (
+          <button disabled style={{ opacity: 0.5, cursor: "default" }}>
+            Następny →
+          </button>
+        )}
       </div>
-    </nav>
+    </div>
   )
 }
 

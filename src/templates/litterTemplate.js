@@ -18,7 +18,7 @@ export const query = graphql`
     highgraph {
       litter(where: { id: $id }) {
         id
-        litterName
+        name
         slug
         images {
           id

@@ -34,7 +34,7 @@ export const query = graphql`
           id
           url
         }
-        litterName
+        name
         slug
       }
     }

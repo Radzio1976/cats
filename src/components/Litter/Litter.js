@@ -4,14 +4,14 @@ import LitterParents from "./LitterParents"
 import LitterChildren from "./LitterChildren"
 import * as styles from "./Litter.module.css"
 
-const Litter = ({ litterData, pageContext }) => {
+const Litter = ({ litterData }) => {
   if (!litterData) return null
 
   return (
     <section className={styles.section}>
       <LitterGallery litter={litterData} />
 
-      <h1 className={styles.title}>{litterData.litterName}</h1>
+      <h1 className={styles.title}>{litterData.name}</h1>
 
       <LitterParents parents={litterData.parents} />
 

@@ -71,9 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (!litter) return
 
     createPage({
-      path: `/mioty/${litter.slug}/${
-        youngCat.sex === "male" ? "mlode-kocury" : "mlode-kotki"
-      }/${youngCat.slug}`,
+      path: `/mioty/${litter.slug}/${youngCat.slug}`,
       component: catTemplate,
       context: {
         id: youngCat.id,

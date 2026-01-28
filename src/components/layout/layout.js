@@ -8,16 +8,18 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../header"
+import Header from "../Header/Header"
 import Footer from "../footer"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ catData, litterData, children }) => {
+  const location = window.location
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          siteURL
         }
       }
     }
@@ -25,7 +27,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header
+        location={location}
+        data={data}
+        catData={catData}
+        litterData={litterData}
+      />
       <div
         className="main-wrapper"
         style={{

@@ -1,14 +1,11 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => {
+const MainMenu = ({ siteTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header style={{ display: "flex", justifyContent: "space-between" }}>
-      <section className="logo">
-        <Link to="/">{siteTitle}</Link>
-      </section>
+    <>
       <nav className="menu" aria-label="Główna nawigacja">
         <ul style={{ display: "flex", justifyContent: "space-between" }}>
           <li>
@@ -47,8 +44,8 @@ const Header = ({ siteTitle }) => {
           </li>
         </ul>
       </nav>
-    </header>
+    </>
   )
 }
 
-export default Header
+export default MainMenu

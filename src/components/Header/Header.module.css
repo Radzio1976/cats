@@ -1,0 +1,4 @@
+.logo-and-main-menu {
+  display: flex;
+  justify-content: space-between;
+}

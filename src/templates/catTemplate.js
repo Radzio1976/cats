@@ -6,7 +6,7 @@ import Cat from "../components/Cat/Cat"
 const CatTemplate = ({ data }) => {
   const catData = data.highgraph
   return (
-    <Layout>
+    <Layout catData={catData}>
       <Cat catData={catData} />
     </Layout>
   )

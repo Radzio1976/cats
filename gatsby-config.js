@@ -13,6 +13,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Ola ma kota`,
+    siteURL: `http://localhost:8000`,
     description: `Strona hodowli kotów`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,

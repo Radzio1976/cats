@@ -7,7 +7,7 @@ import LitterPagination from "../components/Litter/LitterPagination"
 const LitterTemplate = ({ data, pageContext }) => {
   const litterData = data.highgraph.litter
   return (
-    <Layout>
+    <Layout litterData={litterData}>
       <Litter litterData={litterData} pageContext={pageContext} />
       <LitterPagination pageContext={pageContext} />
     </Layout>

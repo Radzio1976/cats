@@ -12,9 +12,7 @@ const LitterChildren = ({ children, litterSlug }) => {
             <h2>{child.name}</h2>
             <p>{child.desc.markdown}</p>
             <Link
-              to={`/mioty/${litterSlug}${
-                child.sex === "male" ? "/mlode-kocury/" : "/mlode-kotki/"
-              }${child.slug}`}
+              to={`/mioty/${litterSlug}/${child.slug}`}
               className={styles.link}
             >
               Więcej

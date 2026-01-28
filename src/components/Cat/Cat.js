@@ -6,7 +6,6 @@ import CatDescription from "./CatDescription"
 
 const Cat = ({ catData }) => {
   const cat = catData.oldCat || catData.youngCat
-  console.log(cat)
 
   if (!cat) {
     return <p>Nie znaleziono kota</p>

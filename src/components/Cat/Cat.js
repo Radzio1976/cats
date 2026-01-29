@@ -13,9 +13,8 @@ const Cat = ({ catData }) => {
 
   return (
     <section className={styles.section}>
-      <CatGallery cat={cat} />
-
       <h1 className={styles.title}>{cat.name}</h1>
+      <CatGallery cat={cat} />
 
       {cat.parents && <CatParents parents={cat.parents} />}
 

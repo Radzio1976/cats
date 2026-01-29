@@ -24,7 +24,7 @@ module.exports = {
       options: {
         typeName: "HIGHGRAPH",
         fieldName: "highgraph",
-        url: "https://eu-west-2.cdn.hygraph.com/content/cmkfev7ol00a107tbl8dmv7ed/master",
+        url: process.env.HIGHGRAPH_ENDPOINT,
         headers: {
           Authorization: `Bearer ${process.env.HIGHGRAPH_API_TOKEN}`,
         },

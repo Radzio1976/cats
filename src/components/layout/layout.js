@@ -1,19 +1,14 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { useLocation } from "@reach/router"
 
 import Header from "../Header/Header"
 import Footer from "../footer"
 import "./layout.css"
 
 const Layout = ({ catData, litterData, children }) => {
-  const location = window.location
+  const location = useLocation()
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -36,10 +31,9 @@ const Layout = ({ catData, litterData, children }) => {
       <div
         className="main-wrapper"
         style={{
-          margin: `0 auto`,
-          // maxWidth: `var(--size-content)`,
+          margin: "0 auto",
           maxWidth: "1200px",
-          padding: `var(--size-gutter)`,
+          padding: "var(--size-gutter)",
         }}
       >
         <main>{children}</main>

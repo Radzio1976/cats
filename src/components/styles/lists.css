@@ -1,0 +1,21 @@
+ul,
+ol {
+  list-style-position: outside;
+}
+
+li {
+  margin-right: 25px;
+  margin-bottom: calc(var(--space-4) / 2);
+  list-style: none;
+}
+
+li > ul,
+li > ol {
+  margin-top: calc(var(--space-4) / 2);
+  margin-bottom: calc(var(--space-4) / 2);
+  margin-left: var(--space-4);
+}
+
+li *:last-child {
+  margin-bottom: 0;
+}

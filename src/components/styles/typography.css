@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+  margin-bottom: 0.6em;
+}
+
+p {
+  max-width: 680px;
+  margin-bottom: var(--space-4);
+}
+
+b,
+strong {
+  font-weight: bolder;
+}

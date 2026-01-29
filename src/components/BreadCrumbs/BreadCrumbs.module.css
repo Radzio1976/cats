@@ -4,10 +4,5 @@
 }
 
 .bread-crumbs-menu ul li {
-  list-style: none;
   margin-right: 10px;
-}
-
-.bread-crumbs-menu ul li a {
-  text-decoration: none;
 }

@@ -4,6 +4,7 @@ import { useLocation } from "@reach/router"
 
 import Header from "../Header/Header"
 import Footer from "../footer"
+import "../styles/global.css"
 import "./layout.css"
 
 const Layout = ({ catData, litterData, children }) => {

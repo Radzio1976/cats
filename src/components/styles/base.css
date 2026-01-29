@@ -1,0 +1,14 @@
+html {
+  font-size: var(--font-md);
+  line-height: var(--line-height-normal);
+  overflow-y: scroll;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  word-wrap: break-word;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

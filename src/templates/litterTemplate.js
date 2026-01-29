@@ -29,6 +29,7 @@ export const query = graphql`
             id
             name
             sex
+            slug
             images {
               id
               url

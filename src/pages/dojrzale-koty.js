@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import OldCats from "../components/OldCats"
+import OldCats from "../components/OldCats/OldCats"
 import Seo from "../components/seo"
 
 const OldCatsPage = ({ data }) => {

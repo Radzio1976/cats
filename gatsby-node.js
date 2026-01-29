@@ -55,9 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   oldCats.forEach(oldCat =>
     createPage({
-      path: `/dojrzale-koty/${oldCat.sex === "male" ? "kocury" : "kotki"}/${
-        oldCat.slug
-      }`,
+      path: `/dojrzale-koty/${oldCat.slug}`,
       component: catTemplate,
       context: {
         id: oldCat.id,

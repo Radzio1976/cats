@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
+import Litters from "../components/Litters/Litters"
 import Seo from "../components/seo"
 
 const LittersPage = ({ data }) => {
@@ -10,10 +11,7 @@ const LittersPage = ({ data }) => {
 
   return (
     <Layout>
-      <div
-        className="main-cats-and-litters-section"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      ></div>
+      <Litters litters={litters} />
     </Layout>
   )
 }

@@ -11,7 +11,7 @@ const Home = ({ data }) => {
       <section>
         <ul>
           {oldMaleCats.map(cat => (
-            <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty/kocury" />
+            <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty" />
           ))}
         </ul>
       </section>
@@ -30,7 +30,7 @@ const Home = ({ data }) => {
       <section>
         <ul>
           {oldFemaleCats.map(cat => (
-            <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty/kotki" />
+            <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty" />
           ))}
         </ul>
       </section>

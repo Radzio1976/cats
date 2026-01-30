@@ -1,19 +1,20 @@
-.section {
+/* .section {
   padding: 20px;
-}
+} */
 
 .title {
   text-align: center;
 }
 
-.gallery {
+.litter-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 25px;
+  padding: 0;
 }
 
-.galleryImage {
+.litter-gallery .gallery-image {
   width: 150px;
   height: 150px;
   object-fit: cover;

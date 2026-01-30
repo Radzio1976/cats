@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-
+import * as styles from "./Header.module.css"
 const MainMenu = ({ siteTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
-      <nav className="menu" aria-label="Główna nawigacja">
+      <nav className={styles.mainMenu} aria-label="Główna nawigacja">
         <ul style={{ display: "flex", justifyContent: "space-between" }}>
           <li>
             <Link to="/">Home</Link>

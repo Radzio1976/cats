@@ -10,7 +10,7 @@ const LitterGallery = ({ litter }) => {
   const galleryImages = [...litterImages, ...kittenImages]
 
   return (
-    <div className={styles.gallery}>
+    <div className={styles.litterGallery}>
       {galleryImages.map(image => (
         <img
           key={image.id}

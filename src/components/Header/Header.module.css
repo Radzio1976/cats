@@ -8,6 +8,9 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 }
+.main-menu li:last-child {
+  margin-right: 0;
+}
 .logo a {
   font-size: var(--font-lg);
 }

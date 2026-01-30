@@ -1,4 +1,13 @@
+header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 .logo-and-main-menu {
   display: flex;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo a {
+  font-size: var(--font-lg);
 }

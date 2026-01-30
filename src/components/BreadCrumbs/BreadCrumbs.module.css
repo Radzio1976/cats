@@ -1,8 +1,11 @@
+.bread-crumbs-menu {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .bread-crumbs-menu ul {
   display: flex;
   justify-content: flex-start;
 }
-
 .bread-crumbs-menu ul li {
   margin-right: 10px;
 }

@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router"
 import Header from "../Header/Header"
 import Footer from "../footer"
 import "../styles/global.css"
-import "./layout.css"
+import * as styles from "./layout.module.css"
 
 const Layout = ({ catData, litterData, children }) => {
   const location = useLocation()
@@ -29,14 +29,7 @@ const Layout = ({ catData, litterData, children }) => {
         catData={catData}
         litterData={litterData}
       />
-      <div
-        className="main-wrapper"
-        style={{
-          margin: "0 auto",
-          maxWidth: "1200px",
-          padding: "var(--size-gutter)",
-        }}
-      >
+      <div className={styles.mainWrapper}>
         <main>{children}</main>
       </div>
       <Footer />

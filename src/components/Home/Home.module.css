@@ -1,28 +1,36 @@
-.homeGrid {
+.home-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   gap: 24px;
 }
 
-.section {
-  padding: 0 15px;
-}
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.catCard {
-  border: 1px solid black;
+.home-grid .cat-card,
+.home-grid .litter-card {
   border-radius: 12px;
   text-align: center;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
 }
 
-.image {
-  width: 200px;
-  height: 200px;
+.home-grid .cat-card img,
+.home-grid .litter-card img {
+  width: 100%;
+  max-width: 100%;
   object-fit: cover;
-  border-radius: 12px;
+}
+
+.home-grid .cat-card img {
+  aspect-ratio: 1 / 1;
+}
+
+.home-grid .litter-card img {
+  aspect-ratio: 1 / 0.5;
+}
+
+.home-grid .cat-card .cat-name,
+.home-grid .litter-card .litter-name {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 35px;
 }

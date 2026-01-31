@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./Cat.module.css"
-import CatGallery from "./CatGallery"
+import Gallery from "../Gallery"
 import CatParents from "./CatParents"
 import CatDescription from "./CatDescription"
 
@@ -12,9 +12,9 @@ const Cat = ({ catData }) => {
   }
 
   return (
-    <section className={styles.section}>
+    <section className={styles.catSection}>
       <h1 className={styles.title}>{cat.name}</h1>
-      <CatGallery cat={cat} />
+      <Gallery images={cat.images} />
 
       {cat.parents && <CatParents parents={cat.parents} />}
 

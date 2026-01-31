@@ -1,12 +1,10 @@
 import React from "react"
-import * as styles from "./Cat.module.css"
+import * as styles from "./Cat/Cat.module.css"
 
-const CatGallery = ({ cat }) => {
-  const galleryImages = cat.images
-
+const Gallery = ({ images }) => {
   return (
     <div className={styles.gallery}>
-      {galleryImages.map(image => (
+      {images.map(image => (
         <img
           key={image.id}
           src={image.url}
@@ -18,4 +16,4 @@ const CatGallery = ({ cat }) => {
   )
 }
 
-export default CatGallery
+export default Gallery

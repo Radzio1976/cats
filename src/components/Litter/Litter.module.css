@@ -6,21 +6,6 @@
   text-align: center;
 }
 
-.litter-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 0;
-}
-
-.litter-gallery .gallery-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
 .parents {
   display: flex;
   justify-content: space-between;

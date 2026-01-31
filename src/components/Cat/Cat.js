@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./Cat.module.css"
-import Gallery from "../Gallery"
+import Gallery from "../Gallery/Gallery"
 import CatParents from "./CatParents"
 import CatDescription from "./CatDescription"
 

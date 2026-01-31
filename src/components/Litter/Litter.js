@@ -1,15 +1,21 @@
 import React from "react"
-import LitterGallery from "./LitterGallery"
+import Gallery from "../Gallery/Gallery"
 import LitterParents from "./LitterParents"
 import LitterChildren from "./LitterChildren"
 import * as styles from "./Litter.module.css"
 
 const Litter = ({ litterData }) => {
   if (!litterData) return null
+  const litterImages = litterData.images || []
+  const kittenImages = litterData.children
+    .map(child => child.images?.[0])
+    .filter(Boolean)
+
+  const galleryImages = [...litterImages, ...kittenImages]
 
   return (
-    <section className={styles.section}>
-      <LitterGallery litter={litterData} />
+    <section className={styles.litterSection}>
+      <Gallery images={galleryImages} />
 
       <h1 className={styles.title}>{litterData.name}</h1>
 

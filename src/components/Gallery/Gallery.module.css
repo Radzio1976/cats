@@ -1,10 +1,10 @@
-.parents {
+.gallery {
   display: flex;
-  justify-content: space-between;
-  margin: 40px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
-
-.parent-card img {
+.gallery-image {
   width: 150px;
   height: 150px;
   object-fit: cover;

@@ -1,9 +1,9 @@
 import React from "react"
-import * as styles from "./Cat/Cat.module.css"
+import * as styles from "./Gallery.module.css"
 
-const Gallery = ({ images }) => {
+const Gallery = ({ images, className = "" }) => {
   return (
-    <div className={styles.gallery}>
+    <div className={`${styles.gallery} ${className}`}>
       {images.map(image => (
         <img
           key={image.id}

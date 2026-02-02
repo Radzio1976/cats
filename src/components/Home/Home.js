@@ -1,5 +1,5 @@
 import * as React from "react"
-import CatCard from "../CatCard"
+import CatCard from "../CatCard/CatCard"
 import LitterCard from "../LitterCard"
 import * as styles from "./Home.module.css"
 

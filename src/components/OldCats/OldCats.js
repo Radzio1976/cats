@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./OldCats.module.css"
-import CatCard from "../CatCard"
+import CatCard from "../CatCard/CatCard"
 
 const OldCats = ({ oldCats }) => {
   console.log(oldCats)

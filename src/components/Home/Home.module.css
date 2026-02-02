@@ -4,7 +4,6 @@
   gap: 24px;
 }
 
-.home-grid .cat-card,
 .home-grid .litter-card {
   border-radius: 12px;
   text-align: center;
@@ -13,15 +12,10 @@
   margin-bottom: 30px;
 }
 
-.home-grid .cat-card img,
 .home-grid .litter-card img {
   width: 100%;
   max-width: 100%;
   object-fit: cover;
-}
-
-.home-grid .cat-card img {
-  aspect-ratio: 1 / 1;
 }
 
 .home-grid .litter-card img {

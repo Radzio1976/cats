@@ -1,0 +1,20 @@
+.cat-card {
+  border-radius: 12px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
+}
+.cat-card img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.cat-card img {
+  aspect-ratio: 1 / 1;
+}
+.cat-card .cat-name {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 35px;
+}

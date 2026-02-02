@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as styles from "./Home/Home.module.css"
+import * as styles from "./CatCard.module.css"
 
 const CatCard = ({ cat, urlBase }) => {
   return (

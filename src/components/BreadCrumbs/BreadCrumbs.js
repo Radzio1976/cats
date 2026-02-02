@@ -1,5 +1,4 @@
 import * as React from "react"
-import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import * as styles from "./BreadCrumbs.module.css"
 

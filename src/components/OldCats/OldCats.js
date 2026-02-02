@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import * as styles from "./OldCats.module.css"
 import CatCard from "../CatCard"
 

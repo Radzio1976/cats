@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import * as styles from "./Header.module.css"
 import Logo from "./Logo"
 import MainMenu from "./MainMenu"

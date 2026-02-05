@@ -2,9 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import * as styles from "./CatCard.module.css"
 
-const CatCard = ({ cat, urlBase }) => {
+const CatCard = ({ cat, urlBase, className = "" }) => {
+  console.log(className)
   return (
-    <li className={styles.catCard}>
+    <li className={`${styles.catCard} ${className}`}>
       <Link to={`${urlBase}/${cat.slug}`}>
         <div className="image-wrapper">
           <img

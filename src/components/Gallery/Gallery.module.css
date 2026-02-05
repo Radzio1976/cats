@@ -2,11 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  /* gap: 10px; */
+  margin-left: -20px;
+  margin-right: -20px;
 }
 .gallery-image {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 12px;
+  margin: 10px;
 }

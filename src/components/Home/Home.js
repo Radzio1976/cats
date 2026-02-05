@@ -1,6 +1,6 @@
 import * as React from "react"
 import CatCard from "../CatCard/CatCard"
-import LitterCard from "../LitterCard"
+import LitterCard from "../LitterCard/LitterCard"
 import * as styles from "./Home.module.css"
 
 const Home = ({ data }) => {

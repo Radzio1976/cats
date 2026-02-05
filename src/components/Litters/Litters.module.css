@@ -1,0 +1,9 @@
+.littersSection ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.littersLitterCard {
+  width: 50%;
+  align-self: center;
+}

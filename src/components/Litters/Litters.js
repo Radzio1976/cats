@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as styles from "./Litters.module.css"
-import LitterCard from "../LitterCard"
+import LitterCard from "../LitterCard/LitterCard"
 
 const Litters = ({ litters }) => {
   return (
@@ -8,13 +8,19 @@ const Litters = ({ litters }) => {
       className={styles.litters}
       style={{ display: "flex", justifyContent: "space-between" }}
     >
-      <section>
+      <section className={styles.littersSection}>
         <ul>
           {litters.map(litter => (
-            <li key={litter.id}>
-              {<LitterCard key={litter.id} litter={litter} urlBase="/mioty" />}
-              <h3>{litter.name}</h3>
-            </li>
+            <>
+              {
+                <LitterCard
+                  key={litter.id}
+                  litter={litter}
+                  urlBase="/mioty"
+                  className={styles.littersLitterCard}
+                />
+              }
+            </>
           ))}
         </ul>
       </section>

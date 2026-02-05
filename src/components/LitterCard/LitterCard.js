@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import * as styles from "./Home/Home.module.css"
+import * as styles from "./LitterCard.module.css"
 
-const LitterCard = ({ litter, urlBase }) => {
+const LitterCard = ({ litter, urlBase, className }) => {
   return (
-    <li className={styles.litterCard}>
+    <li className={`${styles.litterCard} ${className}`}>
       <Link to={`/mioty/${litter.slug}`}>
         <div className="image-wrapper">
           <img

@@ -10,7 +10,12 @@ const OldCats = ({ oldCats }) => {
         <ul>
           {oldCats.map(cat => {
             return cat.sex === "male" ? (
-              <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty" />
+              <CatCard
+                key={cat.id}
+                cat={cat}
+                urlBase="/dojrzale-koty"
+                className={styles.oldCatsCatCard}
+              />
             ) : (
               ""
             )
@@ -21,7 +26,12 @@ const OldCats = ({ oldCats }) => {
         <ul>
           {oldCats.map(cat => {
             return cat.sex === "female" ? (
-              <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty" />
+              <CatCard
+                key={cat.id}
+                cat={cat}
+                urlBase="/dojrzale-koty"
+                className={styles.oldCatsCatCard}
+              />
             ) : (
               ""
             )

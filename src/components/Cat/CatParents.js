@@ -9,11 +9,11 @@ const CatParents = ({ parents }) => {
   return (
     <div className={styles.parents}>
       {[father, mother].map(parent => (
-        <Link to={`/dojrzale-koty/${parent.slug}`}>
-          <div key={parent.id} className={styles.parentCard}>
-            <img src={parent.images[0].url} alt={parent.images[0].fileName} />
+        <Link to={`/dojrzale-koty/${parent?.slug}`}>
+          <div key={parent?.id} className={styles.parentCard}>
+            <img src={parent?.images[0].url} alt={parent?.images[0].fileName} />
             <h2>
-              {parent.sex === "male" ? "Ojciec" : "Matka"}: {parent.name}
+              {parent?.sex === "male" ? "Ojciec" : "Matka"}: {parent?.name}
             </h2>
           </div>
         </Link>

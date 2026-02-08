@@ -1,4 +1,5 @@
 const path = require("path")
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -91,5 +92,63 @@ exports.createPages = async ({ graphql, actions }) => {
         nextSlug: array[i + 1]?.slug,
       },
     })
+  })
+}
+
+/* =======================
+      TWORZENIE LOKALNYCH FILE NODES
+     ======================= */
+
+exports.createResolvers = ({
+  createResolvers,
+  cache,
+  store,
+  reporter,
+  actions,
+}) => {
+  const { createNode } = actions
+
+  createResolvers({
+    HIGHGRAPH_Asset: {
+      localFile: {
+        type: "File",
+        resolve(source) {
+          return createRemoteFileNode({
+            url: source.url,
+            cache,
+            store,
+            createNode,
+            reporter,
+          })
+        },
+      },
+    },
+  })
+}
+
+exports.createResolvers = async ({
+  createResolvers,
+  cache,
+  store,
+  reporter,
+  actions,
+}) => {
+  const { createNode } = actions
+
+  createResolvers({
+    HIGHGRAPH_Asset: {
+      localFile: {
+        type: "File",
+        resolve(source) {
+          return createRemoteFileNode({
+            url: source.url,
+            cache,
+            store,
+            createNode,
+            reporter,
+          })
+        },
+      },
+    },
   })
 }

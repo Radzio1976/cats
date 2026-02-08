@@ -12,6 +12,7 @@
   object-fit: cover;
   border-radius: 12px;
   margin: 10px;
+  cursor: pointer;
 }
 /* The Modal (background) */
 .modal {

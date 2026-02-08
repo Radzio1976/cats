@@ -12,6 +12,7 @@ const Litter = ({ litterData }) => {
     .filter(Boolean)
 
   const galleryImages = [...litterImages, ...kittenImages]
+  console.log(galleryImages)
 
   return (
     <section className={styles.litterSection}>

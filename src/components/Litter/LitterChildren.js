@@ -6,8 +6,12 @@ const LitterChildren = ({ children, litterSlug }) => {
   return (
     <div className={styles.children}>
       {children.map(child => (
-        <Link to={`/mioty/${litterSlug}/${child.slug}`} className={styles.link}>
-          <div key={child.id} className={styles.childCard}>
+        <Link
+          to={`/mioty/${litterSlug}/${child.slug}`}
+          className={styles.link}
+          key={child.id}
+        >
+          <div className={styles.childCard}>
             <img src={child.images[0].url} alt={child.images[0].fileName} />
             <div>
               <h2>{child.name}</h2>

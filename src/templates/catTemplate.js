@@ -22,7 +22,9 @@ export const query = graphql`
         }
         birthDate
         images {
+          id
           url
+          fileName
         }
       }
       youngCat(where: { id: $id }) {
@@ -33,7 +35,9 @@ export const query = graphql`
         }
         birthDate
         images {
+          id
           url
+          fileName
         }
         parents {
           ... on HIGHGRAPH_OldCat {

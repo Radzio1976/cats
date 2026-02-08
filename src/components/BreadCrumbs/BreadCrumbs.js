@@ -30,7 +30,7 @@ const BreadCrumbs = ({ location, data, catData, litterData }) => {
           <Link to="/">{`Home ${breadCrumbs.length > 0 ? " \\" : ""}`}</Link>
         </li>
         {breadCrumbs.map((el, i) => (
-          <li>
+          <li key={i}>
             <Link to={`/${el.path}`}>
               {el.name} {`${i + 1 === breadCrumbs.length ? "" : " \\"}`}
             </Link>

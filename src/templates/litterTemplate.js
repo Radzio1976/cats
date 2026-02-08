@@ -23,6 +23,7 @@ export const query = graphql`
         images {
           id
           url
+          fileName
         }
         parents {
           ... on HIGHGRAPH_OldCat {

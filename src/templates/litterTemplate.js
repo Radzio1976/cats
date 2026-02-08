@@ -24,6 +24,7 @@ export const query = graphql`
           id
           url
           fileName
+          title
         }
         parents {
           ... on HIGHGRAPH_OldCat {
@@ -35,6 +36,7 @@ export const query = graphql`
               id
               url
               fileName
+              title
             }
           }
         }
@@ -50,6 +52,7 @@ export const query = graphql`
             id
             url
             fileName
+            title
           }
           parents {
             ... on HIGHGRAPH_OldCat {
@@ -61,6 +64,7 @@ export const query = graphql`
                 id
                 url
                 fileName
+                title
               }
             }
           }

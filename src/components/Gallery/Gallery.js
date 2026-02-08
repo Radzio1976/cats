@@ -5,6 +5,7 @@ import * as styles from "./Gallery.module.css"
 const Gallery = ({ images, className = "" }) => {
   const ref = useRef(null)
   const [imageCount, setImageCount] = useState(null)
+  console.log(images)
 
   useClickOutside(ref, () => {
     setImageCount(null)
@@ -33,7 +34,7 @@ const Gallery = ({ images, className = "" }) => {
               src={images[imageCount].url}
               alt={images[imageCount].fileName}
             />
-            <div className={styles.caption}>{images[imageCount].fileName}</div>
+            <div className={styles.caption}>{images[imageCount].title}</div>
             <div>
               <button
                 className={styles.prev}

@@ -6,8 +6,9 @@ import * as styles from "./Header.module.css"
 const Logo = ({ data }) => {
   return (
     <section className={styles.logo}>
-      <img src={headerImage} alt="Logo" />
-      {/* <Link to="/">{data.site.siteMetadata?.title || `Title`}</Link> */}
+      <Link to="/">
+        <img src={headerImage} alt="Logo" />
+      </Link>
     </section>
   )
 }

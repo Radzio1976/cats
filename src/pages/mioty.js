@@ -31,6 +31,16 @@ export const query = graphql`
         images {
           id
           url
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1200
+                quality: 70
+                placeholder: BLURRED
+                formats: [WEBP, AVIF]
+              )
+            }
+          }
         }
         name
         slug

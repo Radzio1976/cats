@@ -43,6 +43,16 @@ export const query = graphql`
           url
           width
           height
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1200
+                quality: 70
+                placeholder: BLURRED
+                formats: [WEBP, AVIF]
+              )
+            }
+          }
         }
       }
     }

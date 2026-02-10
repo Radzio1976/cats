@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const Gallery = ({ images, className = "" }) => {
   const ref = useRef(null)
   const [imageCount, setImageCount] = useState(null)
+  const modalImage = getImage(images?.[imageCount]?.localFile)
 
   useClickOutside(ref, () => {
     setImageCount(null)
@@ -36,7 +37,7 @@ const Gallery = ({ images, className = "" }) => {
             </span>
             <GatsbyImage
               className={styles.modalContent}
-              image={getImage(images[imageCount].localFile)}
+              image={modalImage}
               alt=""
             />
             <div className={styles.caption}>{images[imageCount].fileName}</div>

@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react"
 import useClickOutside from "../../hooks/useClickOutside"
 import * as styles from "./Gallery.module.css"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Gallery = ({ images, className = "" }) => {
   const ref = useRef(null)
   const [imageCount, setImageCount] = useState(null)
-  console.log(images)
 
   useClickOutside(ref, () => {
     setImageCount(null)
@@ -13,28 +13,33 @@ const Gallery = ({ images, className = "" }) => {
 
   return (
     <div className={`${styles.gallery} ${className}`}>
-      {images.map((image, i) => (
-        <img
-          key={image.id}
-          src={image.url}
-          alt={image.fileName}
-          className={styles.galleryImage}
-          onClick={() => setImageCount(i)}
-        />
-      ))}
+      {images.map((img, i) => {
+        const image = getImage(img.localFile)
+        return (
+          <div
+            key={img.id}
+            className={styles.galleryImage}
+            onClick={e => {
+              setImageCount(i)
+            }}
+          >
+            <GatsbyImage image={image} alt="" />
+          </div>
+        )
+      })}
 
       {imageCount !== null && (
-        <div ref={ref}>
+        <div>
           <div className={styles.modal}>
             <span onClick={() => setImageCount(null)} className={styles.close}>
               &times;
             </span>
-            <img
+            <GatsbyImage
               className={styles.modalContent}
-              src={images[imageCount].url}
-              alt={images[imageCount].fileName}
+              image={getImage(images[imageCount].localFile)}
+              alt=""
             />
-            <div className={styles.caption}>{images[imageCount].title}</div>
+            <div className={styles.caption}>{images[imageCount].fileName}</div>
             <div>
               <button
                 className={styles.prev}

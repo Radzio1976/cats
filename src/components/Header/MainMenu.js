@@ -7,7 +7,7 @@ const MainMenu = ({ siteTitle }) => {
   return (
     <>
       <nav className={styles.mainMenu} aria-label="Główna nawigacja">
-        <ul style={{ display: "flex", justifyContent: "space-between" }}>
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>

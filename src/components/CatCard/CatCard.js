@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import * as styles from "./CatCard.module.css"
 
 const CatCard = ({ cat, urlBase, className = "" }) => {
-  console.log(className)
   return (
     <li className={`${styles.catCard} ${className}`}>
       <Link to={`${urlBase}/${cat.slug}`}>

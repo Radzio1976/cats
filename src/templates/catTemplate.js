@@ -26,6 +26,16 @@ export const query = graphql`
           url
           fileName
           title
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1200
+                quality: 70
+                placeholder: BLURRED
+                formats: [WEBP, AVIF]
+              )
+            }
+          }
         }
       }
       youngCat(where: { id: $id }) {
@@ -40,6 +50,16 @@ export const query = graphql`
           url
           fileName
           title
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1200
+                quality: 70
+                placeholder: BLURRED
+                formats: [WEBP, AVIF]
+              )
+            }
+          }
         }
         parents {
           ... on HIGHGRAPH_OldCat {
@@ -52,6 +72,16 @@ export const query = graphql`
               url
               fileName
               title
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 1200
+                    quality: 70
+                    placeholder: BLURRED
+                    formats: [WEBP, AVIF]
+                  )
+                }
+              }
             }
           }
         }

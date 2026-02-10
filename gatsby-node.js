@@ -105,6 +105,7 @@ exports.createResolvers = ({
   store,
   reporter,
   actions,
+  createNodeId,
 }) => {
   const { createNode } = actions
 
@@ -113,11 +114,15 @@ exports.createResolvers = ({
       localFile: {
         type: "File",
         resolve(source) {
+          if (!source.url) {
+            return null
+          }
           return createRemoteFileNode({
             url: source.url,
             cache,
             store,
             createNode,
+            createNodeId,
             reporter,
           })
         },
@@ -132,6 +137,7 @@ exports.createResolvers = async ({
   store,
   reporter,
   actions,
+  createNodeId,
 }) => {
   const { createNode } = actions
 
@@ -140,11 +146,15 @@ exports.createResolvers = async ({
       localFile: {
         type: "File",
         resolve(source) {
+          if (!source.url) {
+            return null
+          }
           return createRemoteFileNode({
             url: source.url,
             cache,
             store,
             createNode,
+            createNodeId,
             reporter,
           })
         },

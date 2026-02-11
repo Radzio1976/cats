@@ -9,8 +9,6 @@
   width: 100%;
   max-width: 100%;
   object-fit: cover;
-}
-.litter-card img {
   aspect-ratio: 1 / 0.5;
 }
 .litter-card .litter-name {

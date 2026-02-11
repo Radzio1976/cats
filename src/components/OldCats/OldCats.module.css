@@ -23,6 +23,9 @@
   margin: 0;
   text-align: right;
 } */
+.oldCatsCatCard img {
+  aspect-ratio: 1 / 0.5;
+}
 
 .oldMaleCatsSection ul,
 .oldFemaleCatsSection ul {

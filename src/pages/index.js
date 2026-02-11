@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
   const litters = data?.highgraph?.litters || []
 
   return (
-    <Layout>
+    <Layout data={{ oldMaleCats, oldFemaleCats }}>
       <Home data={{ oldMaleCats, oldFemaleCats, litters }} />
     </Layout>
   )

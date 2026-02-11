@@ -4,19 +4,18 @@ import Logo from "./Logo"
 import MainMenu from "./MainMenu"
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs"
 
-const Header = ({ location, data, catData, litterData }) => {
+const Header = ({ location, metaData, catData, litterData }) => {
   const pathname = location.pathname
   console.log(location)
   return (
     <header>
       <section className={styles.logoAndMainMenu}>
-        <Logo data={data} />
+        <Logo metaData={metaData} />
         <MainMenu />
       </section>
       {pathname !== "/" && (
         <BreadCrumbs
           location={location}
-          data={data}
           catData={catData}
           litterData={litterData}
         />

@@ -8,7 +8,7 @@ const CatCard = ({ cat, urlBase, className = "" }) => {
 
   return (
     <li className={`${styles.catCard} ${className}`}>
-      <Link to={`${urlBase}/${cat.slug}`}>
+      <Link to={`${urlBase}/${cat.slug}`} className={styles.cardLink}>
         <div className={styles.imageWrapper}>
           {imageData && <GatsbyImage image={imageData} alt={cat.name} />}
         </div>

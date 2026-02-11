@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import * as styles from "./BreadCrumbs.module.css"
 
-const BreadCrumbs = ({ location, data, catData, litterData }) => {
+const BreadCrumbs = ({ location, catData, litterData }) => {
   const pathname = location.pathname
   const cat = catData?.oldCat || catData?.youngCat
   const litter = litterData

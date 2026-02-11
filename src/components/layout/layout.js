@@ -4,13 +4,15 @@ import { useLocation } from "@reach/router"
 
 import Header from "../Header/Header"
 import Footer from "../footer"
+import CatCard from "../CatCard/CatCard"
 import "../styles/global.css"
 import * as styles from "./layout.module.css"
 
-const Layout = ({ catData, litterData, children }) => {
+const Layout = ({ data, catData, litterData, children }) => {
   const location = useLocation()
+  const { oldMaleCats, oldFemaleCats } = data
 
-  const data = useStaticQuery(graphql`
+  const metaData = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -25,12 +27,38 @@ const Layout = ({ catData, litterData, children }) => {
     <>
       <Header
         location={location}
-        data={data}
+        metaData={metaData}
         catData={catData}
         litterData={litterData}
       />
       <div className={styles.mainWrapper}>
-        <main>{children}</main>
+        <main>
+          <section className={styles.mainLeftColumn}>
+            <ul>
+              {oldMaleCats.map(cat => (
+                <CatCard
+                  key={cat.id}
+                  cat={cat}
+                  urlBase="/dojrzale-koty"
+                  className={styles.layoutCatCardLeftColumn}
+                />
+              ))}
+            </ul>
+          </section>
+          <section className={styles.mainMiddleColumn}>{children}</section>
+          <section className={styles.mainRightColumn}>
+            <ul>
+              {oldFemaleCats.map(cat => (
+                <CatCard
+                  key={cat.id}
+                  cat={cat}
+                  urlBase="/dojrzale-koty"
+                  className={styles.layoutCatCardRightColumn}
+                />
+              ))}
+            </ul>
+          </section>
+        </main>
       </div>
       <Footer />
     </>

@@ -8,12 +8,17 @@ const CatCard = ({ cat, urlBase, className = "" }) => {
 
   return (
     <li className={`${styles.catCard} ${className}`}>
-      <Link to={`${urlBase}/${cat.slug}`} className={styles.cardLink}>
-        <div className={styles.imageWrapper}>
+      <Link
+        to={`${urlBase}/${cat.slug}`}
+        className={`${styles.cardLink} oldCatsCatCardCardLink`}
+      >
+        <div className={`${styles.imageWrapper} oldCatsCatCardImageWrapper`}>
           {imageData && <GatsbyImage image={imageData} alt={cat.name} />}
         </div>
 
-        <h3 className={styles.catName}>{cat.name}</h3>
+        <h3 className={`${styles.catName} oldCatsCatCardCatName`}>
+          {cat.name}
+        </h3>
       </Link>
     </li>
   )

@@ -9,7 +9,13 @@ const MainMenu = ({ siteTitle }) => {
       <nav className={styles.mainMenu} aria-label="Główna nawigacja">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Hodowla</Link>
+          </li>
+          <li>
+            <Link to="/kocury">Kocury</Link>
+          </li>
+          <li>
+            <Link to="/kotki">Kotki</Link>
           </li>
 
           <li>

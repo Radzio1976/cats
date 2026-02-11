@@ -1,18 +1,25 @@
-/* .old-cats-section {
-  display: flex;
-  justify-content: space-between;
+.oldCatsCatCard {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
   width: 100%;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: var(--box-shadow);
+}
+.oldCatsCatCardCardLink {
+  display: flex !important; /* KLUCZ */
+  width: 100% !important; /* KLUCZ */
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.oldCatsCatCardImageWrapper {
+  flex-shrink: 0; /* obraz NIE będzie się ściskał */
 }
 
-.old-male-cats-section,
-.old-female-cats-section {
-  width: 25%;
-} */
-
-/* .old-cats-section img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-} */
+.oldCatsCatCardCatName {
+  margin: 0;
+  text-align: right;
+}

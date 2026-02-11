@@ -1,9 +1,3 @@
-/* .home-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 24px;
-} */
-
 .home-grid {
   display: flex;
   flex-direction: column;

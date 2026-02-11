@@ -39,7 +39,7 @@ const Layout = ({ data, catData, litterData, children }) => {
                 <CatCard
                   key={cat.id}
                   cat={cat}
-                  urlBase="/dojrzale-koty"
+                  urlBase="/kocury"
                   className={styles.layoutCatCardLeftColumn}
                 />
               ))}
@@ -52,7 +52,7 @@ const Layout = ({ data, catData, litterData, children }) => {
                 <CatCard
                   key={cat.id}
                   cat={cat}
-                  urlBase="/dojrzale-koty"
+                  urlBase="/kotki"
                   className={styles.layoutCatCardRightColumn}
                 />
               ))}

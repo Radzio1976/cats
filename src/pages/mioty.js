@@ -6,11 +6,14 @@ import Litters from "../components/Litters/Litters"
 import Seo from "../components/seo"
 
 const LittersPage = ({ data }) => {
+  const oldCats = data?.highgraph?.oldCats || []
+  const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
+  const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
   const litters = data?.highgraph?.litters || []
   console.log(litters)
 
   return (
-    <Layout>
+    <Layout data={{ oldMaleCats, oldFemaleCats }}>
       <Litters litters={litters} />
     </Layout>
   )
@@ -26,6 +29,30 @@ export const Head = () => <Seo title="Dojrzałe koty" />
 export const query = graphql`
   query {
     highgraph {
+      oldCats {
+        id
+        name
+        slug
+        sex
+        desc {
+          markdown
+        }
+        images {
+          url
+          width
+          height
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1200
+                quality: 70
+                placeholder: BLURRED
+                formats: [WEBP, AVIF]
+              )
+            }
+          }
+        }
+      }
       litters {
         id
         images {

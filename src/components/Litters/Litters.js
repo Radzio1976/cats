@@ -4,10 +4,7 @@ import LitterCard from "../LitterCard/LitterCard"
 
 const Litters = ({ litters }) => {
   return (
-    <div
-      className={styles.litters}
-      style={{ display: "flex", justifyContent: "space-between" }}
-    >
+    <div className={styles.litters}>
       <section className={styles.littersSection}>
         <ul>
           {litters.map(litter => (

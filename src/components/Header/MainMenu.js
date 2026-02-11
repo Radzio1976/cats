@@ -18,19 +18,15 @@ const MainMenu = ({ siteTitle }) => {
             <Link to="/kotki">Kotki</Link>
           </li>
 
-          <li>
-            <Link to="/o-nas">O nas</Link>
-          </li>
-
-          <li className="has-submenu">
-            {/* <button
+          {/* <li className="has-submenu">
+            <button
               onClick={() => setIsOpen(prev => !prev)}
               aria-expanded={isOpen}
               aria-haspopup="true"
-            > */}
+            >
             <Link to="/dojrzale-koty">Dojrzałe koty</Link>
-            {/* </button> */}
-            {/* {isOpen && (
+            </button>
+            {isOpen && (
               <ul className="submenu">
                 <li>
                   <Link to="/dojrzale-koty/kocury">Kocury</Link>
@@ -40,8 +36,8 @@ const MainMenu = ({ siteTitle }) => {
                   <Link to="/dojrzale-koty/kotki">Kotki</Link>
                 </li>
               </ul>
-            )} */}
-          </li>
+            )}
+          </li> */}
           <li>
             <Link to="/mioty">Mioty</Link>
           </li>

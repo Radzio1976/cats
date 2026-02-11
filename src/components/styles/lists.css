@@ -4,7 +4,6 @@ ol {
 }
 
 li {
-  margin-right: 25px;
   margin-bottom: calc(var(--space-4) / 2);
   list-style: none;
 }

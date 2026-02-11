@@ -13,13 +13,11 @@ const Header = ({ location, metaData, catData, litterData }) => {
         <Logo metaData={metaData} />
         <MainMenu />
       </section>
-      {pathname !== "/" && (
-        <BreadCrumbs
-          location={location}
-          catData={catData}
-          litterData={litterData}
-        />
-      )}
+      <BreadCrumbs
+        location={location}
+        catData={catData}
+        litterData={litterData}
+      />
     </header>
   )
 }

@@ -1,4 +1,4 @@
-.oldCatsCatCard {
+/* .oldCatsCatCard {
   display: flex !important;
   flex-direction: column;
   align-items: center !important;
@@ -9,17 +9,29 @@
   box-shadow: var(--box-shadow);
 }
 .oldCatsCatCardCardLink {
-  display: flex !important; /* KLUCZ */
-  width: 100% !important; /* KLUCZ */
+  display: flex !important;
+  width: 100% !important;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
 }
 .oldCatsCatCardImageWrapper {
-  flex-shrink: 0; /* obraz NIE będzie się ściskał */
+  flex-shrink: 0;
 }
 
 .oldCatsCatCardCatName {
   margin: 0;
   text-align: right;
+} */
+
+.oldMaleCatsSection ul,
+.oldFemaleCatsSection ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oldCatsCatCard {
+  width: 80%;
+  align-self: center;
 }

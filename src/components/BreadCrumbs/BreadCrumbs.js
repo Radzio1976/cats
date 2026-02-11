@@ -25,18 +25,20 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
 
   return (
     <nav className={styles.breadCrumbsMenu}>
-      <ul>
-        <li>
-          <Link to="/">{`Home ${breadCrumbs.length > 0 ? " \\" : ""}`}</Link>
-        </li>
-        {breadCrumbs.map((el, i) => (
-          <li key={i}>
-            <Link to={`/${el.path}`}>
-              {el.name} {`${i + 1 === breadCrumbs.length ? "" : " \\"}`}
-            </Link>
+      {pathname !== "/" && (
+        <ul>
+          <li>
+            <Link to="/">{`Home ${breadCrumbs.length > 0 ? " \\" : ""}`}</Link>
           </li>
-        ))}
-      </ul>
+          {breadCrumbs.map((el, i) => (
+            <li key={i}>
+              <Link to={`/${el.path}`}>
+                {el.name} {`${i + 1 === breadCrumbs.length ? "" : " \\"}`}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   )
 }

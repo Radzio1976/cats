@@ -28,7 +28,9 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       {pathname !== "/" && (
         <ul>
           <li>
-            <Link to="/">{`Home ${breadCrumbs.length > 0 ? " \\" : ""}`}</Link>
+            <Link to="/">{`Hodowla ${
+              breadCrumbs.length > 0 ? " \\" : ""
+            }`}</Link>
           </li>
           {breadCrumbs.map((el, i) => (
             <li key={i}>

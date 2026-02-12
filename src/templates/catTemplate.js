@@ -5,8 +5,11 @@ import Cat from "../components/Cat/Cat"
 
 const CatTemplate = ({ data }) => {
   const catData = data.highgraph
+  const oldCats = data?.highgraph?.oldCats || []
+  const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
+  const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
   return (
-    <Layout catData={catData}>
+    <Layout catData={catData} data={{ oldMaleCats, oldFemaleCats }}>
       <Cat catData={catData} />
     </Layout>
   )

@@ -6,8 +6,11 @@ import LitterPagination from "../components/Litter/LitterPagination"
 
 const LitterTemplate = ({ data, pageContext }) => {
   const litterData = data.highgraph.litter
+  const oldCats = data?.highgraph?.oldCats || []
+  const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
+  const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
   return (
-    <Layout litterData={litterData}>
+    <Layout litterData={litterData} data={{ oldMaleCats, oldFemaleCats }}>
       <Litter litterData={litterData} pageContext={pageContext} />
       <LitterPagination pageContext={pageContext} />
     </Layout>

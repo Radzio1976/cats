@@ -113,6 +113,30 @@ export const query = graphql`
           }
         }
       }
+      oldCats {
+        id
+        name
+        slug
+        sex
+        desc {
+          markdown
+        }
+        images {
+          url
+          width
+          height
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1200
+                quality: 70
+                placeholder: BLURRED
+                formats: [WEBP, AVIF]
+              )
+            }
+          }
+        }
+      }
     }
   }
 `

@@ -4,6 +4,7 @@ import Layout from "../components/layout/layout"
 import Cat from "../components/Cat/Cat"
 
 const CatTemplate = ({ data }) => {
+  console.log(data)
   const catData = data.highgraph
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
@@ -85,6 +86,30 @@ export const query = graphql`
                   )
                 }
               }
+            }
+          }
+        }
+      }
+      oldCats {
+        id
+        name
+        slug
+        sex
+        desc {
+          markdown
+        }
+        images {
+          url
+          width
+          height
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1200
+                quality: 70
+                placeholder: BLURRED
+                formats: [WEBP, AVIF]
+              )
             }
           }
         }

@@ -6,7 +6,6 @@ import BreadCrumbs from "../BreadCrumbs/BreadCrumbs"
 
 const Header = ({ location, metaData, catData, litterData }) => {
   const pathname = location.pathname
-  console.log(location)
   return (
     <header>
       <section className={styles.logoAndMainMenu}>

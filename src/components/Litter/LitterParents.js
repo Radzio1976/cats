@@ -12,7 +12,12 @@ const LitterParents = ({ parents }) => {
       {[father, mother].map(parent => {
         const image = getImage(parent?.images?.[0]?.localFile)
         return (
-          <Link to={`/dojrzale-koty/${parent?.slug}`} key={parent?.id}>
+          <Link
+            to={`/${parent.sex === "male" ? "kocury" : "kotki"}/${
+              parent?.slug
+            }`}
+            key={parent?.id}
+          >
             <div className={styles.parentCard}>
               {image && (
                 <GatsbyImage image={image} alt={parent?.images[0].fileName} />

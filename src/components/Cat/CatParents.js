@@ -10,9 +10,14 @@ const CatParents = ({ parents }) => {
   return (
     <div className={styles.parents}>
       {[father, mother].map(parent => {
+        console.log(parent)
         const image = getImage(parent?.images?.[0]?.localFile)
         return (
-          <Link to={`/dojrzale-koty/${parent?.slug}`}>
+          <Link
+            to={`/${parent.sex === "male" ? "kocury" : "kotki"}/${
+              parent?.slug
+            }`}
+          >
             <div key={parent?.id} className={styles.parentCard}>
               {image && (
                 <GatsbyImage image={image} alt={parent?.images[0].fileName} />

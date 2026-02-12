@@ -14,17 +14,16 @@ const Gallery = ({ images, className = "" }) => {
 
   return (
     <div className={`${styles.gallery} ${className}`}>
-      <div className={styles.galleryLeft}></div>
-      <div className={styles.galleryRight}></div>
       {images.map((img, i) => {
         const image = getImage(img.localFile)
+
         return (
           <div
             key={img.id}
-            className={styles.galleryImage}
-            onClick={e => {
-              setImageCount(i)
-            }}
+            className={`${styles.galleryImage} ${
+              i === 0 ? styles.bigImage : ""
+            }`}
+            onClick={() => setImageCount(i)}
           >
             <GatsbyImage image={image} alt="" />
           </div>

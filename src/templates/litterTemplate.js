@@ -5,7 +5,7 @@ import Litter from "../components/Litter/Litter"
 import LitterPagination from "../components/Litter/LitterPagination"
 
 const LitterTemplate = ({ data, pageContext }) => {
-  const litterData = data.highgraph.litter
+  const litterData = data?.highgraph?.litter
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")

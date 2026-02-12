@@ -2,20 +2,14 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import Litters from "../components/Litters/Litters"
 import Seo from "../components/seo"
 
-const LittersPage = ({ data }) => {
+const ContactPage = ({ data }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
-  const litters = data?.highgraph?.litters || []
 
-  return (
-    <Layout data={{ oldMaleCats, oldFemaleCats }}>
-      <Litters litters={litters} />
-    </Layout>
-  )
+  return <Layout data={{ oldMaleCats, oldFemaleCats }}></Layout>
 }
 
 /**
@@ -23,7 +17,7 @@ const LittersPage = ({ data }) => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Mioty" />
+export const Head = () => <Seo title="Kontakt" />
 
 export const query = graphql`
   query {
@@ -52,27 +46,8 @@ export const query = graphql`
           }
         }
       }
-      litters {
-        id
-        images {
-          id
-          url
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 1200
-                quality: 70
-                placeholder: BLURRED
-                formats: [WEBP, AVIF]
-              )
-            }
-          }
-        }
-        name
-        slug
-      }
     }
   }
 `
 
-export default LittersPage
+export default ContactPage

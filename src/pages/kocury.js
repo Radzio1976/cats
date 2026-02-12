@@ -11,7 +11,6 @@ const OldMaleCatsPage = ({ data }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
-  console.log(oldCats)
 
   return (
     <Layout data={{ oldMaleCats, oldFemaleCats }}>
@@ -25,7 +24,7 @@ const OldMaleCatsPage = ({ data }) => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Dojrzałe koty" />
+export const Head = () => <Seo title="Kocury" />
 
 export const query = graphql`
   query {

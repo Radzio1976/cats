@@ -3,18 +3,9 @@ import CatCard from "../CatCard/CatCard"
 import LitterCard from "../LitterCard/LitterCard"
 import * as styles from "./Home.module.css"
 
-const Home = ({ data }) => {
-  const { oldMaleCats, oldFemaleCats, litters } = data
-
+const Home = () => {
   return (
     <div className={styles.homeGrid}>
-      {/* <section>
-        <ul>
-          {oldMaleCats.map(cat => (
-            <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty" />
-          ))}
-        </ul>
-      </section> */}
       <h1>Zaczynamy</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -65,20 +56,6 @@ const Home = ({ data }) => {
         eleifend. Nullam aliquam nunc ligula, quis egestas massa tempus sed.
         Pellentesque eget mi et mi facilisis tristique.
       </p>
-
-      {/* <ul>
-        {litters.map(litter => (
-          <>{<LitterCard key={litter.id} litter={litter} urlBase="/mioty" />}</>
-        ))}
-      </ul> */}
-
-      {/* <section>
-        <ul>
-          {oldFemaleCats.map(cat => (
-            <CatCard key={cat.id} cat={cat} urlBase="/dojrzale-koty" />
-          ))}
-        </ul>
-      </section> */}
     </div>
   )
 }

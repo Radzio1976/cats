@@ -3,8 +3,6 @@ header {
   padding-bottom: 15px;
 }
 .logo-and-main-menu {
-  /* display: flex;
-  justify-content: space-between; */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -15,9 +13,6 @@ header {
 .main-menu li {
   padding: 15px;
 }
-/* .main-menu li:last-child {
-  margin-right: 0;
-} */
 .logo a {
   font-size: var(--font-lg);
 }

@@ -25,7 +25,7 @@ const OldFemaleCatsPage = ({ data }) => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Dojrzałe koty" />
+export const Head = () => <Seo title="Kotki" />
 
 export const query = graphql`
   query {

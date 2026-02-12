@@ -9,11 +9,10 @@ const IndexPage = ({ data }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
-  const litters = data?.highgraph?.litters || []
 
   return (
     <Layout data={{ oldMaleCats, oldFemaleCats }}>
-      <Home data={{ oldMaleCats, oldFemaleCats, litters }} />
+      <Home />
     </Layout>
   )
 }
@@ -23,7 +22,7 @@ const IndexPage = ({ data }) => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Hodowla" />
 
 export const query = graphql`
   query {
@@ -51,29 +50,6 @@ export const query = graphql`
             }
           }
         }
-      }
-      litters {
-        id
-        name
-        desc {
-          markdown
-        }
-        images {
-          url
-          width
-          height
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 1200
-                quality: 70
-                placeholder: BLURRED
-                formats: [WEBP, AVIF]
-              )
-            }
-          }
-        }
-        slug
       }
     }
   }

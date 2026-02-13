@@ -16,7 +16,7 @@ const Gallery = ({ images, className = "" }) => {
     <div className={`${styles.gallery} ${className}`}>
       {images.map((img, i) => {
         const image = getImage(img.localFile)
-        return i < 6 ? (
+        return i < 7 ? (
           <div
             key={img.id}
             className={`${styles.galleryImage} ${

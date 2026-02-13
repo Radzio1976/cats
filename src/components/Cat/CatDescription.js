@@ -20,17 +20,17 @@ const CatDescription = ({ cat, catData }) => {
           <h3 className={styles.title}>Badania</h3>
           <ul>
             <li>
-              <a href={cat.hcmTest.url} target="_blank">
+              <a href={cat?.hcmTest?.url} target="_blank">
                 Badanie HCM
               </a>
             </li>
             <li>
-              <a href={cat.pkdTest.url} target="_blank">
+              <a href={cat?.pkdTest?.url} target="_blank">
                 Badanie PKD
               </a>
             </li>
             <li>
-              <a href={cat.xyzTest.url} target="_blank">
+              <a href={cat?.xyzTest?.url} target="_blank">
                 Badanie XYZ
               </a>
             </li>

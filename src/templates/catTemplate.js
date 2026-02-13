@@ -62,6 +62,7 @@ export const query = graphql`
           markdown
         }
         birthDate
+        color
         images {
           id
           url

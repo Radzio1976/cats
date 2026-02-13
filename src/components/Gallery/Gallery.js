@@ -16,8 +16,7 @@ const Gallery = ({ images, className = "" }) => {
     <div className={`${styles.gallery} ${className}`}>
       {images.map((img, i) => {
         const image = getImage(img.localFile)
-
-        return (
+        return i < 6 ? (
           <div
             key={img.id}
             className={`${styles.galleryImage} ${
@@ -27,7 +26,7 @@ const Gallery = ({ images, className = "" }) => {
           >
             <GatsbyImage image={image} alt="" />
           </div>
-        )
+        ) : null
       })}
 
       {imageCount !== null && (
@@ -40,8 +39,9 @@ const Gallery = ({ images, className = "" }) => {
               className={styles.modalContent}
               image={modalImage}
               alt=""
+              style={{ maxHeight: "90vh" }}
+              imgStyle={{ objectFit: "contain" }}
             />
-            <div className={styles.caption}>{images[imageCount].fileName}</div>
             <div>
               <button
                 className={styles.prev}

@@ -4,7 +4,6 @@ import Layout from "../components/layout/layout"
 import Cat from "../components/Cat/Cat"
 
 const CatTemplate = ({ data }) => {
-  console.log(data)
   const catData = data.highgraph
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
@@ -25,6 +24,20 @@ export const query = graphql`
           markdown
         }
         birthDate
+        color
+        lineage
+        hcmTest {
+          fileName
+          url
+        }
+        pkdTest {
+          fileName
+          url
+        }
+        xyzTest {
+          fileName
+          url
+        }
         images {
           id
           url

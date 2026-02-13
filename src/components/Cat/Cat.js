@@ -5,6 +5,7 @@ import CatParents from "./CatParents"
 import CatDescription from "./CatDescription"
 
 const Cat = ({ catData }) => {
+  console.log(catData)
   const cat = catData.oldCat || catData.youngCat
 
   if (!cat) {
@@ -13,12 +14,11 @@ const Cat = ({ catData }) => {
 
   return (
     <section className={styles.catSection}>
-      <h1 className={styles.title}>{cat.name}</h1>
       <Gallery images={cat.images} className={styles.catGallery} />
 
       {cat.parents && <CatParents parents={cat.parents} />}
 
-      <CatDescription cat={cat} />
+      <CatDescription cat={cat} catData={catData} />
     </section>
   )
 }

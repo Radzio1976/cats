@@ -13,6 +13,11 @@ main {
   align-items: flex-start !important;
   width: 100%;
 }
+.mainMiddleColumn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 .layoutCatCardRightColumn {
   display: flex !important;
   flex-direction: column;

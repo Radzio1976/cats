@@ -6,7 +6,7 @@ const OldCats = ({ oldCats, location }) => {
   const pathname = location.pathname
   console.log(location)
   return (
-    <div className={styles.oldCatsGrid}>
+    <section className={styles.oldCatsSection}>
       {pathname === "/kocury/" ? (
         <div className={styles.oldMaleCatsSection}>
           <ul>
@@ -42,7 +42,7 @@ const OldCats = ({ oldCats, location }) => {
           </ul>
         </div>
       )}
-    </div>
+    </section>
   )
 }
 

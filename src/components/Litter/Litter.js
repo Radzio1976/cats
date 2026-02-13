@@ -2,9 +2,10 @@ import React from "react"
 import Gallery from "../Gallery/Gallery"
 import LitterParents from "./LitterParents"
 import LitterChildren from "./LitterChildren"
+import LitterPagination from "./LitterPagination"
 import * as styles from "./Litter.module.css"
 
-const Litter = ({ litterData }) => {
+const Litter = ({ litterData, pageContext }) => {
   if (!litterData) return null
   const litterImages = litterData.images || []
   const kittenImages = litterData.children
@@ -25,6 +26,7 @@ const Litter = ({ litterData }) => {
         litterSlug={litterData.slug}
         children={litterData.children}
       />
+      <LitterPagination pageContext={pageContext} />
     </section>
   )
 }

@@ -2,7 +2,6 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import Litter from "../components/Litter/Litter"
-import LitterPagination from "../components/Litter/LitterPagination"
 
 const LitterTemplate = ({ data, pageContext }) => {
   const litterData = data?.highgraph?.litter
@@ -12,7 +11,6 @@ const LitterTemplate = ({ data, pageContext }) => {
   return (
     <Layout litterData={litterData} data={{ oldMaleCats, oldFemaleCats }}>
       <Litter litterData={litterData} pageContext={pageContext} />
-      <LitterPagination pageContext={pageContext} />
     </Layout>
   )
 }

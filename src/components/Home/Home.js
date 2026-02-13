@@ -5,7 +5,7 @@ import * as styles from "./Home.module.css"
 
 const Home = () => {
   return (
-    <div className={styles.homeGrid}>
+    <section className={styles.homeSection}>
       <h1>Zaczynamy</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -56,7 +56,7 @@ const Home = () => {
         eleifend. Nullam aliquam nunc ligula, quis egestas massa tempus sed.
         Pellentesque eget mi et mi facilisis tristique.
       </p>
-    </div>
+    </section>
   )
 }
 

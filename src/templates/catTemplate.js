@@ -79,25 +79,31 @@ export const query = graphql`
             }
           }
         }
-        parents {
-          ... on HIGHGRAPH_OldCat {
+        litter {
+          ... on HIGHGRAPH_Litter {
             id
             name
-            sex
-            slug
-            images {
-              id
-              url
-              fileName
-              title
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 1200
-                    quality: 70
-                    placeholder: BLURRED
-                    formats: [WEBP, AVIF]
-                  )
+            parents {
+              ... on HIGHGRAPH_OldCat {
+                id
+                name
+                sex
+                slug
+                images {
+                  id
+                  url
+                  fileName
+                  title
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 1200
+                        quality: 70
+                        placeholder: BLURRED
+                        formats: [WEBP, AVIF]
+                      )
+                    }
+                  }
                 }
               }
             }

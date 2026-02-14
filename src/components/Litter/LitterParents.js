@@ -13,7 +13,7 @@ const LitterParents = ({ parents }) => {
         const image = getImage(parent?.images?.[0]?.localFile)
         return (
           <Link
-            to={`/${parent.sex === "male" ? "kocury" : "kotki"}/${
+            to={`/${parent?.sex === "male" ? "kocury" : "kotki"}/${
               parent?.slug
             }`}
             key={parent?.id}

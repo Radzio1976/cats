@@ -16,9 +16,8 @@ const Litter = ({ litterData, pageContext }) => {
 
   return (
     <section className={styles.litterSection}>
-      <Gallery images={galleryImages} className={styles.litterGallery} />
-
       <h1 className={styles.title}>{litterData.name}</h1>
+      <Gallery images={galleryImages} className={styles.litterGallery} />
 
       <LitterParents parents={litterData.parents} />
 

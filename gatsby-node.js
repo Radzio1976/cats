@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           slug
           sex
-          parents {
+          litter {
             ... on HIGHGRAPH_Litter {
               id
               slug
@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
   )
 
   youngCats.forEach(youngCat => {
-    const litter = youngCat.parents?.find(p => p?.slug)
+    const litter = youngCat.litter?.find(p => p?.slug)
     if (!litter) return
 
     createPage({

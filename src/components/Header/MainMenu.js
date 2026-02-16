@@ -12,6 +12,9 @@ const MainMenu = ({ siteTitle }) => {
             <Link to="/">Hodowla</Link>
           </li>
           <li>
+            <Link to="/o-nas">O nas</Link>
+          </li>
+          <li>
             <Link to="/kocury">Kocury</Link>
           </li>
           <li>

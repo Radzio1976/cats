@@ -1,16 +1,33 @@
 .litter-card {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; */
   border-radius: 12px;
   text-align: center;
   overflow: hidden;
   box-shadow: var(--box-shadow);
   margin-bottom: 30px;
 }
-.litter-card img {
+/* .image-wrapper {
+  line-height: 0;
+
+  -webkit-column-count: 4;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 4;
+  -moz-column-gap: 0px;
+  column-count: 4;
+  column-gap: 0px;
+}
+.image-wrapper img {
+  width: 100% !important;
+  height: auto !important;
+} */
+/* .litter-card img {
   width: 100%;
   max-width: 100%;
   object-fit: cover;
   aspect-ratio: 1 / 0.5;
-}
+} */
 .litter-card .litter-name {
   text-align: center;
   padding-top: 25px;

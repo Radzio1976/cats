@@ -22,9 +22,7 @@ const LitterParents = ({ parents }) => {
               {image && (
                 <GatsbyImage image={image} alt={parent?.images[0].fileName} />
               )}
-              <h2>
-                {parent?.sex === "male" ? "Ojciec" : "Matka"}: {parent?.name}
-              </h2>
+              <h2>{parent?.name}</h2>
             </div>
           </Link>
         )

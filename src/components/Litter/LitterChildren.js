@@ -20,8 +20,24 @@ const LitterChildren = ({ children, litterSlug }) => {
               )}
               <div>
                 <h2>{child.name}</h2>
-                <p>{child.desc.markdown}</p>
-                Więcej
+                <p
+                  className={styles.availability}
+                  style={{
+                    backgroundColor:
+                      child.availability === "available"
+                        ? "green"
+                        : child.availability === "unavailable"
+                        ? "red"
+                        : "yellow",
+                  }}
+                >{`${
+                  child.availability === "available"
+                    ? "Dostępny"
+                    : child.availability === "unavailable"
+                    ? "Niedostępny"
+                    : "Zarezerwowany"
+                }`}</p>
+                <p>Więcej</p>
               </div>
             </div>
           </Link>

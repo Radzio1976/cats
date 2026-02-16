@@ -66,6 +66,7 @@ export const query = graphql`
           name
           sex
           slug
+          availability
           desc {
             markdown
           }

@@ -13,13 +13,14 @@ const Litter = ({ litterData, pageContext }) => {
     .filter(Boolean)
 
   const galleryImages = [...litterImages, ...kittenImages]
+  console.log(litterData)
 
   return (
     <section className={styles.litterSection}>
-      <h1 className={styles.title}>{litterData.name}</h1>
-      <Gallery images={galleryImages} className={styles.litterGallery} />
+      {/* <Gallery images={galleryImages} className={styles.litterGallery} /> */}
 
       <LitterParents parents={litterData.parents} />
+      {/* <h1 className={styles.title}>{litterData.name}</h1> */}
 
       <LitterChildren
         litterSlug={litterData.slug}

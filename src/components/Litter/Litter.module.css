@@ -13,10 +13,15 @@
 }
 
 .parentCard img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.parentCard h2 {
+  text-align: center;
+  padding-top: 10px;
 }
 
 .children {
@@ -28,8 +33,8 @@
 .childCard {
   display: flex;
   gap: 30px;
-  margin: 0 auto;
-  width: 60%;
+  /* margin: 0 auto;
+  width: 60%; */
 }
 
 .childCard img {
@@ -37,6 +42,12 @@
   height: 150px;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.availability {
+  background-color: aqua;
+  display: inline;
+  padding: 0 3px 3px 3px;
 }
 
 .pagination {

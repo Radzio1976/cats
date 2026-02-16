@@ -9,7 +9,7 @@
 .parents {
   display: flex;
   justify-content: space-between;
-  margin: 40px 0;
+  margin: 40px 0 100px 0;
 }
 
 .parentCard img {

@@ -23,9 +23,10 @@ const LitterChildren = ({ children, litterSlug }) => {
                 <p
                   className={styles.availability}
                   style={{
+                    color: "black",
                     backgroundColor:
                       child.availability === "available"
-                        ? "green"
+                        ? "yellowgreen"
                         : child.availability === "unavailable"
                         ? "red"
                         : "yellow",

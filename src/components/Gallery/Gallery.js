@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react"
 import useClickOutside from "../../hooks/useClickOutside"
 import * as styles from "./Gallery.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Modal from "../Modal/Modal"
 
 const Gallery = ({ images, className = "" }) => {
   const ref = useRef(null)
@@ -28,46 +29,12 @@ const Gallery = ({ images, className = "" }) => {
           </div>
         ) : null
       })}
-
-      {imageCount !== null && (
-        <div>
-          <div className={styles.modal}>
-            <span onClick={() => setImageCount(null)} className={styles.close}>
-              &times;
-            </span>
-            <GatsbyImage
-              className={styles.modalContent}
-              image={modalImage}
-              alt=""
-              style={{ maxHeight: "90vh" }}
-              imgStyle={{ objectFit: "contain" }}
-            />
-            <div>
-              <button
-                className={styles.prev}
-                onClick={() =>
-                  setImageCount(
-                    imageCount === 0 ? images.length - 1 : imageCount - 1
-                  )
-                }
-              >
-                &#8592;
-              </button>
-
-              <button
-                className={styles.next}
-                onClick={() =>
-                  setImageCount(
-                    imageCount === images.length - 1 ? 0 : imageCount + 1
-                  )
-                }
-              >
-                &#8594;
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <Modal
+        images={images}
+        modalImage={modalImage}
+        imageCount={imageCount}
+        setImageCount={setImageCount}
+      />
     </div>
   )
 }

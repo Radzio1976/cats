@@ -5,10 +5,14 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  /* font-family: var(--font-sans); */
+  font-family: ProximaNova, Arial, sans-serif;
   color: var(--color-text);
   word-wrap: break-word;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("../../images/gradient-background-for-business-banner_BNJ.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

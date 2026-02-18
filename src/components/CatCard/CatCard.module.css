@@ -1,5 +1,7 @@
 .cat-card {
-  border-radius: 12px;
+  border-radius: var(--border-radius);
+  border: 3px solid white;
+  background: #fff;
   text-align: center;
   overflow: hidden;
   box-shadow: var(--box-shadow);

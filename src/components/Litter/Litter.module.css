@@ -12,6 +12,12 @@
   margin: 0 0 100px 0;
 }
 
+.parentCard {
+  padding-top: 25px;
+  padding-bottom: 35px;
+  box-shadow: var(--box-shadow);
+}
+
 .parentCard img {
   width: 250px;
   height: 250px;
@@ -33,8 +39,12 @@
 .childCard {
   display: flex;
   gap: 30px;
+  box-shadow: var(--box-shadow);
   /* margin: 0 auto;
   width: 60%; */
+  border: 3px solid white;
+  background: white;
+  border-radius: 12px;
 }
 
 .childCard img {
@@ -47,7 +57,7 @@
 .availability {
   background-color: aqua;
   display: inline;
-  padding: 0 3px 3px 3px;
+  padding: 0 3px 0 3px;
 }
 
 .pagination {

@@ -19,25 +19,33 @@ const LitterChildren = ({ children, litterSlug }) => {
                 <GatsbyImage image={image} alt={child.images[0].fileName} />
               )}
               <div>
-                <h2>{child.name}</h2>
-                <p
-                  className={styles.availability}
+                <div
                   style={{
-                    color: "black",
-                    backgroundColor:
-                      child.availability === "available"
-                        ? "yellowgreen"
-                        : child.availability === "unavailable"
-                        ? "red"
-                        : "yellow",
+                    display: "flex",
+                    alignItems: "baseline",
                   }}
-                >{`${
-                  child.availability === "available"
-                    ? "Dostępny"
-                    : child.availability === "unavailable"
-                    ? "Niedostępny"
-                    : "Zarezerwowany"
-                }`}</p>
+                >
+                  <h2>{child.name}</h2>
+                  <p
+                    className={styles.availability}
+                    style={{
+                      color: "black",
+                      backgroundColor:
+                        child.availability === "available"
+                          ? "yellowgreen"
+                          : child.availability === "unavailable"
+                          ? "red"
+                          : "yellow",
+                      marginLeft: "20px",
+                    }}
+                  >{`${
+                    child.availability === "available"
+                      ? "Dostępny"
+                      : child.availability === "unavailable"
+                      ? "Niedostępny"
+                      : "Zarezerwowany"
+                  }`}</p>
+                </div>
                 <p>Więcej</p>
               </div>
             </div>

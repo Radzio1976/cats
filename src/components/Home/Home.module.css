@@ -1,10 +1,15 @@
 .home-section {
   display: flex;
   flex-direction: column;
+  width: 90%;
   align-items: center;
   padding: 30px;
   border-radius: 12px;
   text-align: center;
   margin-bottom: 30px;
   box-shadow: var(--box-shadow);
+  background-color: #fff;
+}
+.home-section h1 {
+  margin-bottom: 20px;
 }

@@ -53,10 +53,10 @@ const AboutUs = () => {
       <div className={styles.aboutUsGallery}>
         <div
           className={styles.aboutUsGalleryImage1}
-          onClick={() => setImageCount(1)}
+          onClick={() => setImageCount(0)}
         >
           <StaticImage
-            src="../../images/breeding_1.jpg"
+            src="../../images/breeding/breeding_1.jpg"
             alt=""
             placeholder="blurred"
             className="rounded-lg"
@@ -64,10 +64,10 @@ const AboutUs = () => {
         </div>
         <div
           className={styles.aboutUsGalleryImage2}
-          onClick={() => setImageCount(2)}
+          onClick={() => setImageCount(1)}
         >
           <StaticImage
-            src="../../images/breeding_2.jpg"
+            src="../../images/breeding/breeding_2.jpg"
             alt=""
             placeholder="blurred"
             className="rounded-lg"
@@ -75,10 +75,10 @@ const AboutUs = () => {
         </div>
         <div
           className={styles.aboutUsGalleryImage3}
-          onClick={() => setImageCount(3)}
+          onClick={() => setImageCount(2)}
         >
           <StaticImage
-            src="../../images/breeding_3.jpg"
+            src="../../images/breeding/breeding_3.jpg"
             alt=""
             placeholder="blurred"
             className="rounded-lg"
@@ -86,10 +86,10 @@ const AboutUs = () => {
         </div>
         <div
           className={styles.aboutUsGalleryImage4}
-          onClick={() => setImageCount(4)}
+          onClick={() => setImageCount(3)}
         >
           <StaticImage
-            src="../../images/breeding_4.jpg"
+            src="../../images/breeding/breeding_4.jpg"
             alt=""
             placeholder="blurred"
             className="rounded-lg"
@@ -97,10 +97,10 @@ const AboutUs = () => {
         </div>
         <div
           className={styles.aboutUsGalleryImage5}
-          onClick={() => setImageCount(5)}
+          onClick={() => setImageCount(4)}
         >
           <StaticImage
-            src="../../images/breeding_5.jpg"
+            src="../../images/breeding/breeding_5.jpg"
             alt=""
             placeholder="blurred"
             className="rounded-lg"
@@ -108,10 +108,10 @@ const AboutUs = () => {
         </div>
         <div
           className={styles.aboutUsGalleryImage6}
-          onClick={() => setImageCount(6)}
+          onClick={() => setImageCount(5)}
         >
           <StaticImage
-            src="../../images/breeding_6.jpg"
+            src="../../images/breeding/breeding_6.jpg"
             alt=""
             placeholder="blurred"
             className="rounded-lg"

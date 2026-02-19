@@ -10,7 +10,13 @@ const CatCard = ({ cat, urlBase, className = "" }) => {
     <li className={`${styles.catCard} ${className}`}>
       <Link to={`${urlBase}/${cat.slug}`} className={styles.cardLink}>
         <div className={styles.imageWrapper}>
-          {imageData && <GatsbyImage image={imageData} alt={cat.name} />}
+          {imageData && (
+            <GatsbyImage
+              image={imageData}
+              alt={cat.name}
+              className={styles.catImage}
+            />
+          )}
         </div>
 
         <h3 className={styles.catName}>{cat.name}</h3>

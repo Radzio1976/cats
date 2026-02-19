@@ -17,6 +17,7 @@ const OldCats = ({ oldCats, location }) => {
                   cat={cat}
                   urlBase="/kocury"
                   className={styles.oldCatsCatCard}
+                  variant="oldCats"
                 />
               ) : (
                 ""
@@ -34,6 +35,7 @@ const OldCats = ({ oldCats, location }) => {
                   cat={cat}
                   urlBase="/kotki"
                   className={styles.oldCatsCatCard}
+                  variant="oldCats"
                 />
               ) : (
                 ""

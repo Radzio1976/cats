@@ -11,12 +11,32 @@
   width: 100%;
   max-width: 100%;
   object-fit: cover;
-}
-.cat-card img {
   aspect-ratio: 1 / 1;
 }
 .cat-card .cat-name {
   text-align: center;
   padding-top: 25px;
   padding-bottom: 35px;
+}
+/* Style do stron Koty i Kotki */
+.catCardOldCats {
+  width: 60%;
+  align-self: center;
+}
+.catCardOldCats {
+  width: 60%;
+  align-self: center;
+}
+.catImageOldCats {
+  height: 600px;
+}
+/* Style do layoutu */
+.catCardLayout {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start !important;
+  width: 100%;
+}
+.catImgLayout {
+  object-position: top;
 }

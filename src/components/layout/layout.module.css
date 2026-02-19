@@ -7,26 +7,8 @@ main {
   grid-template-columns: 1fr 5fr 1fr;
   gap: 24px;
 }
-.layoutCatCardLeftColumn {
-  display: flex !important;
-  flex-direction: column;
-  align-items: flex-start !important;
-  width: 100%;
-}
-.layoutCatCardLeftColumn img {
-  object-position: top;
-}
 .mainMiddleColumn {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-.layoutCatCardRightColumn {
-  display: flex !important;
-  flex-direction: column;
-  align-items: flex-end !important;
-  width: 100%;
-}
-.layoutCatCardRightColumn img {
-  object-position: top;
 }

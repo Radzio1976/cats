@@ -40,7 +40,7 @@ const Layout = ({ data, catData, litterData, children }) => {
                   key={cat.id}
                   cat={cat}
                   urlBase="/kocury"
-                  className={styles.layoutCatCardLeftColumn}
+                  variant="layout"
                 />
               ))}
             </ul>
@@ -53,7 +53,7 @@ const Layout = ({ data, catData, litterData, children }) => {
                   key={cat.id}
                   cat={cat}
                   urlBase="/kotki"
-                  className={styles.layoutCatCardRightColumn}
+                  variant="layout"
                 />
               ))}
             </ul>

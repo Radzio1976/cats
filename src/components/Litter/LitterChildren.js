@@ -16,7 +16,12 @@ const LitterChildren = ({ children, litterSlug }) => {
           >
             <div className={styles.childCard}>
               {image && (
-                <GatsbyImage image={image} alt={child.images[0].fileName} />
+                <GatsbyImage
+                  image={image}
+                  alt={child.images[0].fileName}
+                  className={styles.childImage}
+                  imgClassName={styles.childImg}
+                />
               )}
               <div>
                 <div

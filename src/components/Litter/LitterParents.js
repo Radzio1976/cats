@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as styles from "./Litter.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import * as styles from "./Litter.module.css"
 
 const LitterParents = ({ parents }) => {
   const father = parents.find(p => p.sex === "male")
@@ -20,7 +20,12 @@ const LitterParents = ({ parents }) => {
           >
             <div className={styles.parentCard}>
               {image && (
-                <GatsbyImage image={image} alt={parent?.images[0].fileName} />
+                <GatsbyImage
+                  image={image}
+                  alt={parent?.images[0].fileName}
+                  className={styles.parentImage}
+                  imgClassName={styles.parentImg}
+                />
               )}
               <h2>{parent?.name}</h2>
             </div>

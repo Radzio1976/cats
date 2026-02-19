@@ -18,9 +18,12 @@
   box-shadow: var(--box-shadow);
 }
 
-.parentCard img {
+.parentImage {
   width: 250px;
   height: 250px;
+}
+
+.parentImg {
   object-fit: cover;
   border-radius: 12px;
 }
@@ -47,9 +50,12 @@
   border-radius: 12px;
 }
 
-.childCard img {
+.childImage {
   width: 150px;
   height: 150px;
+}
+
+.childImg {
   object-fit: cover;
   border-radius: 12px;
 }

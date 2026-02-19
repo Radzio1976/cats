@@ -10,7 +10,11 @@ const Cat = ({ catData }) => {
 
   return (
     <section className={styles.catSection}>
-      <Gallery images={cat.images} className={styles.catGallery} />
+      <Gallery
+        images={cat.images}
+        className={styles.catGallery}
+        variant="cat"
+      />
       <CatDescription cat={cat} catData={catData} />
       {parents && <CatParents parents={parents} />}
     </section>

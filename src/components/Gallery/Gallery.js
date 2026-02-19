@@ -4,7 +4,7 @@ import * as styles from "./Gallery.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Modal from "../Modal/Modal"
 
-const Gallery = ({ images, className = "" }) => {
+const Gallery = ({ images, variant }) => {
   const ref = useRef(null)
   const [imageCount, setImageCount] = useState(null)
   const modalImage = getImage(images?.[imageCount]?.localFile)
@@ -14,7 +14,11 @@ const Gallery = ({ images, className = "" }) => {
   })
 
   return (
-    <div className={`${styles.gallery} ${className}`}>
+    <div
+      className={[styles.gallery, variant === "cat" && styles.galleryCat]
+        .filter(Boolean)
+        .join(" ")}
+    >
       {images.map((img, i) => {
         const image = getImage(img.localFile)
         return i < 7 ? (

@@ -1,13 +1,17 @@
 import * as React from "react"
-import { Link } from "gatsby-plugin-react-i18next"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import * as styles from "./BreadCrumbs.module.css"
 
 const BreadCrumbs = ({ location, catData, litterData }) => {
+  const { language } = useI18next()
   const pathname = location.pathname
   const cat = catData?.oldCat || catData?.youngCat
   const litter = litterData
 
-  let pathNameElements = pathname.split("/").filter(el => el !== "")
+  let pathNameElements = pathname
+    .split("/")
+    .filter(el => el !== "" && el !== "de" && el !== "en")
+  console.log(pathNameElements)
   let breadCrumbs = []
   pathNameElements.forEach((el, i) =>
     breadCrumbs.push({
@@ -22,7 +26,8 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       path: pathNameElements.slice(0, i + 1).join("/"),
     })
   )
-
+  console.log(breadCrumbs)
+  console.log(language)
   return (
     <nav className={styles.breadCrumbsMenu}>
       {pathname !== "/" && (

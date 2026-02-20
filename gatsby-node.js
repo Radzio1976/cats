@@ -99,38 +99,6 @@ exports.createPages = async ({ graphql, actions }) => {
       TWORZENIE LOKALNYCH FILE NODES
      ======================= */
 
-exports.createResolvers = ({
-  createResolvers,
-  cache,
-  store,
-  reporter,
-  actions,
-  createNodeId,
-}) => {
-  const { createNode } = actions
-
-  createResolvers({
-    HIGHGRAPH_Asset: {
-      localFile: {
-        type: "File",
-        resolve(source) {
-          if (!source.url) {
-            return null
-          }
-          return createRemoteFileNode({
-            url: source.url,
-            cache,
-            store,
-            createNode,
-            createNodeId,
-            reporter,
-          })
-        },
-      },
-    },
-  })
-}
-
 exports.createResolvers = async ({
   createResolvers,
   cache,
@@ -145,11 +113,10 @@ exports.createResolvers = async ({
     HIGHGRAPH_Asset: {
       localFile: {
         type: "File",
-        resolve(source) {
-          if (!source.url) {
-            return null
-          }
-          return createRemoteFileNode({
+        async resolve(source) {
+          if (!source.url) return null
+
+          return await createRemoteFileNode({
             url: source.url,
             cache,
             store,

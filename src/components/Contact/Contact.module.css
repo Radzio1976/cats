@@ -1,0 +1,10 @@
+.contactSection {
+  width: 80%;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 2px solid #fff;
+}
+.contactMapRow {
+  height: 300px;
+}

@@ -16,6 +16,17 @@ const LitterTemplate = ({ data, pageContext }) => {
 }
 export const query = graphql`
   query LitterPage($id: ID!) {
+    # Pobranie wszystkich tłumaczeń dla pluginu
+    locales: allLocale {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+
     highgraph {
       litter(where: { id: $id }) {
         id
@@ -70,7 +81,6 @@ export const query = graphql`
           desc {
             markdown
           }
-
           images {
             id
             url
@@ -103,6 +113,7 @@ export const query = graphql`
           }
         }
       }
+
       oldCats {
         id
         name

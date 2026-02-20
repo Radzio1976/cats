@@ -11,7 +11,6 @@ const OldFemaleCatsPage = ({ data }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
-  console.log(oldCats)
 
   return (
     <Layout data={{ oldMaleCats, oldFemaleCats }}>
@@ -28,7 +27,7 @@ const OldFemaleCatsPage = ({ data }) => {
 export const Head = () => <Seo title="Kotki" />
 
 export const query = graphql`
-  query {
+  query ($language: String!) {
     highgraph {
       oldCats {
         id
@@ -52,6 +51,15 @@ export const query = graphql`
               )
             }
           }
+        }
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }

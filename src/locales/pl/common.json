@@ -1,0 +1,12 @@
+{
+  "header": {
+    "main_menu": {
+      "home": "Hodowla",
+      "about_us": "O nas",
+      "male_cats": "Kocury",
+      "female_cats": "Kotki",
+      "litters": "Mioty",
+      "contact": "Kontakt"
+    }
+  }
+}

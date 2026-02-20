@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-react-i18next"
 import * as styles from "./Litter.module.css"
 
 const LitterPagination = ({ pageContext }) => {

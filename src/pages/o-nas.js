@@ -25,7 +25,7 @@ const AboutUsPage = ({ data }) => {
 export const Head = () => <Seo title="O nas" />
 
 export const query = graphql`
-  query {
+  query ($language: String!) {
     highgraph {
       oldCats {
         id
@@ -49,6 +49,15 @@ export const query = graphql`
               )
             }
           }
+        }
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }

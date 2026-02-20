@@ -16,6 +16,17 @@ const CatTemplate = ({ data }) => {
 }
 export const query = graphql`
   query CatPage($id: ID!) {
+    # Pobranie wszystkich tłumaczeń dla pluginu
+    locales: allLocale {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+
     highgraph {
       oldCat(where: { id: $id }) {
         id
@@ -55,6 +66,7 @@ export const query = graphql`
           }
         }
       }
+
       youngCat(where: { id: $id }) {
         id
         name
@@ -110,6 +122,7 @@ export const query = graphql`
           }
         }
       }
+
       oldCats {
         id
         name

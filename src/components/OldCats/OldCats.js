@@ -4,7 +4,7 @@ import CatCard from "../CatCard/CatCard"
 
 const OldCats = ({ oldCats, location }) => {
   const pathname = location.pathname
-  console.log(location)
+
   return (
     <section className={styles.oldCatsSection}>
       {pathname === "/kocury/" ? (

@@ -1,0 +1,12 @@
+{
+  "header": {
+    "main_menu": {
+      "home": "Breeding",
+      "about_us": "About us",
+      "male_cats": "Male cats",
+      "female_cats": "Female cats",
+      "litters": "Litters",
+      "contact": "Contact"
+    }
+  }
+}

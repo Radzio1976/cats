@@ -54,5 +54,27 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `locales`, // musi zgadzać się z localeJsonSourceName w pluginie
+        path: `${__dirname}/src/locales/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locales`,
+        languages: [`pl`, `en`, `de`],
+        defaultLanguage: `pl`,
+        siteUrl: `http://localhost:8000`,
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
+          nsSeparator: false,
+        },
+      },
+    },
   ],
 }

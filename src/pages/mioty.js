@@ -26,7 +26,7 @@ const LittersPage = ({ data }) => {
 export const Head = () => <Seo title="Mioty" />
 
 export const query = graphql`
-  query {
+  query ($language: String!) {
     highgraph {
       oldCats {
         id
@@ -70,6 +70,15 @@ export const query = graphql`
         }
         name
         slug
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
       }
     }
   }

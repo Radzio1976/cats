@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-react-i18next"
 import * as styles from "./LitterCard.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -7,7 +7,7 @@ const LitterCard = ({ litter, urlBase, className }) => {
   const image = getImage(litter.images?.[0]?.localFile)
   const getRandomSize = (min, max) =>
     Math.round(Math.random() * (max - min) + min)
-  console.log(litter.images)
+
   return (
     <li className={`${styles.litterCard} ${className}`}>
       <Link to={`/mioty/${litter.slug}`}>

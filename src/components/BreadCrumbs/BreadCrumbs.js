@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Link, useI18next } from "gatsby-plugin-react-i18next"
+import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import * as styles from "./BreadCrumbs.module.css"
 
 const BreadCrumbs = ({ location, catData, litterData }) => {
+  const { t } = useTranslation()
   const { language, path } = useI18next()
   const pathname = location.pathname
   const cat = catData?.oldCat || catData?.youngCat
@@ -37,13 +38,10 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       {pathname !== "/" && (
         <ul>
           <li>
-            <Link to="/">{`${
-              language === "pl"
-                ? "Hodowla"
-                : language === "en"
-                ? "Breeding"
-                : "Zucht"
-            } ${breadCrumbs.length > 0 ? " \\" : ""}`}</Link>
+            <Link to="/">
+              {t("header.menu.home.label")}
+              {` ${breadCrumbs.length > 0 ? " \\" : ""}`}
+            </Link>
           </li>
           {breadCrumbs.map((el, i) => (
             <li key={i}>

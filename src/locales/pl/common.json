@@ -1,12 +1,12 @@
 {
   "header": {
-    "main_menu": {
-      "home": "Hodowla",
-      "about_us": "O nas",
-      "male_cats": "Kocury",
-      "female_cats": "Kotki",
-      "litters": "Mioty",
-      "contact": "Kontakt"
+    "menu": {
+      "home": { "label": "Hodowla", "path": "/" },
+      "about_us": { "label": "O nas", "path": "/o-nas" },
+      "male_cats": { "label": "Kocury", "path": "/kocury" },
+      "female_cats": { "label": "Kotki", "path": "/kotki" },
+      "litters": { "label": "Mioty", "path": "/mioty" },
+      "contact": { "label": "Kontakt", "path": "/kontakt" }
     }
   }
 }

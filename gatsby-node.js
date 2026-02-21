@@ -49,48 +49,72 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const catTemplate = path.resolve("src/templates/catTemplate.js")
   const litterTemplate = path.resolve("src/templates/litterTemplate.js")
+  const languages = ["pl", "en", "de"]
 
   /* =======================
       STRONY KOTÓW
      ======================= */
 
-  oldCats.forEach(oldCat =>
-    createPage({
-      path: `/${oldCat.sex === "male" ? "kocury" : "kotki"}/${oldCat.slug}`,
-      component: catTemplate,
-      context: {
-        id: oldCat.id,
-        slug: oldCat.slug,
-      },
-    })
+  languages.forEach(lang =>
+    oldCats.forEach(oldCat =>
+      createPage({
+        path:
+          lang === "pl"
+            ? `/${oldCat.sex === "male" ? "kocury" : "kotki"}/${oldCat.slug}`
+            : lang === "en"
+            ? `/${oldCat.sex === "male" ? "male-cats" : "female-cats"}/${
+                oldCat.slug
+              }`
+            : `/${oldCat.sex === "male" ? "kater" : "katzen"}/${oldCat.slug}`,
+        component: catTemplate,
+        context: {
+          id: oldCat.id,
+          slug: oldCat.slug,
+        },
+      })
+    )
   )
 
-  youngCats.forEach(youngCat => {
-    const litter = youngCat.litter?.find(p => p?.slug)
-    if (!litter) return
+  languages.forEach(lang => {
+    youngCats.forEach(youngCat => {
+      const litter = youngCat.litter?.find(p => p?.slug)
+      if (!litter) return
 
-    createPage({
-      path: `/mioty/${litter.slug}/${youngCat.slug}`,
-      component: catTemplate,
-      context: {
-        id: youngCat.id,
-        slug: youngCat.slug,
-      },
+      createPage({
+        path:
+          lang === "pl"
+            ? `/mioty/${litter.slug}/${youngCat.slug}`
+            : lang === "en"
+            ? `/litters/${litter.slug}/${youngCat.slug}`
+            : `/wuerfe/${litter.slug}/${youngCat.slug}`,
+        component: catTemplate,
+        context: {
+          id: youngCat.id,
+          slug: youngCat.slug,
+        },
+      })
     })
   })
 
-  litters.forEach((litter, i, array) => {
-    createPage({
-      path: `/mioty/${litter.slug}`,
-      component: litterTemplate,
-      context: {
-        id: litter.id,
-        slug: litter.slug,
-        prevId: array[i - 1]?.id,
-        prevSlug: array[i - 1]?.slug,
-        nextId: array[i + 1]?.id,
-        nextSlug: array[i + 1]?.slug,
-      },
+  languages.forEach(lang => {
+    litters.forEach((litter, i, array) => {
+      createPage({
+        path:
+          lang === "pl"
+            ? `/mioty/${litter.slug}`
+            : lang === "en"
+            ? `/litters/${litter.slug}`
+            : `/wuerfe/${litter.slug}`,
+        component: litterTemplate,
+        context: {
+          id: litter.id,
+          slug: litter.slug,
+          prevId: array[i - 1]?.id,
+          prevSlug: array[i - 1]?.slug,
+          nextId: array[i + 1]?.id,
+          nextSlug: array[i + 1]?.slug,
+        },
+      })
     })
   })
 }

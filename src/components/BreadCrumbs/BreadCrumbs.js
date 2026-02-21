@@ -3,15 +3,20 @@ import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import * as styles from "./BreadCrumbs.module.css"
 
 const BreadCrumbs = ({ location, catData, litterData }) => {
-  const { language } = useI18next()
+  const { language, path } = useI18next()
   const pathname = location.pathname
   const cat = catData?.oldCat || catData?.youngCat
   const litter = litterData
 
+  console.log(path)
+
   let pathNameElements = pathname
     .split("/")
-    .filter(el => el !== "" && el !== "de" && el !== "en")
-  console.log(pathNameElements)
+    .filter(el => el !== "" && el !== "de" && el !== "en" && el !== "pl")
+  if (language !== "pl") {
+    pathNameElements.shift()
+  }
+
   let breadCrumbs = []
   pathNameElements.forEach((el, i) =>
     breadCrumbs.push({
@@ -26,16 +31,19 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       path: pathNameElements.slice(0, i + 1).join("/"),
     })
   )
-  console.log(breadCrumbs)
-  console.log(language)
+
   return (
     <nav className={styles.breadCrumbsMenu}>
       {pathname !== "/" && (
         <ul>
           <li>
-            <Link to="/">{`Hodowla ${
-              breadCrumbs.length > 0 ? " \\" : ""
-            }`}</Link>
+            <Link to="/">{`${
+              language === "pl"
+                ? "Hodowla"
+                : language === "en"
+                ? "Breeding"
+                : "Zucht"
+            } ${breadCrumbs.length > 0 ? " \\" : ""}`}</Link>
           </li>
           {breadCrumbs.map((el, i) => (
             <li key={i}>

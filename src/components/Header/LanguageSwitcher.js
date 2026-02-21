@@ -2,14 +2,14 @@ import React from "react"
 import { Link, useI18next } from "gatsby-plugin-react-i18next"
 
 const LanguageSwitcher = () => {
-  const { languages, originalPath } = useI18next()
+  const { language, languages, originalPath, path } = useI18next()
 
   return (
     <div>
       {languages.map(lng => (
         <Link
           key={lng}
-          to={originalPath}
+          to={`${lng === "pl" ? "/" : lng === "en" ? "/breeding" : "/zucht"}`}
           language={lng} // <- bardzo ważne, żeby przekazać język
           style={{ marginRight: "10px" }}
         >

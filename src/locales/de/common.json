@@ -1,12 +1,12 @@
 {
   "header": {
-    "main_menu": {
-      "home": "Zucht",
-      "about_us": "Über uns",
-      "male_cats": "Kater",
-      "female_cats": "Kätzinnen",
-      "litters": "Würfe",
-      "contact": "Kontakt"
+    "menu": {
+      "home": { "label": "Zucht", "path": "/zucht" },
+      "about_us": { "label": "Über uns", "path": "/uber-uns" },
+      "male_cats": { "label": "Kater", "path": "/kater" },
+      "female_cats": { "label": "Kätzinnen", "path": "/katzen" },
+      "litters": { "label": "Würfe", "path": "/wuerfe" },
+      "contact": { "label": "Kontakt", "path": "/kontakt" }
     }
   }
 }

@@ -10,22 +10,34 @@ const MainMenu = () => {
       <nav className={styles.mainMenu} aria-label="Główna nawigacja">
         <ul>
           <li>
-            <Link to="/">{t("header.main_menu.home")}</Link>
+            <Link to={t("header.menu.home.path")}>
+              {t("header.menu.home.label")}
+            </Link>
           </li>
           <li>
-            <Link to="/o-nas">{t("header.main_menu.about_us")}</Link>
+            <Link to={t("header.menu.about_us.path")}>
+              {t("header.menu.about_us.label")}
+            </Link>
           </li>
           <li>
-            <Link to="/kocury">{t("header.main_menu.male_cats")}</Link>
+            <Link to={t("header.menu.male_cats.path")}>
+              {t("header.menu.male_cats.label")}
+            </Link>
           </li>
           <li>
-            <Link to="/kotki">{t("header.main_menu.female_cats")}</Link>
+            <Link to={t("header.menu.female_cats.path")}>
+              {t("header.menu.female_cats.label")}
+            </Link>
           </li>
           <li>
-            <Link to="/mioty">{t("header.main_menu.litters")}</Link>
+            <Link to={t("header.menu.litters.path")}>
+              {t("header.menu.litters.label")}
+            </Link>
           </li>
           <li>
-            <Link to="/kontakt">{t("header.main_menu.contact")}</Link>
+            <Link to={t("header.menu.contact.path")}>
+              {t("header.menu.contact.label")}
+            </Link>
           </li>
           <LanguageSwitcher />
         </ul>

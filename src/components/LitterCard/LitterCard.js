@@ -10,7 +10,7 @@ const LitterCard = ({ litter, urlBase, className }) => {
 
   return (
     <li className={`${styles.litterCard} ${className}`}>
-      <Link to={`/mioty/${litter.slug}`}>
+      <Link to={`${urlBase}/${litter.slug}`}>
         <div className="-m-1 flex flex-row h-[600px]">
           <div className="flex w-full flex-wrap">
             <div className="w-1/2 p-1 h-[45%] object-contain">

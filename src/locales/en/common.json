@@ -1,12 +1,12 @@
 {
   "header": {
-    "main_menu": {
-      "home": "Breeding",
-      "about_us": "About us",
-      "male_cats": "Male cats",
-      "female_cats": "Female cats",
-      "litters": "Litters",
-      "contact": "Contact"
+    "menu": {
+      "home": { "label": "Breeding", "path": "/breeding" },
+      "about_us": { "label": "About", "path": "/about-us" },
+      "male_cats": { "label": "Male Cats", "path": "/male-cats" },
+      "female_cats": { "label": "Female Cats", "path": "/female-cats" },
+      "litters": { "label": "Litters", "path": "/litters" },
+      "contact": { "label": "Contact", "path": "/contact" }
     }
   }
 }

@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
 
 import Header from "../Header/Header"
 import Footer from "../footer"
@@ -9,6 +10,7 @@ import "../styles/global.css"
 import * as styles from "./layout.module.css"
 
 const Layout = ({ data, catData, litterData, children }) => {
+  const { language } = useI18next()
   const location = useLocation()
   const { oldMaleCats, oldFemaleCats } = data
 
@@ -39,7 +41,13 @@ const Layout = ({ data, catData, litterData, children }) => {
                 <CatCard
                   key={cat.id}
                   cat={cat}
-                  urlBase="/kocury"
+                  urlBase={`/${
+                    language === "pl"
+                      ? "kocury"
+                      : language === "en"
+                      ? "male-cats"
+                      : "kater"
+                  }`}
                   variant="layout"
                 />
               ))}
@@ -52,7 +60,13 @@ const Layout = ({ data, catData, litterData, children }) => {
                 <CatCard
                   key={cat.id}
                   cat={cat}
-                  urlBase="/kotki"
+                  urlBase={`/${
+                    language === "pl"
+                      ? "kotki"
+                      : language === "en"
+                      ? "female-cats"
+                      : "katzen"
+                  }`}
                   variant="layout"
                 />
               ))}

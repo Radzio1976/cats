@@ -1,16 +1,24 @@
 import React from "react"
-import { Link } from "gatsby-plugin-react-i18next"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import * as styles from "./Litter.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const LitterChildren = ({ children, litterSlug }) => {
+  const { language } = useI18next()
+
   return (
     <div className={styles.children}>
       {children.map(child => {
         const image = getImage(child.images?.[0]?.localFile)
         return (
           <Link
-            to={`/mioty/${litterSlug}/${child.slug}`}
+            to={`/${
+              language === "pl"
+                ? "mioty"
+                : language === "en"
+                ? "litters"
+                : "wuerfe"
+            }/${litterSlug}/${child.slug}`}
             className={styles.link}
             key={child.id}
           >

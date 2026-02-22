@@ -10,6 +10,11 @@
   box-shadow: var(--box-shadow);
   background-color: #fff;
 }
+
+.about-us-section h1 {
+  margin-bottom: 20px;
+}
+
 .about-us-gallery {
   position: relative;
   width: 100%;

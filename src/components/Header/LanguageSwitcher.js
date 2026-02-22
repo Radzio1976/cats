@@ -5,7 +5,7 @@ const LanguageSwitcher = () => {
   const { language, languages, originalPath, path } = useI18next()
 
   return (
-    <div>
+    <div style={{ padding: "15px" }}>
       {languages.map(lng => (
         <Link
           key={lng}

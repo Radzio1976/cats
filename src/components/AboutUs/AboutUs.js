@@ -3,9 +3,11 @@ import * as styles from "./AboutUs.module.css"
 import { StaticImage } from "gatsby-plugin-image"
 import { getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import Modal from "../Modal/Modal"
 
 const AboutUs = () => {
+  const { t } = useTranslation()
   const [imageCount, setImageCount] = useState(null)
   const data = useStaticQuery(graphql`
     query {
@@ -27,28 +29,10 @@ const AboutUs = () => {
   return (
     <section className={styles.aboutUsSection}>
       <div className={styles.aboutUsText}>
-        <p>
-          W naszej hodowli nie licząc bardzo dużej części wspólnej naszego domu
-          gdzie koty mają swobodny dostęp i żyją z nami jak rodzina, stado ma do
-          swojej dyspozycji dwa dedykowane pomieszczenia oraz obszerną wolierę.{" "}
-        </p>
-        <p>
-          Pierwsze pomieszczenie, można rzec główna sypialnia oraz bawialnia
-          usytuowana jest na głównym poziomie domu. Wejście do niej stanowią
-          wielkie szklane drzwi aby koty mogły cały czas obserwować domowników,
-          nawet gdy sielsko spędzają czas na wielu legowiskach i drapakach
-          znajdujących się w środku. Z pomieszczenia prowadzi wyjście na
-          obszerną wolierę, umieszczoną nad brzegiem uroczej rzeki gdzie kociaki
-          uwielbiają przesiadywać obserwując kaczki i gołębie.{" "}
-        </p>
-        <p>
-          Drugie pomieszczenie mieści się na poddaszu. Jest to bardziej spokojne
-          i kameralne miejsce w którym najczęściej mieszka kotka opiekująca się
-          jeszcze bardzo młodymi i delikatnymi kotkami. Tutaj również kociaki
-          mają do dyspozycji wyjście na małą wolierę oraz zapewniony pełen
-          komfort w postaci legowisk i drapaków. Do tego pomieszczenia również
-          prowadzą szklane drzwi co bardzo sprzyja socjalizacji młodych pokoleń
-        </p>
+        <h1 data-i18n="about_us.h1">{t("about_us.h1")}</h1>
+        <p data-i18n="about_us.p1">{t("about_us.p1")}</p>
+        <p data-i18n="about_us.p2">{t("about_us.p2")}</p>
+        <p data-i18n="about_us.p3">{t("about_us.p3")}</p>
       </div>
       <div className={styles.aboutUsGallery}>
         <div

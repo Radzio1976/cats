@@ -1,12 +1,15 @@
 import * as React from "react"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import CatCard from "../CatCard/CatCard"
 import LitterCard from "../LitterCard/LitterCard"
 import * as styles from "./Home.module.css"
 
 const Home = () => {
+  const { t } = useTranslation()
+
   return (
     <section className={styles.homeSection}>
-      <h1>Zaczynamy</h1>
+      <h1 data-i18n="home.h1">{t("home.h1")}</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
         sollicitudin porta aliquet. Maecenas nec purus vestibulum, commodo augue

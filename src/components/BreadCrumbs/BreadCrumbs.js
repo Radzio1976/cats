@@ -14,7 +14,7 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
   let pathNameElements = pathname
     .split("/")
     .filter(el => el !== "" && el !== "de" && el !== "en" && el !== "pl")
-  if (language !== "pl") {
+  if (path === "en/breeding/" || path === "de/zucht/") {
     pathNameElements.shift()
   }
 
@@ -38,7 +38,7 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       {pathname !== "/" && (
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/" data-i18n="header.menu.home.label">
               {t("header.menu.home.label")}
               {` ${breadCrumbs.length > 0 ? " \\" : ""}`}
             </Link>

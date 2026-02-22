@@ -8,5 +8,18 @@
       "litters": { "label": "Würfe", "path": "/wuerfe" },
       "contact": { "label": "Kontakt", "path": "/kontakt" }
     }
+  },
+  "links": {
+    "male_cats": "kater",
+    "female_cats": "katzen",
+    "litters": "wuerfe"
+  },
+  "home": {
+    "h1": "Los geht's"
+  },
+  "about_us": {
+    "p1": "In unserer Zucht haben die Katzen – neben einem großen gemeinschaftlich genutzten Bereich unseres Hauses, in dem sie freien Zugang haben und mit uns wie Familienmitglieder leben – zusätzlich zwei speziell eingerichtete Räume sowie eine großzügige Außenvoliere zur Verfügung.",
+    "p2": "Der erste Raum, gewissermaßen das Hauptschlaf- und Spielzimmer, befindet sich auf der Hauptebene des Hauses. Große Glastüren ermöglichen es den Katzen, die Familienmitglieder jederzeit zu beobachten, selbst wenn sie gemütlich auf den zahlreichen Liegeplätzen und Kratzbäumen entspannen. Von diesem Raum aus gelangt man direkt in eine geräumige Voliere am Ufer eines idyllischen Flusses, wo die Kätzchen es lieben, Enten und Tauben zu beobachten.",
+    "p3": "Der zweite Raum befindet sich im Dachgeschoss. Es ist ein ruhigerer und privater Bereich, in dem meist eine Katzenmutter mit ihren noch sehr jungen und empfindlichen Kätzchen lebt. Auch hier haben die Kleinen Zugang zu einer kleinen Außenvoliere und genießen höchsten Komfort in Form von gemütlichen Liegeplätzen und Kratzbäumen. Auch dieser Raum ist mit Glastüren ausgestattet, was die Sozialisierung der jungen Generationen besonders fördert."
   }
 }

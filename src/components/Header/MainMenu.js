@@ -4,7 +4,8 @@ import * as styles from "./Header.module.css"
 import LanguageSwitcher from "./LanguageSwitcher"
 const MainMenu = () => {
   const { t } = useTranslation()
-  console.log(t("header.menu"))
+
+  console.log(t("menu.home"))
 
   return (
     <>
@@ -12,50 +13,56 @@ const MainMenu = () => {
         <ul>
           <li>
             <Link
-              to={t("header.menu.home.path")}
-              data-i18n="header.menu.home.path"
+              to={t("paths.home")}
+              data-i18n-route="routes:paths.home"
+              data-i18n-label="common:menu.home"
             >
-              {t("header.menu.home.label")}
+              {t("menu.home")}
             </Link>
           </li>
           <li>
             <Link
-              to={t("header.menu.about_us.path")}
-              data-i18n="header.menu.about_us.path"
+              to={t("paths.about_us")}
+              data-i18n-route="routes:paths.about_us"
+              data-i18n-label="common:menu.about_us"
             >
-              {t("header.menu.about_us.label")}
+              {t("menu.about_us")}
             </Link>
           </li>
           <li>
             <Link
-              to={t("header.menu.male_cats.path")}
-              data-i18n="header.menu.male_cats.path"
+              to={t("paths.male_cats")}
+              data-i18n-route="routes:paths.male_cats"
+              data-i18n-label="common:menu.male_cats"
             >
-              {t("header.menu.male_cats.label")}
+              {t("menu.male_cats")}
             </Link>
           </li>
           <li>
             <Link
-              to={t("header.menu.female_cats.path")}
-              data-i18n="header.menu.female_cats.path"
+              to={t("paths.female_cats")}
+              data-i18n-route="routes:paths.female_cats"
+              data-i18n-label="common:menu.female_cats"
             >
-              {t("header.menu.female_cats.label")}
+              {t("menu.female_cats")}
             </Link>
           </li>
           <li>
             <Link
-              to={t("header.menu.litters.path")}
-              data-i18n="header.menu.litters.path"
+              to={t("paths.litters")}
+              data-i18n-route="routes:paths.litters"
+              data-i18n-label="common:menu.litters"
             >
-              {t("header.menu.litters.label")}
+              {t("menu.litters")}
             </Link>
           </li>
           <li>
             <Link
-              to={t("header.menu.contact.path")}
-              data-i18n="header.menu.contact.path"
+              to={t("paths.contact")}
+              data-i18n-route="routes:paths.contact"
+              data-i18n-label="common:menu.contact"
             >
-              {t("header.menu.contact.label")}
+              {t("menu.contact")}
             </Link>
           </li>
           <LanguageSwitcher />

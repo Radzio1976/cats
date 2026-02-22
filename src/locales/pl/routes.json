@@ -1,1 +1,13 @@
-{}
+{
+  "paths": {
+    "home": "/",
+    "about_us": "/o-nas/",
+    "male_cats": "/kocury/",
+    "female_cats": "/kotki/",
+    "litters": "/mioty/",
+    "contact": "/kontakt/",
+    "litterSingle": "/mioty/{{slug}}/",
+    "oldCatSingle": "/{{slug}}/",
+    "youngCatSingle": "/mioty/{{slug}}/{{slug}}/"
+  }
+}

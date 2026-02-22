@@ -38,8 +38,8 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       {pathname !== "/" && (
         <ul>
           <li>
-            <Link to="/" data-i18n="header.menu.home.label">
-              {t("header.menu.home.label")}
+            <Link to="/" data-i18n="menu.home">
+              {t("menu.home")}
               {` ${breadCrumbs.length > 0 ? " \\" : ""}`}
             </Link>
           </li>

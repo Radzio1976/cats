@@ -1,26 +1,15 @@
 {
-  "header": {
-    "menu": {
-      "home": { "label": "Breeding", "path": "/breeding" },
-      "about_us": { "label": "About us", "path": "/about-us" },
-      "male_cats": { "label": "Male Cats", "path": "/male-cats" },
-      "female_cats": { "label": "Female Cats", "path": "/female-cats" },
-      "litters": { "label": "Litters", "path": "/litters" },
-      "contact": { "label": "Contact", "path": "/contact" }
-    }
+  "menu": {
+    "home": "Breeding",
+    "about_us": "About us",
+    "male_cats": "Male Cats",
+    "female_cats": "Female Cats",
+    "litters": "Litters",
+    "contact": "Contact"
   },
   "links": {
     "male_cats": "male-cats",
     "female_cats": "female-cats",
     "litters": "litters"
-  },
-  "home": {
-    "h1": "Let's Begin"
-  },
-  "about_us": {
-    "h1": "About us",
-    "p1": "In our cattery, besides a large shared part of our home where the cats have free access and live with us as part of the family, the group also has two dedicated rooms and a spacious outdoor enclosure at their disposal.",
-    "p2": "The first room, which could be described as the main bedroom and playroom, is located on the main level of the house. It features large glass doors so the cats can constantly observe the household members, even while peacefully relaxing on the many beds and scratching posts inside. From this room there is direct access to a spacious outdoor enclosure situated above the bank of a charming river, where the kittens love to sit and watch ducks and pigeons.",
-    "p3": "The second room is located in the attic. It is a quieter and more intimate space where a mother cat caring for very young and delicate kittens usually resides. Here, the kittens also have access to a small outdoor enclosure and are provided with full comfort in the form of cozy beds and scratching posts. This room also has glass doors, which greatly support the socialization of the younger generations."
   }
 }

@@ -1,1 +1,13 @@
-{}
+{
+  "paths": {
+    "home": "/breeding/",
+    "about_us": "/about-us/",
+    "male_cats": "/male-cats/",
+    "female_cats": "/female-cats/",
+    "litters": "/litters/",
+    "contact": "/contact/",
+    "litterSingle": "/litters/{{slug}}/",
+    "oldCatSingle": "/{{slug}}/",
+    "youngCatSingle": "/litters/{{slug}}/{{slug}}/"
+  }
+}

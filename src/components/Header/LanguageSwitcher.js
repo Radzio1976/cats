@@ -3,6 +3,7 @@ import { Link, useI18next } from "gatsby-plugin-react-i18next"
 
 const LanguageSwitcher = () => {
   const { language, languages, originalPath, path } = useI18next()
+  console.log(languages)
 
   return (
     <div style={{ padding: "15px" }}>

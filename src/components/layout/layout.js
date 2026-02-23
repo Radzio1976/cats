@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
-import { Link, useI18next } from "gatsby-plugin-react-i18next"
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Header from "../Header/Header"
 import Footer from "../footer"
@@ -10,6 +10,7 @@ import "../styles/global.css"
 import * as styles from "./layout.module.css"
 
 const Layout = ({ data, catData, litterData, children }) => {
+  const { t } = useTranslation()
   const { language } = useI18next()
   const location = useLocation()
   const { oldMaleCats, oldFemaleCats } = data
@@ -39,15 +40,10 @@ const Layout = ({ data, catData, litterData, children }) => {
             <ul>
               {oldMaleCats.map(cat => (
                 <CatCard
+                  data-i18n="routes:paths.male_cats"
                   key={cat.id}
                   cat={cat}
-                  urlBase={`/${
-                    language === "pl"
-                      ? "kocury"
-                      : language === "en"
-                      ? "male-cats"
-                      : "kater"
-                  }`}
+                  urlBase={t("paths.male_cats")}
                   variant="layout"
                 />
               ))}
@@ -58,15 +54,10 @@ const Layout = ({ data, catData, litterData, children }) => {
             <ul>
               {oldFemaleCats.map(cat => (
                 <CatCard
+                  data-i18n="routes:paths.female_cats"
                   key={cat.id}
                   cat={cat}
-                  urlBase={`/${
-                    language === "pl"
-                      ? "kotki"
-                      : language === "en"
-                      ? "female-cats"
-                      : "katzen"
-                  }`}
+                  urlBase={t("paths.female_cats")}
                   variant="layout"
                 />
               ))}

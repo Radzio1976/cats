@@ -16,7 +16,7 @@ const CatCard = ({ cat, urlBase, variant }) => {
         .filter(Boolean)
         .join(" ")}
     >
-      <Link to={`${urlBase}/${cat.slug}`} className={styles.cardLink}>
+      <Link to={`${urlBase}${cat.slug}`} className={styles.cardLink}>
         <div className={styles.imageWrapper}>
           {imageData && (
             <GatsbyImage

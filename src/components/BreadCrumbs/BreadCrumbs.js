@@ -9,8 +9,6 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
   const cat = catData?.oldCat || catData?.youngCat
   const litter = litterData
 
-  console.log(t("menu.home"))
-
   let pathNameElements = pathname
     .split("/")
     .filter(el => el !== "" && el !== "de" && el !== "en" && el !== "pl")

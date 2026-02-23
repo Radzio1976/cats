@@ -21,7 +21,6 @@ const languageConfig = {
 
 const LanguageSwitcher = () => {
   const { languages, language } = useI18next()
-  console.log(languages)
 
   return (
     <div style={{ padding: "15px" }}>

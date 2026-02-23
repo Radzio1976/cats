@@ -72,7 +72,7 @@ module.exports = {
           interpolation: { escapeValue: false },
           nsSeparator: false,
         },
-        generateDefaultLanguagePage: true, // <--- WAŻNE
+        generateDefaultLanguagePage: false, // <--- WAŻNE
         redirect: true,
       },
     },

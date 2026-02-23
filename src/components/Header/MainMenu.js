@@ -5,8 +5,6 @@ import LanguageSwitcher from "./LanguageSwitcher"
 const MainMenu = () => {
   const { t } = useTranslation()
 
-  console.log(t("menu.home"))
-
   return (
     <>
       <nav className={styles.mainMenu} aria-label="Główna nawigacja">

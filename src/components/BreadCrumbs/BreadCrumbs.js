@@ -9,7 +9,7 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
   const cat = catData?.oldCat || catData?.youngCat
   const litter = litterData
 
-  console.log(path)
+  console.log(t("menu.home"))
 
   let pathNameElements = pathname
     .split("/")
@@ -38,7 +38,11 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       {pathname !== "/" && (
         <ul>
           <li>
-            <Link to="/" data-i18n="menu.home">
+            <Link
+              to="/"
+              data-i18n-route="routes:paths.home"
+              data-i18n-label="common:menu.home"
+            >
               {t("menu.home")}
               {` ${breadCrumbs.length > 0 ? " \\" : ""}`}
             </Link>

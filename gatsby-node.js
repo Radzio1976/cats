@@ -49,23 +49,37 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const catTemplate = path.resolve("src/templates/catTemplate.js")
   const litterTemplate = path.resolve("src/templates/litterTemplate.js")
-  const languages = ["pl", "en", "de"]
+  const languages = [
+    {
+      lang: "pl",
+      maleCats: "kocury",
+      femaleCats: "kotki",
+      litters: "mioty",
+    },
+    {
+      lang: "en",
+      maleCats: "male-cats",
+      femaleCats: "female-cats",
+      litters: "litters",
+    },
+    {
+      lang: "de",
+      maleCats: "kater",
+      femaleCats: "katzen",
+      litters: "wuerfe",
+    },
+  ]
 
   /* =======================
       STRONY KOTÓW
      ======================= */
 
-  languages.forEach(lang =>
+  languages.forEach(item =>
     oldCats.forEach(oldCat =>
       createPage({
-        path:
-          lang === "pl"
-            ? `/${oldCat.sex === "male" ? "kocury" : "kotki"}/${oldCat.slug}`
-            : lang === "en"
-            ? `/${oldCat.sex === "male" ? "male-cats" : "female-cats"}/${
-                oldCat.slug
-              }`
-            : `/${oldCat.sex === "male" ? "kater" : "katzen"}/${oldCat.slug}`,
+        path: `/${oldCat.sex === "male" ? item.maleCats : item.femaleCats}/${
+          oldCat.slug
+        }`,
         component: catTemplate,
         context: {
           id: oldCat.id,
@@ -75,18 +89,13 @@ exports.createPages = async ({ graphql, actions }) => {
     )
   )
 
-  languages.forEach(lang => {
+  languages.forEach(item => {
     youngCats.forEach(youngCat => {
       const litter = youngCat.litter?.find(p => p?.slug)
       if (!litter) return
 
       createPage({
-        path:
-          lang === "pl"
-            ? `/mioty/${litter.slug}/${youngCat.slug}`
-            : lang === "en"
-            ? `/litters/${litter.slug}/${youngCat.slug}`
-            : `/wuerfe/${litter.slug}/${youngCat.slug}`,
+        path: `/${item.litters}/${litter.slug}/${youngCat.slug}`,
         component: catTemplate,
         context: {
           id: youngCat.id,
@@ -96,15 +105,10 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  languages.forEach(lang => {
+  languages.forEach(item => {
     litters.forEach((litter, i, array) => {
       createPage({
-        path:
-          lang === "pl"
-            ? `/mioty/${litter.slug}`
-            : lang === "en"
-            ? `/litters/${litter.slug}`
-            : `/wuerfe/${litter.slug}`,
+        path: `/${item.litters}/${litter.slug}`,
         component: litterTemplate,
         context: {
           id: litter.id,

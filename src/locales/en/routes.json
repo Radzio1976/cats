@@ -8,6 +8,6 @@
     "contact": "/contact/",
     "litterSingle": "/litters/{{slug}}/",
     "oldCatSingle": "/{{slug}}/",
-    "youngCatSingle": "/litters/{{slug}}/{{slug}}/"
+    "youngCatSingle": "/litters/{{litterSlug}}/{{catSlug}}/"
   }
 }

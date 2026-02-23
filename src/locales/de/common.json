@@ -7,9 +7,8 @@
     "litters": "Würfe",
     "contact": "Kontakt"
   },
-  "links": {
-    "male_cats": "kater",
-    "female_cats": "katzen",
-    "litters": "wuerfe"
+  "buttons": {
+    "prev": "Vorherige",
+    "next": "Nächste"
   }
 }

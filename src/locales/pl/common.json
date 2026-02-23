@@ -7,9 +7,8 @@
     "litters": "Mioty",
     "contact": "Kontakt"
   },
-  "links": {
-    "male_cats": "kocury",
-    "female_cats": "kotki",
-    "litters": "mioty"
+  "buttons": {
+    "prev": "Poprzedni",
+    "next": "Następny"
   }
 }

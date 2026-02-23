@@ -1,8 +1,9 @@
 import React from "react"
-import { Link } from "gatsby-plugin-react-i18next"
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 import * as styles from "./Litter.module.css"
 
 const LitterPagination = ({ pageContext }) => {
+  const { t } = useTranslation()
   const { prevSlug, nextSlug } = pageContext
 
   return (
@@ -10,12 +11,21 @@ const LitterPagination = ({ pageContext }) => {
       {/* POPRZEDNI */}
       <div className={styles.prev}>
         {prevSlug ? (
-          <Link to={`/mioty/${prevSlug}`}>
-            <button>← Poprzedni</button>
+          <Link
+            to={`${t("paths.litters")}${prevSlug}`}
+            data-i18n-route="routes:paths.litters"
+          >
+            <button data-i18n-label="common:buttons.prev">
+              ← {t("buttons.prev")}
+            </button>
           </Link>
         ) : (
-          <button disabled style={{ opacity: 0.5, cursor: "default" }}>
-            ← Poprzedni
+          <button
+            disabled
+            style={{ opacity: 0.5, cursor: "default" }}
+            data-i18n-label="common:buttons.prev"
+          >
+            ← {t("buttons.prev")}
           </button>
         )}
       </div>
@@ -23,12 +33,21 @@ const LitterPagination = ({ pageContext }) => {
       {/* NASTĘPNY */}
       <div className={styles.next}>
         {nextSlug ? (
-          <Link to={`/mioty/${nextSlug}`}>
-            <button>Następny →</button>
+          <Link
+            to={`${t("paths.litters")}${nextSlug}`}
+            data-i18n-route="routes:paths.litters"
+          >
+            <button data-i18n-label="common:buttons.next">
+              {t("buttons.next")} →
+            </button>
           </Link>
         ) : (
-          <button disabled style={{ opacity: 0.5, cursor: "default" }}>
-            Następny →
+          <button
+            disabled
+            style={{ opacity: 0.5, cursor: "default" }}
+            data-i18n-label="common:buttons.next"
+          >
+            {t("buttons.next")} →
           </button>
         )}
       </div>

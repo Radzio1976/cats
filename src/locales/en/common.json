@@ -7,9 +7,8 @@
     "litters": "Litters",
     "contact": "Contact"
   },
-  "links": {
-    "male_cats": "male-cats",
-    "female_cats": "female-cats",
-    "litters": "litters"
+  "buttons": {
+    "prev": "Prev",
+    "next": "Next"
   }
 }

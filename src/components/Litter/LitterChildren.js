@@ -1,9 +1,10 @@
 import React from "react"
-import { Link, useI18next } from "gatsby-plugin-react-i18next"
+import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import * as styles from "./Litter.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const LitterChildren = ({ children, litterSlug }) => {
+  const { t } = useTranslation()
   const { language } = useI18next()
 
   return (

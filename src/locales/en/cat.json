@@ -1,1 +1,8 @@
-{}
+{
+  "cat": {
+    "date_of_birth": "Date of Birth",
+    "color": "Color",
+    "lineage": "Lineage",
+    "tests": "Tests"
+  }
+}

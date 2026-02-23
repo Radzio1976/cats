@@ -13,9 +13,9 @@ const LitterPagination = ({ pageContext }) => {
         {prevSlug ? (
           <Link
             to={t("paths.litterSingle", { slug: prevSlug })}
-            data-i18n-route="routes:paths.litterSingle"
+            data-i18n="routes:paths.litterSingle"
           >
-            <button data-i18n-label="common:buttons.prev">
+            <button data-i18n="common:buttons.prev">
               ← {t("buttons.prev")}
             </button>
           </Link>
@@ -23,7 +23,7 @@ const LitterPagination = ({ pageContext }) => {
           <button
             disabled
             style={{ opacity: 0.5, cursor: "default" }}
-            data-i18n-label="common:buttons.prev"
+            data-i18n="common:buttons.prev"
           >
             ← {t("buttons.prev")}
           </button>
@@ -35,9 +35,9 @@ const LitterPagination = ({ pageContext }) => {
         {nextSlug ? (
           <Link
             to={t("paths.litterSingle", { slug: nextSlug })}
-            data-i18n-route="routes:paths.litterSingle"
+            data-i18n="routes:paths.litterSingle"
           >
-            <button data-i18n-label="common:buttons.next">
+            <button data-i18n="common:buttons.next">
               {t("buttons.next")} →
             </button>
           </Link>
@@ -45,7 +45,7 @@ const LitterPagination = ({ pageContext }) => {
           <button
             disabled
             style={{ opacity: 0.5, cursor: "default" }}
-            data-i18n-label="common:buttons.next"
+            data-i18n="common:buttons.next"
           >
             {t("buttons.next")} →
           </button>

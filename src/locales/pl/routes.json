@@ -7,7 +7,8 @@
     "litters": "/mioty/",
     "contact": "/kontakt/",
     "litterSingle": "/mioty/{{slug}}/",
-    "oldCatSingle": "/{{slug}}/",
+    "oldMaleCatSingle": "/kocury/{{catSlug}}/",
+    "oldFemaleCatSingle": "/kotki/{{catSlug}}/",
     "youngCatSingle": "/mioty/{{litterSlug}}/{{catSlug}}/"
   }
 }

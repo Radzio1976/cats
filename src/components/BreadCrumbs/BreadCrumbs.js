@@ -38,9 +38,8 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
       <ul>
         <li>
           <Link
-            to="/"
-            data-i18n-route="routes:paths.home"
-            data-i18n-label="common:menu.home"
+            to={t("paths.home")}
+            data-i18n="routes:paths.home common:menu.home"
           >
             {t("menu.home")}
             {` ${breadCrumbs.length > 0 ? " \\" : ""}`}

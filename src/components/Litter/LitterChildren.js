@@ -16,7 +16,7 @@ const LitterChildren = ({ children, litterSlug }) => {
             to={t("paths.youngCatSingle", { litterSlug, catSlug: child.slug })}
             className={styles.link}
             key={child.id}
-            data-i18n-route="routes:paths.youngCatSingle"
+            data-i18n="routes:paths.youngCatSingle"
           >
             <div className={styles.childCard}>
               {image && (
@@ -36,7 +36,7 @@ const LitterChildren = ({ children, litterSlug }) => {
                 >
                   <h2>{child.name}</h2>
                   <p
-                    data-i18n-label="common:availability.available"
+                    data-i18n="common:availability.available"
                     className={styles.availability}
                     style={{
                       color: "black",
@@ -56,7 +56,7 @@ const LitterChildren = ({ children, litterSlug }) => {
                       : t("availability.reserved")
                   }`}</p>
                 </div>
-                <p data-i18n-label="common:buttons.more">{t("buttons.more")}</p>
+                <p data-i18n="common:buttons.more">{t("buttons.more")}</p>
               </div>
             </div>
           </Link>

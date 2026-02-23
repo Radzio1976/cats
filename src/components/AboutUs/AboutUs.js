@@ -29,10 +29,10 @@ const AboutUs = () => {
   return (
     <section className={styles.aboutUsSection}>
       <div className={styles.aboutUsText}>
-        <h1 data-i18n="about_us.h1">{t("about_us.h1")}</h1>
-        <p data-i18n="about_us.p1">{t("about_us.p1")}</p>
-        <p data-i18n="about_us.p2">{t("about_us.p2")}</p>
-        <p data-i18n="about_us.p3">{t("about_us.p3")}</p>
+        <h1 data-i18n="aboutUs:about_us.h1">{t("about_us.h1")}</h1>
+        <p data-i18n="aboutUs:aboutUs:about_us.p1">{t("about_us.p1")}</p>
+        <p data-i18n="aboutUs:about_us.p2">{t("about_us.p2")}</p>
+        <p data-i18n="aboutUs:about_us.p3">{t("about_us.p3")}</p>
       </div>
       <div className={styles.aboutUsGallery}>
         <div

@@ -12,10 +12,16 @@ const CatParents = ({ parents }) => {
     <div className={styles.parents}>
       <h3>
         Rodzice:{" "}
-        <Link to={`/${t("links.male_cats")}/${father?.slug}`}>
+        <Link
+          data-i18n="routes:paths.oldMaleCatSingle"
+          to={t("paths.oldMaleCatSingle", { catSlug: father?.slug })}
+        >
           {father?.name}
         </Link>
-        <Link to={`/${t("links.female_cats")}/${mother?.slug}`}>
+        <Link
+          data-i18n="routes:paths.oldFemaleCatSingle"
+          to={t("paths.oldFemaleCatSingle", { catSlug: mother?.slug })}
+        >
           {mother?.name}
         </Link>
       </h3>

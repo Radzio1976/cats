@@ -12,8 +12,7 @@ const MainMenu = () => {
           <li>
             <Link
               to={t("paths.home")}
-              data-i18n-route="routes:paths.home"
-              data-i18n-label="common:menu.home"
+              data-i18n="routes:paths.home common:menu.home"
             >
               {t("menu.home")}
             </Link>
@@ -21,8 +20,7 @@ const MainMenu = () => {
           <li>
             <Link
               to={t("paths.about_us")}
-              data-i18n-route="routes:paths.about_us"
-              data-i18n-label="common:menu.about_us"
+              data-i18n="routes:paths.about_us common:menu.about_us"
             >
               {t("menu.about_us")}
             </Link>
@@ -30,8 +28,7 @@ const MainMenu = () => {
           <li>
             <Link
               to={t("paths.male_cats")}
-              data-i18n-route="routes:paths.male_cats"
-              data-i18n-label="common:menu.male_cats"
+              data-i18n="routes:paths.male_cats common:menu.male_cats"
             >
               {t("menu.male_cats")}
             </Link>
@@ -39,8 +36,7 @@ const MainMenu = () => {
           <li>
             <Link
               to={t("paths.female_cats")}
-              data-i18n-route="routes:paths.female_cats"
-              data-i18n-label="common:menu.female_cats"
+              data-i18n="routes:paths.female_cats common:menu.female_cats"
             >
               {t("menu.female_cats")}
             </Link>
@@ -48,8 +44,7 @@ const MainMenu = () => {
           <li>
             <Link
               to={t("paths.litters")}
-              data-i18n-route="routes:paths.litters"
-              data-i18n-label="common:menu.litters"
+              data-i18n="routes:paths.litters common:menu.litters"
             >
               {t("menu.litters")}
             </Link>
@@ -57,8 +52,7 @@ const MainMenu = () => {
           <li>
             <Link
               to={t("paths.contact")}
-              data-i18n-route="routes:paths.contact"
-              data-i18n-label="common:menu.contact"
+              data-i18n="routes:paths.contact common:menu.contact"
             >
               {t("menu.contact")}
             </Link>

@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <section className={styles.homeSection}>
-      <h1 data-i18n="home.h1">{t("home.h1")}</h1>
+      <h1 data-i18n="home:home.h1">{t("home.h1")}</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
         sollicitudin porta aliquet. Maecenas nec purus vestibulum, commodo augue

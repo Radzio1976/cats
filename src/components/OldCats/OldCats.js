@@ -6,7 +6,6 @@ import CatCard from "../CatCard/CatCard"
 const OldCats = ({ oldCats, location }) => {
   const { t } = useTranslation()
   const pathname = location.pathname
-  console.log(pathname)
 
   return (
     <section className={styles.oldCatsSection}>

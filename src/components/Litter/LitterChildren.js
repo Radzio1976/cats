@@ -13,15 +13,10 @@ const LitterChildren = ({ children, litterSlug }) => {
         const image = getImage(child.images?.[0]?.localFile)
         return (
           <Link
-            to={`/${
-              language === "pl"
-                ? "mioty"
-                : language === "en"
-                ? "litters"
-                : "wuerfe"
-            }/${litterSlug}/${child.slug}`}
+            to={t("paths.youngCatSingle", { litterSlug, catSlug: child.slug })}
             className={styles.link}
             key={child.id}
+            data-i18n-route="routes:paths.youngCatSingle"
           >
             <div className={styles.childCard}>
               {image && (
@@ -41,6 +36,7 @@ const LitterChildren = ({ children, litterSlug }) => {
                 >
                   <h2>{child.name}</h2>
                   <p
+                    data-i18n-label="common:availability.available"
                     className={styles.availability}
                     style={{
                       color: "black",
@@ -54,13 +50,13 @@ const LitterChildren = ({ children, litterSlug }) => {
                     }}
                   >{`${
                     child.availability === "available"
-                      ? "Dostępny"
+                      ? t("availability.available")
                       : child.availability === "unavailable"
-                      ? "Niedostępny"
-                      : "Zarezerwowany"
+                      ? t("availability.unavailable")
+                      : t("availability.reserved")
                   }`}</p>
                 </div>
-                <p>Więcej</p>
+                <p data-i18n-label="common:buttons.more">{t("buttons.more")}</p>
               </div>
             </div>
           </Link>

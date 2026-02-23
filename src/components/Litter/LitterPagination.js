@@ -12,7 +12,7 @@ const LitterPagination = ({ pageContext }) => {
       <div className={styles.prev}>
         {prevSlug ? (
           <Link
-            to={t("litterSingle", { slug: prevSlug })}
+            to={t("paths.litterSingle", { slug: prevSlug })}
             data-i18n-route="routes:paths.litterSingle"
           >
             <button data-i18n-label="common:buttons.prev">
@@ -34,8 +34,8 @@ const LitterPagination = ({ pageContext }) => {
       <div className={styles.next}>
         {nextSlug ? (
           <Link
-            to={t("litterSingle", { slug: nextSlug })}
-            data-i18n-route="routes:paths.litters"
+            to={t("paths.litterSingle", { slug: nextSlug })}
+            data-i18n-route="routes:paths.litterSingle"
           >
             <button data-i18n-label="common:buttons.next">
               {t("buttons.next")} →

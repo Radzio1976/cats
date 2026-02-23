@@ -9,6 +9,12 @@
   },
   "buttons": {
     "prev": "Vorherige",
-    "next": "Nächste"
+    "next": "Nächste",
+    "more": "Mehr"
+  },
+  "availability": {
+    "available": "Verfügbar",
+    "unavailable": "Nicht verfügbar",
+    "reserved": "Reserviert"
   }
 }

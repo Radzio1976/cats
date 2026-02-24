@@ -4,7 +4,7 @@ import * as styles from "./BreadCrumbs.module.css"
 
 const BreadCrumbs = ({ location, catData, litterData }) => {
   const { t } = useTranslation()
-  const { language, path } = useI18next()
+  const { path } = useI18next()
   const pathname = location.pathname
   const cat = catData?.oldCat || catData?.youngCat
   const litter = litterData

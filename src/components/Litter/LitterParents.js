@@ -21,6 +21,7 @@ const LitterParents = ({ parents }) => {
                 : t("paths.female_cats")
             }${parent?.slug}`}
             key={parent?.id}
+            data-i18n="routes:paths.male_cats routes:paths.female_cats"
           >
             <div className={styles.parentCard}>
               {image && (

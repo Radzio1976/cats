@@ -49,6 +49,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const homeTemplate = path.resolve("src/templates/homeTemplate.js")
   const aboutUsTemplate = path.resolve("src/templates/aboutUsTemplate.js")
+  const oldMaleCatsTemplate = path.resolve(
+    "src/templates/oldMaleCatsTemplate.js"
+  )
   const catTemplate = path.resolve("src/templates/catTemplate.js")
   const litterTemplate = path.resolve("src/templates/litterTemplate.js")
   const languages = [
@@ -59,6 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
       litters: "mioty",
       home: "",
       aboutUs: "o-nas",
+      oldMaleCats: "kocury",
     },
     {
       lang: "en",
@@ -67,6 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
       litters: "litters",
       home: "breeding",
       aboutUs: "about-us",
+      oldMaleCats: "male-cats",
     },
     {
       lang: "de",
@@ -75,6 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
       litters: "wuerfe",
       home: "zucht",
       aboutUs: "uber-uns",
+      oldMaleCats: "kater",
     },
   ]
 
@@ -109,6 +115,24 @@ exports.createPages = async ({ graphql, actions }) => {
           pl: `/${languages[0].aboutUs}`,
           en: `/${languages[1].aboutUs}`,
           de: `/${languages[2].aboutUs}`,
+        },
+      },
+    })
+  })
+
+  /* =======================
+      STRONA DOJRZAŁE KOTY
+     ======================= */
+
+  languages.forEach((item, i, languages) => {
+    createPage({
+      path: `/${item.oldMaleCats}`,
+      component: oldMaleCatsTemplate,
+      context: {
+        allLanguagesPaths: {
+          pl: `/${languages[0].oldMaleCats}`,
+          en: `/${languages[1].oldMaleCats}`,
+          de: `/${languages[2].oldMaleCats}`,
         },
       },
     })

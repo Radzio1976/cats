@@ -11,7 +11,6 @@ import * as styles from "./layout.module.css"
 
 const Layout = ({ data, catData, litterData, children, pageContext }) => {
   const { t } = useTranslation()
-  const { language } = useI18next()
   const location = useLocation()
   const { oldMaleCats, oldFemaleCats } = data
 

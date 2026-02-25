@@ -20,20 +20,19 @@ const languageConfig = {
 }
 
 const LanguageSwitcher = ({ pageContext }) => {
-  const allLanguagesPaths = pageContext.allLanguagesPaths
+  const allLanguagesPaths = pageContext?.allLanguagesPaths || {}
   const { t } = useTranslation()
-  const { languages, language, originalPath } = useI18next()
+  const { languages, language } = useI18next()
 
   return (
     <div style={{ padding: "15px" }}>
       {languages.map(lng => {
         const config = languageConfig[lng]
-        const lang = allLanguagesPaths[lng]
+        const lang = allLanguagesPaths?.[lng] || "/"
         return (
           <Link
             key={lng}
             to={lang}
-            // to={`${lng === "pl" ? "/" : lng === "en" ? "/breeding" : "/zucht"}`}
             language={lng} // <- bardzo ważne, żeby przekazać język
             style={{ marginRight: "10px" }}
           >

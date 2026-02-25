@@ -1,18 +1,19 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import Layout from "../components/layout/layout"
 import Litters from "../components/Litters/Litters"
 import Seo from "../components/seo"
 
-const LittersPageDe = ({ data }) => {
+const LittersPage = ({ data, pageContext }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
   const litters = data?.highgraph?.litters || []
 
   return (
-    <Layout data={{ oldMaleCats, oldFemaleCats }}>
+    <Layout data={{ oldMaleCats, oldFemaleCats }} pageContext={pageContext}>
       <Litters litters={litters} />
     </Layout>
   )
@@ -23,7 +24,10 @@ const LittersPageDe = ({ data }) => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Würfe" />
+export const Head = () => {
+  const { t } = useTranslation()
+  return <Seo title={t("menu.litters")} />
+}
 
 export const query = graphql`
   query ($language: String!) {
@@ -84,4 +88,4 @@ export const query = graphql`
   }
 `
 
-export default LittersPageDe
+export default LittersPage

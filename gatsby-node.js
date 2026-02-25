@@ -55,6 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const oldFemaleCatsTemplate = path.resolve(
     "src/templates/oldFemaleCatsTemplate.js"
   )
+  const littersTemplate = path.resolve("src/templates/littersTemplate.js")
   const catTemplate = path.resolve("src/templates/catTemplate.js")
   const litterTemplate = path.resolve("src/templates/litterTemplate.js")
   const languages = [
@@ -67,6 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "o-nas",
       oldMaleCats: "kocury",
       oldFemaleCats: "kotki",
+      litters: "mioty",
     },
     {
       lang: "en",
@@ -77,6 +79,7 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "about-us",
       oldMaleCats: "male-cats",
       oldFemaleCats: "female-cats",
+      litters: "litters",
     },
     {
       lang: "de",
@@ -87,6 +90,7 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "uber-uns",
       oldMaleCats: "kater",
       oldFemaleCats: "katzen",
+      litters: "wuerfe",
     },
   ]
 
@@ -157,6 +161,24 @@ exports.createPages = async ({ graphql, actions }) => {
           pl: `/${languages[0].oldFemaleCats}`,
           en: `/${languages[1].oldFemaleCats}`,
           de: `/${languages[2].oldFemaleCats}`,
+        },
+      },
+    })
+  })
+
+  /* =======================
+      STRONA MIOTY
+     ======================= */
+
+  languages.forEach((item, i, languages) => {
+    createPage({
+      path: `/${item.litters}`,
+      component: littersTemplate,
+      context: {
+        allLanguagesPaths: {
+          pl: `/${languages[0].litters}`,
+          en: `/${languages[1].litters}`,
+          de: `/${languages[2].litters}`,
         },
       },
     })

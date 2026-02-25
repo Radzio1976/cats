@@ -48,6 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
      ======================= */
 
   const homeTemplate = path.resolve("src/templates/homeTemplate.js")
+  const aboutUsTemplate = path.resolve("src/templates/aboutUsTemplate.js")
   const catTemplate = path.resolve("src/templates/catTemplate.js")
   const litterTemplate = path.resolve("src/templates/litterTemplate.js")
   const languages = [
@@ -57,6 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
       femaleCats: "kotki",
       litters: "mioty",
       home: "",
+      aboutUs: "o-nas",
     },
     {
       lang: "en",
@@ -64,6 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
       femaleCats: "female-cats",
       litters: "litters",
       home: "breeding",
+      aboutUs: "about-us",
     },
     {
       lang: "de",
@@ -71,11 +74,12 @@ exports.createPages = async ({ graphql, actions }) => {
       femaleCats: "katzen",
       litters: "wuerfe",
       home: "zucht",
+      aboutUs: "uber-uns",
     },
   ]
 
   /* =======================
-      STRONY KOTÓW
+      STRONA HOME
      ======================= */
 
   languages.forEach((item, i, languages) => {
@@ -91,6 +95,28 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  /* =======================
+      STRONA O NAS
+     ======================= */
+
+  languages.forEach((item, i, languages) => {
+    createPage({
+      path: `/${item.aboutUs}`,
+      component: aboutUsTemplate,
+      context: {
+        allLanguagesPaths: {
+          pl: `/${languages[0].aboutUs}`,
+          en: `/${languages[1].aboutUs}`,
+          de: `/${languages[2].aboutUs}`,
+        },
+      },
+    })
+  })
+
+  /* =======================
+      STRONY KOTÓW
+     ======================= */
 
   languages.forEach(item =>
     oldCats.forEach(oldCat =>

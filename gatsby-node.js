@@ -62,39 +62,39 @@ exports.createPages = async ({ graphql, actions }) => {
   const languages = [
     {
       lang: "pl",
-      maleCats: "kocury",
-      femaleCats: "kotki",
-      litters: "mioty",
-      home: "",
-      aboutUs: "o-nas",
-      oldMaleCats: "kocury",
-      oldFemaleCats: "kotki",
-      litters: "mioty",
-      contact: "kontakt",
+      maleCats: "/kocury",
+      femaleCats: "/kotki",
+      litters: "/mioty",
+      home: "/",
+      aboutUs: "/o-nas",
+      oldMaleCats: "/kocury",
+      oldFemaleCats: "/kotki",
+      litters: "/mioty",
+      contact: "/kontakt",
     },
     {
       lang: "en",
-      maleCats: "male-cats",
-      femaleCats: "female-cats",
-      litters: "litters",
-      home: "breeding",
-      aboutUs: "about-us",
-      oldMaleCats: "male-cats",
-      oldFemaleCats: "female-cats",
-      litters: "litters",
-      contact: "contact",
+      maleCats: "/male-cats",
+      femaleCats: "/female-cats",
+      litters: "/litters",
+      home: "/breeding",
+      aboutUs: "/about-us",
+      oldMaleCats: "/male-cats",
+      oldFemaleCats: "/female-cats",
+      litters: "/litters",
+      contact: "/contact",
     },
     {
       lang: "de",
-      maleCats: "kater",
-      femaleCats: "katzen",
-      litters: "wuerfe",
-      home: "zucht",
-      aboutUs: "uber-uns",
-      oldMaleCats: "kater",
-      oldFemaleCats: "katzen",
-      litters: "wuerfe",
-      contact: "kontakt",
+      maleCats: "/kater",
+      femaleCats: "/katzen",
+      litters: "/wuerfe",
+      home: "/zucht",
+      aboutUs: "/uber-uns",
+      oldMaleCats: "/kater",
+      oldFemaleCats: "/katzen",
+      litters: "/wuerfe",
+      contact: "/kontakt",
     },
   ]
 
@@ -103,15 +103,16 @@ exports.createPages = async ({ graphql, actions }) => {
      ======================= */
 
   languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.home}`
+    })
     createPage({
-      path: `/${item.home}`,
+      path: `${item.home}`,
       component: homeTemplate,
       context: {
-        allLanguagesPaths: {
-          pl: `/${languages[0].home}`,
-          en: `/${languages[1].home}`,
-          de: `/${languages[2].home}`,
-        },
+        allLanguagesPaths,
       },
     })
   })
@@ -121,15 +122,16 @@ exports.createPages = async ({ graphql, actions }) => {
      ======================= */
 
   languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.aboutUs}`
+    })
     createPage({
-      path: `/${item.aboutUs}`,
+      path: `${item.aboutUs}`,
       component: aboutUsTemplate,
       context: {
-        allLanguagesPaths: {
-          pl: `/${languages[0].aboutUs}`,
-          en: `/${languages[1].aboutUs}`,
-          de: `/${languages[2].aboutUs}`,
-        },
+        allLanguagesPaths,
       },
     })
   })
@@ -139,15 +141,16 @@ exports.createPages = async ({ graphql, actions }) => {
      ======================= */
 
   languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.oldMaleCats}`
+    })
     createPage({
-      path: `/${item.oldMaleCats}`,
+      path: `${item.oldMaleCats}`,
       component: oldMaleCatsTemplate,
       context: {
-        allLanguagesPaths: {
-          pl: `/${languages[0].oldMaleCats}`,
-          en: `/${languages[1].oldMaleCats}`,
-          de: `/${languages[2].oldMaleCats}`,
-        },
+        allLanguagesPaths,
       },
     })
   })
@@ -157,15 +160,16 @@ exports.createPages = async ({ graphql, actions }) => {
      ======================= */
 
   languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.oldFemaleCats}`
+    })
     createPage({
-      path: `/${item.oldFemaleCats}`,
+      path: `${item.oldFemaleCats}`,
       component: oldFemaleCatsTemplate,
       context: {
-        allLanguagesPaths: {
-          pl: `/${languages[0].oldFemaleCats}`,
-          en: `/${languages[1].oldFemaleCats}`,
-          de: `/${languages[2].oldFemaleCats}`,
-        },
+        allLanguagesPaths,
       },
     })
   })
@@ -175,15 +179,16 @@ exports.createPages = async ({ graphql, actions }) => {
      ======================= */
 
   languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.litters}`
+    })
     createPage({
-      path: `/${item.litters}`,
+      path: `${item.litters}`,
       component: littersTemplate,
       context: {
-        allLanguagesPaths: {
-          pl: `/${languages[0].litters}`,
-          en: `/${languages[1].litters}`,
-          de: `/${languages[2].litters}`,
-        },
+        allLanguagesPaths,
       },
     })
   })
@@ -193,75 +198,88 @@ exports.createPages = async ({ graphql, actions }) => {
      ======================= */
 
   languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.contact}`
+    })
     createPage({
-      path: `/${item.contact}`,
+      path: `${item.contact}`,
       component: contactTemplate,
       context: {
-        allLanguagesPaths: {
-          pl: `/${languages[0].contact}`,
-          en: `/${languages[1].contact}`,
-          de: `/${languages[2].contact}`,
-        },
+        allLanguagesPaths,
       },
     })
   })
 
   /* =======================
-      STRONY POJEDYŃCZYCH KOTÓW
+      STRONY POJEDYŃCZYCH DOJRZAŁYCH KOTÓW
      ======================= */
 
   languages.forEach(item => {
     oldCats.forEach(oldCat => {
+      const allLanguagesPaths = {}
+
+      languages.forEach(langItem => {
+        allLanguagesPaths[langItem.lang] = `/${
+          oldCat.sex === "male" ? langItem.maleCats : langItem.femaleCats
+        }/${oldCat.slug}`
+      })
       return createPage({
-        path: `/${oldCat.sex === "male" ? item.maleCats : item.femaleCats}/${
+        path: `${oldCat.sex === "male" ? item.maleCats : item.femaleCats}/${
           oldCat.slug
         }`,
         component: catTemplate,
         context: {
           id: oldCat.id,
           slug: oldCat.slug,
-          allLanguagesPaths: {
-            pl: `/${
-              oldCat.sex === "male"
-                ? languages[0].maleCats
-                : languages[0].femaleCats
-            }/${oldCat.slug}`,
-            en: `/${
-              oldCat.sex === "male"
-                ? languages[1].maleCats
-                : languages[1].femaleCats
-            }/${oldCat.slug}`,
-            de: `/${
-              oldCat.sex === "male"
-                ? languages[2].maleCats
-                : languages[2].femaleCats
-            }/${oldCat.slug}`,
-          },
+          allLanguagesPaths,
         },
       })
     })
   })
 
-  languages.forEach(item => {
+  /* =======================
+      STRONY POJEDYŃCZYCH MŁODYCH KOTÓW
+     ======================= */
+
+  languages.forEach((item, i, languages) => {
     youngCats.forEach(youngCat => {
       const litter = youngCat.litter?.find(p => p?.slug)
       if (!litter) return
+      const allLanguagesPaths = {}
+
+      languages.forEach(langItem => {
+        allLanguagesPaths[
+          langItem.lang
+        ] = `${langItem.litters}/${litter.slug}/${youngCat.slug}`
+      })
 
       createPage({
-        path: `/${item.litters}/${litter.slug}/${youngCat.slug}`,
+        path: `${item.litters}/${litter.slug}/${youngCat.slug}`,
         component: catTemplate,
         context: {
           id: youngCat.id,
           slug: youngCat.slug,
+          allLanguagesPaths,
         },
       })
     })
   })
 
+  /* =======================
+      STRONY POJEDYŃCZYCH MIOTÓW
+     ======================= */
+
   languages.forEach((item, i, languages) => {
     litters.forEach((litter, i, array) => {
+      const allLanguagesPaths = {}
+
+      languages.forEach(langItem => {
+        allLanguagesPaths[langItem.lang] = `${langItem.litters}/${litter.slug}`
+      })
       createPage({
-        path: `/${item.litters}/${litter.slug}`,
+        path: `${item.litters}/${litter.slug}`,
         component: litterTemplate,
         context: {
           id: litter.id,
@@ -270,11 +288,7 @@ exports.createPages = async ({ graphql, actions }) => {
           prevSlug: array[i - 1]?.slug,
           nextId: array[i + 1]?.id,
           nextSlug: array[i + 1]?.slug,
-          allLanguagesPaths: {
-            pl: `/${languages[0].litters}/${litter.slug}`,
-            en: `/${languages[1].litters}/${litter.slug}`,
-            de: `/${languages[2].litters}/${litter.slug}`,
-          },
+          allLanguagesPaths,
         },
       })
     })

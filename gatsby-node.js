@@ -47,6 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
      ŚCIEŻKI DO SZABLONÓW
      ======================= */
 
+  const homeTemplate = path.resolve("src/templates/homeTemplate.js")
   const catTemplate = path.resolve("src/templates/catTemplate.js")
   const litterTemplate = path.resolve("src/templates/litterTemplate.js")
   const languages = [
@@ -55,24 +56,41 @@ exports.createPages = async ({ graphql, actions }) => {
       maleCats: "kocury",
       femaleCats: "kotki",
       litters: "mioty",
+      home: "",
     },
     {
       lang: "en",
       maleCats: "male-cats",
       femaleCats: "female-cats",
       litters: "litters",
+      home: "breeding",
     },
     {
       lang: "de",
       maleCats: "kater",
       femaleCats: "katzen",
       litters: "wuerfe",
+      home: "zucht",
     },
   ]
 
   /* =======================
       STRONY KOTÓW
      ======================= */
+
+  languages.forEach((item, i, languages) => {
+    createPage({
+      path: `/${item.home}`,
+      component: homeTemplate,
+      context: {
+        allLanguagesPaths: {
+          pl: `/${languages[0].home}`,
+          en: `/${languages[1].home}`,
+          de: `/${languages[2].home}`,
+        },
+      },
+    })
+  })
 
   languages.forEach(item =>
     oldCats.forEach(oldCat =>
@@ -105,7 +123,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  languages.forEach(item => {
+  languages.forEach((item, i, languages) => {
     litters.forEach((litter, i, array) => {
       createPage({
         path: `/${item.litters}/${litter.slug}`,
@@ -117,6 +135,11 @@ exports.createPages = async ({ graphql, actions }) => {
           prevSlug: array[i - 1]?.slug,
           nextId: array[i + 1]?.id,
           nextSlug: array[i + 1]?.slug,
+          allLanguagesPaths: {
+            pl: `/${languages[0].litters}/${litter.slug}`,
+            en: `/${languages[1].litters}/${litter.slug}`,
+            de: `/${languages[2].litters}/${litter.slug}`,
+          },
         },
       })
     })

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 import * as styles from "./Header.module.css"
 import LanguageSwitcher from "./LanguageSwitcher"
-const MainMenu = () => {
+const MainMenu = ({ pageContext }) => {
   const { t } = useTranslation()
 
   return (
@@ -57,7 +57,7 @@ const MainMenu = () => {
               {t("menu.contact")}
             </Link>
           </li>
-          <LanguageSwitcher />
+          <LanguageSwitcher pageContext={pageContext} />
         </ul>
       </nav>
     </>

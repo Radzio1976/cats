@@ -8,8 +8,13 @@ const LitterTemplate = ({ data, pageContext }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
+
   return (
-    <Layout litterData={litterData} data={{ oldMaleCats, oldFemaleCats }}>
+    <Layout
+      litterData={litterData}
+      data={{ oldMaleCats, oldFemaleCats }}
+      pageContext={pageContext}
+    >
       <Litter litterData={litterData} pageContext={pageContext} />
     </Layout>
   )

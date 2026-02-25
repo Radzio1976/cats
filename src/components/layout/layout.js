@@ -9,7 +9,7 @@ import CatCard from "../CatCard/CatCard"
 import "../styles/global.css"
 import * as styles from "./layout.module.css"
 
-const Layout = ({ data, catData, litterData, children }) => {
+const Layout = ({ data, catData, litterData, children, pageContext }) => {
   const { t } = useTranslation()
   const { language } = useI18next()
   const location = useLocation()
@@ -33,6 +33,7 @@ const Layout = ({ data, catData, litterData, children }) => {
         metaData={metaData}
         catData={catData}
         litterData={litterData}
+        pageContext={pageContext}
       />
       <div className={styles.mainWrapper}>
         <main>

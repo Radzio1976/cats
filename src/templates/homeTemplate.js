@@ -1,17 +1,18 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Layout from "../components/layout/layout"
 import Home from "../components/Home/Home"
 import Seo from "../components/seo"
 
-const IndexPageDe = ({ data }) => {
+const IndexPage = ({ data, pageContext }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
 
   return (
-    <Layout data={{ oldMaleCats, oldFemaleCats }}>
+    <Layout data={{ oldMaleCats, oldFemaleCats }} pageContext={pageContext}>
       <Home />
     </Layout>
   )
@@ -22,7 +23,10 @@ const IndexPageDe = ({ data }) => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Zucht" />
+export const Head = () => {
+  const { t } = useTranslation()
+  return <Seo title={t("menu.home")} />
+}
 
 export const query = graphql`
   query ($language: String!) {
@@ -64,4 +68,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPageDe
+export default IndexPage

@@ -4,13 +4,13 @@ import Logo from "./Logo"
 import MainMenu from "./MainMenu"
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs"
 
-const Header = ({ location, metaData, catData, litterData }) => {
+const Header = ({ location, metaData, catData, litterData, pageContext }) => {
   const pathname = location.pathname
   return (
     <header>
       <section className={styles.logoAndMainMenu}>
         <Logo metaData={metaData} />
-        <MainMenu />
+        <MainMenu pageContext={pageContext} />
       </section>
       <BreadCrumbs
         location={location}

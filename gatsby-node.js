@@ -55,6 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const oldFemaleCatsTemplate = path.resolve(
     "src/templates/oldFemaleCatsTemplate.js"
   )
+  const contactTemplate = path.resolve("src/templates/contactTemplate.js")
   const littersTemplate = path.resolve("src/templates/littersTemplate.js")
   const catTemplate = path.resolve("src/templates/catTemplate.js")
   const litterTemplate = path.resolve("src/templates/litterTemplate.js")
@@ -69,6 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
       oldMaleCats: "kocury",
       oldFemaleCats: "kotki",
       litters: "mioty",
+      contact: "kontakt",
     },
     {
       lang: "en",
@@ -80,6 +82,7 @@ exports.createPages = async ({ graphql, actions }) => {
       oldMaleCats: "male-cats",
       oldFemaleCats: "female-cats",
       litters: "litters",
+      contact: "contact",
     },
     {
       lang: "de",
@@ -91,6 +94,7 @@ exports.createPages = async ({ graphql, actions }) => {
       oldMaleCats: "kater",
       oldFemaleCats: "katzen",
       litters: "wuerfe",
+      contact: "kontakt",
     },
   ]
 
@@ -185,12 +189,30 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   /* =======================
-      STRONY KOTÓW
+      STRONA KONTAKT
      ======================= */
 
-  languages.forEach(item =>
-    oldCats.forEach(oldCat =>
-      createPage({
+  languages.forEach((item, i, languages) => {
+    createPage({
+      path: `/${item.contact}`,
+      component: contactTemplate,
+      context: {
+        allLanguagesPaths: {
+          pl: `/${languages[0].contact}`,
+          en: `/${languages[1].contact}`,
+          de: `/${languages[2].contact}`,
+        },
+      },
+    })
+  })
+
+  /* =======================
+      STRONY POJEDYŃCZYCH KOTÓW
+     ======================= */
+
+  languages.forEach(item => {
+    oldCats.forEach(oldCat => {
+      return createPage({
         path: `/${oldCat.sex === "male" ? item.maleCats : item.femaleCats}/${
           oldCat.slug
         }`,
@@ -198,10 +220,27 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           id: oldCat.id,
           slug: oldCat.slug,
+          allLanguagesPaths: {
+            pl: `/${
+              oldCat.sex === "male"
+                ? languages[0].maleCats
+                : languages[0].femaleCats
+            }/${oldCat.slug}`,
+            en: `/${
+              oldCat.sex === "male"
+                ? languages[1].maleCats
+                : languages[1].femaleCats
+            }/${oldCat.slug}`,
+            de: `/${
+              oldCat.sex === "male"
+                ? languages[2].maleCats
+                : languages[2].femaleCats
+            }/${oldCat.slug}`,
+          },
         },
       })
-    )
-  )
+    })
+  })
 
   languages.forEach(item => {
     youngCats.forEach(youngCat => {

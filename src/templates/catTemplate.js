@@ -3,13 +3,17 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import Cat from "../components/Cat/Cat"
 
-const CatTemplate = ({ data }) => {
+const CatTemplate = ({ data, pageContext }) => {
   const catData = data.highgraph
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
   return (
-    <Layout catData={catData} data={{ oldMaleCats, oldFemaleCats }}>
+    <Layout
+      catData={catData}
+      data={{ oldMaleCats, oldFemaleCats }}
+      pageContext={pageContext}
+    >
       <Cat catData={catData} />
     </Layout>
   )

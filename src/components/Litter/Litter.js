@@ -1,4 +1,5 @@
 import React from "react"
+import { useI18next } from "gatsby-plugin-react-i18next"
 import Gallery from "../Gallery/Gallery"
 import LitterParents from "./LitterParents"
 import LitterChildren from "./LitterChildren"
@@ -6,6 +7,7 @@ import LitterPagination from "./LitterPagination"
 import * as styles from "./Litter.module.css"
 
 const Litter = ({ litterData, pageContext }) => {
+  const { language } = useI18next()
   if (!litterData) return null
   const litterImages = litterData.images || []
   const kittenImages = litterData.children
@@ -13,7 +15,6 @@ const Litter = ({ litterData, pageContext }) => {
     .filter(Boolean)
 
   const galleryImages = [...litterImages, ...kittenImages]
-  console.log(litterData)
 
   return (
     <section className={styles.litterSection}>
@@ -23,7 +24,7 @@ const Litter = ({ litterData, pageContext }) => {
       {/* <h1 className={styles.title}>{litterData.name}</h1> */}
 
       <LitterChildren
-        litterSlug={litterData.slug}
+        litterSlug={litterData[language]}
         children={litterData.children}
       />
       <LitterPagination pageContext={pageContext} />

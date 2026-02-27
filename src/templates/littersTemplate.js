@@ -72,8 +72,12 @@ export const query = graphql`
             }
           }
         }
-        name
-        slug
+        namePL
+        nameEN
+        nameDE
+        pl
+        en
+        de
       }
     }
     locales: allLocale(filter: { language: { eq: $language } }) {

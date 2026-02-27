@@ -98,7 +98,9 @@ export const query = graphql`
         litter {
           ... on HIGHGRAPH_Litter {
             id
-            name
+            namePL
+            nameEN
+            nameDE
             parents {
               ... on HIGHGRAPH_OldCat {
                 id

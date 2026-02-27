@@ -23,13 +23,17 @@ exports.createPages = async ({ graphql, actions }) => {
           litter {
             ... on HIGHGRAPH_Litter {
               id
-              slug
+              pl
+              en
+              de
             }
           }
         }
         litters {
           id
-          slug
+          pl
+          en
+          de
         }
       }
     }
@@ -245,18 +249,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
   languages.forEach((item, i, languages) => {
     youngCats.forEach(youngCat => {
-      const litter = youngCat.litter?.find(p => p?.slug)
+      const litter = youngCat.litter?.find(p => p?.[item.lang])
       if (!litter) return
       const allLanguagesPaths = {}
 
       languages.forEach(langItem => {
-        allLanguagesPaths[
-          langItem.lang
-        ] = `${langItem.litters}/${litter.slug}/${youngCat.slug}`
+        allLanguagesPaths[langItem.lang] = `${langItem.litters}/${
+          litter[langItem.lang]
+        }/${youngCat.slug}`
       })
-
       createPage({
-        path: `${item.litters}/${litter.slug}/${youngCat.slug}`,
+        path: `${item.litters}/${litter[item.lang]}/${youngCat.slug}`,
         component: catTemplate,
         context: {
           id: youngCat.id,
@@ -276,10 +279,12 @@ exports.createPages = async ({ graphql, actions }) => {
       const allLanguagesPaths = {}
 
       languages.forEach(langItem => {
-        allLanguagesPaths[langItem.lang] = `${langItem.litters}/${litter.slug}`
+        allLanguagesPaths[langItem.lang] = `${langItem.litters}/${
+          litter[langItem.lang]
+        }`
       })
       createPage({
-        path: `${item.litters}/${litter.slug}`,
+        path: `${item.litters}/${litter[item.lang]}`,
         component: litterTemplate,
         context: {
           id: litter.id,

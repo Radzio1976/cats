@@ -35,8 +35,12 @@ export const query = graphql`
     highgraph {
       litter(where: { id: $id }) {
         id
-        name
-        slug
+        namePL
+        nameEN
+        nameDE
+        pl
+        en
+        de
         images {
           id
           url
@@ -105,7 +109,9 @@ export const query = graphql`
           litter {
             ... on HIGHGRAPH_Litter {
               id
-              name
+              namePL
+              namePL
+              nameDE
               parents {
                 ... on HIGHGRAPH_OldCat {
                   id

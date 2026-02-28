@@ -16,10 +16,10 @@ header {
   font-size: var(--font-lg);
 }
 .border-bottom-visible {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #7026b9;
   padding-bottom: 6px;
 }
 .border-bottom-hidden {
-  border-bottom: 0 solid black;
+  border-bottom: 0;
   padding-bottom: 6px;
 }

@@ -15,3 +15,11 @@ header {
 .logo a {
   font-size: var(--font-lg);
 }
+.border-bottom-visible {
+  border-bottom: 3px solid black;
+  padding-bottom: 6px;
+}
+.border-bottom-hidden {
+  border-bottom: 0 solid black;
+  padding-bottom: 6px;
+}

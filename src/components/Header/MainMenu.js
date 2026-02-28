@@ -1,9 +1,11 @@
 import React from "react"
-import { Link, useTranslation } from "gatsby-plugin-react-i18next"
+import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import * as styles from "./Header.module.css"
 import LanguageSwitcher from "./LanguageSwitcher"
 const MainMenu = ({ pageContext }) => {
   const { t } = useTranslation()
+  const { path, originalPath, language } = useI18next()
+  console.log(path, t("paths.home"))
 
   return (
     <>
@@ -11,6 +13,15 @@ const MainMenu = ({ pageContext }) => {
         <ul>
           <li>
             <Link
+              className={`${
+                language === "pl"
+                  ? path === t("paths.home")
+                    ? styles.borderBottomVisible
+                    : styles.borderBottomHidden
+                  : path.includes(t("paths.home"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
               to={t("paths.home")}
               data-i18n="routes:paths.home common:menu.home"
             >
@@ -19,6 +30,11 @@ const MainMenu = ({ pageContext }) => {
           </li>
           <li>
             <Link
+              className={`${
+                path.includes(t("paths.about_us"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
               to={t("paths.about_us")}
               data-i18n="routes:paths.about_us common:menu.about_us"
             >
@@ -27,6 +43,11 @@ const MainMenu = ({ pageContext }) => {
           </li>
           <li>
             <Link
+              className={`${
+                path.includes(t("paths.male_cats"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
               to={t("paths.male_cats")}
               data-i18n="routes:paths.male_cats common:menu.male_cats"
             >
@@ -35,6 +56,11 @@ const MainMenu = ({ pageContext }) => {
           </li>
           <li>
             <Link
+              className={`${
+                path.includes(t("paths.female_cats"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
               to={t("paths.female_cats")}
               data-i18n="routes:paths.female_cats common:menu.female_cats"
             >
@@ -43,6 +69,11 @@ const MainMenu = ({ pageContext }) => {
           </li>
           <li>
             <Link
+              className={`${
+                path.includes(t("paths.litters"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
               to={t("paths.litters")}
               data-i18n="routes:paths.litters common:menu.litters"
             >
@@ -51,6 +82,11 @@ const MainMenu = ({ pageContext }) => {
           </li>
           <li>
             <Link
+              className={`${
+                path.includes(t("paths.contact"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
               to={t("paths.contact")}
               data-i18n="routes:paths.contact common:menu.contact"
             >

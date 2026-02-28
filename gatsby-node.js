@@ -225,10 +225,11 @@ exports.createPages = async ({ graphql, actions }) => {
       const allLanguagesPaths = {}
 
       languages.forEach(langItem => {
-        allLanguagesPaths[langItem.lang] = `/${
+        allLanguagesPaths[langItem.lang] = `${
           oldCat.sex === "male" ? langItem.maleCats : langItem.femaleCats
         }/${oldCat.slug}`
       })
+      console.log(allLanguagesPaths)
       return createPage({
         path: `${oldCat.sex === "male" ? item.maleCats : item.femaleCats}/${
           oldCat.slug

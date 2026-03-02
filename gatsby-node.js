@@ -26,6 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
               pl
               en
               de
+              cs
             }
           }
         }
@@ -34,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
           pl
           en
           de
+          cs
         }
       }
     }
@@ -73,7 +75,6 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "/o-nas",
       oldMaleCats: "/kocury",
       oldFemaleCats: "/kotki",
-      litters: "/mioty",
       contact: "/kontakt",
     },
     {
@@ -81,11 +82,10 @@ exports.createPages = async ({ graphql, actions }) => {
       maleCats: "/male-cats",
       femaleCats: "/female-cats",
       litters: "/litters",
-      home: "/breeding",
+      home: "/",
       aboutUs: "/about-us",
       oldMaleCats: "/male-cats",
       oldFemaleCats: "/female-cats",
-      litters: "/litters",
       contact: "/contact",
     },
     {
@@ -93,11 +93,21 @@ exports.createPages = async ({ graphql, actions }) => {
       maleCats: "/kater",
       femaleCats: "/katzen",
       litters: "/wuerfe",
-      home: "/zucht",
+      home: "/",
       aboutUs: "/uber-uns",
       oldMaleCats: "/kater",
       oldFemaleCats: "/katzen",
-      litters: "/wuerfe",
+      contact: "/kontakt",
+    },
+    {
+      lang: "cs",
+      maleCats: "/kocouri",
+      femaleCats: "/kotky",
+      litters: "/vrhy",
+      home: "/",
+      aboutUs: "/o-nas",
+      oldMaleCats: "/kocouri",
+      oldFemaleCats: "/kotky",
       contact: "/kontakt",
     },
   ]

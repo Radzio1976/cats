@@ -75,9 +75,11 @@ export const query = graphql`
         namePL
         nameEN
         nameDE
+        nameCS
         pl
         en
         de
+        cs
       }
     }
     locales: allLocale(filter: { language: { eq: $language } }) {

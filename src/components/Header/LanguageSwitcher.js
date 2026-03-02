@@ -3,6 +3,7 @@ import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import polandFlag from "../../images/language-switcher-flags/poland.png"
 import unitedKingdomFlag from "../../images/language-switcher-flags/united-kingdom.png"
 import germanyFlag from "../../images/language-switcher-flags/germany.png"
+import czechRepublicFlag from "../../images/language-switcher-flags/czech-republic.png"
 
 const languageConfig = {
   pl: {
@@ -16,6 +17,10 @@ const languageConfig = {
   de: {
     flag: germanyFlag,
     label: "Deutsch",
+  },
+  cs: {
+    flag: czechRepublicFlag,
+    label: "Čeština",
   },
 }
 

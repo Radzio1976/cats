@@ -1,0 +1,14 @@
+{
+  "paths": {
+    "home": "/",
+    "about_us": "/o-nas/",
+    "male_cats": "/kocouri/",
+    "female_cats": "/kotky/",
+    "litters": "/vrhy/",
+    "contact": "/kontakt/",
+    "litterSingle": "/vrhy/{{slug}}/",
+    "oldMaleCatSingle": "/kocouri/{{catSlug}}/",
+    "oldFemaleCatSingle": "/kotky/{{catSlug}}/",
+    "youngCatSingle": "/vrhy/{{litterSlug}}/{{catSlug}}/"
+  }
+}

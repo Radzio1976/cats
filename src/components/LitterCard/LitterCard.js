@@ -5,6 +5,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const LitterCard = ({ litter, urlBase, className }) => {
   const { language } = useI18next()
+  console.log(litter)
+  console.log(`${urlBase}${litter[language]}`)
 
   return (
     <li className={`${styles.litterCard} ${className}`}>

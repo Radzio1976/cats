@@ -4,8 +4,9 @@ import * as styles from "./Header.module.css"
 import LanguageSwitcher from "./LanguageSwitcher"
 const MainMenu = ({ pageContext }) => {
   const { t } = useTranslation()
-  const { path, originalPath, language } = useI18next()
-  console.log(path, t("paths.home"))
+  const { path, language } = useI18next()
+  console.log(path)
+  console.log(language + t("paths.home"))
 
   return (
     <>
@@ -18,7 +19,7 @@ const MainMenu = ({ pageContext }) => {
                   ? path === t("paths.home")
                     ? styles.borderBottomVisible
                     : styles.borderBottomHidden
-                  : path.includes(t("paths.home"))
+                  : path === language + t("paths.home")
                   ? styles.borderBottomVisible
                   : styles.borderBottomHidden
               }`}

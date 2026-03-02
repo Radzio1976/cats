@@ -38,9 +38,11 @@ export const query = graphql`
         namePL
         nameEN
         nameDE
+        nameCS
         pl
         en
         de
+        cs
         images {
           id
           url
@@ -112,6 +114,7 @@ export const query = graphql`
               namePL
               namePL
               nameDE
+              nameCS
               parents {
                 ... on HIGHGRAPH_OldCat {
                   id

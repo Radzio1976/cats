@@ -11,8 +11,15 @@ const BreadCrumbs = ({ location, catData, litterData }) => {
 
   let pathNameElements = pathname
     .split("/")
-    .filter(el => el !== "" && el !== "de" && el !== "en" && el !== "pl")
-  if (path === "en/breeding/" || path === "de/zucht/") {
+    .filter(
+      el =>
+        el !== "" && el !== "de" && el !== "en" && el !== "pl" && el !== "cs"
+    )
+  if (
+    path === "en/breeding/" ||
+    path === "de/zucht/" ||
+    path === "cs/chovatelska-stanice/"
+  ) {
     pathNameElements.shift()
   }
 

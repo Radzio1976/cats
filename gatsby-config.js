@@ -65,7 +65,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locales`, // folder z tłumaczeniami
-        languages: [`pl`, `en`, `de`],
+        languages: [`pl`, `en`, `de`, `cs`],
         defaultLanguage: `pl`,
         siteUrl: `http://localhost:8000`,
         i18nextOptions: {

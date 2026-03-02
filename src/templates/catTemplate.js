@@ -101,6 +101,7 @@ export const query = graphql`
             namePL
             nameEN
             nameDE
+            nameCS
             parents {
               ... on HIGHGRAPH_OldCat {
                 id

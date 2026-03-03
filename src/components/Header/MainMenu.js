@@ -5,8 +5,6 @@ import LanguageSwitcher from "./LanguageSwitcher"
 const MainMenu = ({ pageContext }) => {
   const { t } = useTranslation()
   const { path, language } = useI18next()
-  console.log(path)
-  console.log(language + t("paths.home"))
 
   return (
     <>

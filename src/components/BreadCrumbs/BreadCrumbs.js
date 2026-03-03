@@ -4,24 +4,14 @@ import * as styles from "./BreadCrumbs.module.css"
 
 const BreadCrumbs = ({ location, catData, litterData }) => {
   const { t } = useTranslation()
-  const { path } = useI18next()
+  const { language } = useI18next()
   const pathname = location.pathname
   const cat = catData?.oldCat || catData?.youngCat
   const litter = litterData
 
   let pathNameElements = pathname
     .split("/")
-    .filter(
-      el =>
-        el !== "" && el !== "de" && el !== "en" && el !== "pl" && el !== "cs"
-    )
-  if (
-    path === "en/breeding/" ||
-    path === "de/zucht/" ||
-    path === "cs/chovatelska-stanice/"
-  ) {
-    pathNameElements.shift()
-  }
+    .filter(el => el !== language && el !== "")
 
   let breadCrumbs = []
   pathNameElements.forEach((el, i) =>

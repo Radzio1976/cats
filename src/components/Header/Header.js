@@ -9,8 +9,8 @@ const Header = ({ location, metaData, catData, litterData, pageContext }) => {
   return (
     <header>
       <section className={styles.logoAndMainMenu}>
-        <Logo metaData={metaData} />
         <MainMenu pageContext={pageContext} />
+        <Logo metaData={metaData} />
       </section>
       <BreadCrumbs
         location={location}

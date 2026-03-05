@@ -30,7 +30,7 @@ const LanguageSwitcher = ({ pageContext }) => {
   const { languages, language } = useI18next()
 
   return (
-    <div style={{ padding: "15px" }}>
+    <div>
       {languages.map(lng => {
         const config = languageConfig[lng]
         const lang = allLanguagesPaths?.[lng] || "/"

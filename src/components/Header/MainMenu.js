@@ -8,8 +8,8 @@ const MainMenu = ({ pageContext }) => {
 
   return (
     <>
-      <nav className={styles.mainMenu} aria-label="Główna nawigacja">
-        <ul>
+      <nav className={styles.heroNav} aria-label="Główna nawigacja">
+        <ul className={styles.heroMenu}>
           <li>
             <Link
               className={`${
@@ -69,6 +69,20 @@ const MainMenu = ({ pageContext }) => {
           <li>
             <Link
               className={`${
+                path.includes(t("paths.available_kittens"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
+              to={t("paths.available_kittens")}
+              data-i18n="routes:paths.available_kittens common:menu.available_kittens"
+              style={{ whiteSpace: "pre-line" }}
+            >
+              {t("menu.available_kittens")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${
                 path.includes(t("paths.litters"))
                   ? styles.borderBottomVisible
                   : styles.borderBottomHidden
@@ -77,6 +91,19 @@ const MainMenu = ({ pageContext }) => {
               data-i18n="routes:paths.litters common:menu.litters"
             >
               {t("menu.litters")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${
+                path.includes(t("paths.faq"))
+                  ? styles.borderBottomVisible
+                  : styles.borderBottomHidden
+              }`}
+              to={t("paths.faq")}
+              data-i18n="routes:paths.faq common:menu.faq"
+            >
+              {t("menu.faq")}
             </Link>
           </li>
           <li>

@@ -1,9 +1,117 @@
-header {
+.hero {
+  width: 1500px;
+  height: 500px;
+  margin: 0 auto;
+  background-image: url("../../images/baner.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero-logo img {
+  height: 100px;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 30px 20px;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.hero-menu {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.hero-menu li a {
+  color: #2b3348;
+}
+
+.hero-content {
+  margin-top: 30px;
+  /* margin-bottom: 80px; */
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 42px;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  margin: 20px 0 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.btn {
+  font-size: 20px;
+  padding: 15px 40px;
+  border-radius: var(--border-radius);
+}
+
+.btn-primary {
+  background-color: #263e60;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #dcdfe8;
+  color: #2b3348;
+}
+
+.border-bottom-visible {
+  border-bottom: 2px solid #2b3348;
+  padding-bottom: 6px;
+}
+.border-bottom-hidden {
+  border-bottom: 0;
+  padding-bottom: 6px;
+}
+
+/* header {
   padding-bottom: 15px;
 }
 .logo-and-main-menu {
-  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 1200px;
+}
+.baner {
+  max-width: 1500px;
   margin: 0 auto;
+}
+.main-menu {
+  padding: 24px 0;
 }
 .main-menu ul {
   display: flex;
@@ -14,12 +122,4 @@ header {
 }
 .logo a {
   font-size: var(--font-lg);
-}
-.border-bottom-visible {
-  border-bottom: 3px solid #7026b9;
-  padding-bottom: 6px;
-}
-.border-bottom-hidden {
-  border-bottom: 0;
-  padding-bottom: 6px;
-}
+} */

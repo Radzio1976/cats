@@ -1,19 +1,18 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-
+import FAQ from "../components/FAQ/FAQ"
 import Layout from "../components/layout/layout"
-import Home from "../components/Home/Home"
 import Seo from "../components/seo"
 
-const IndexPage = ({ data, pageContext }) => {
+const FaqPage = ({ data, pageContext }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
 
   return (
     <Layout data={{ oldMaleCats, oldFemaleCats }} pageContext={pageContext}>
-      <Home data={{ oldMaleCats, oldFemaleCats }} />
+      <FAQ />
     </Layout>
   )
 }
@@ -68,4 +67,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default FaqPage

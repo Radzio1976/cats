@@ -15,6 +15,6 @@ li > ol {
   margin-left: var(--space-4);
 }
 
-li *:last-child {
+/* li *:last-child {
   margin-bottom: 0;
-}
+} */

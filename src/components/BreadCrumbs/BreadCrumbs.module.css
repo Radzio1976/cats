@@ -1,5 +1,7 @@
 .bread-crumbs-menu {
-  max-width: 1200px;
+  max-width: 1500px;
+  padding-top: 10px;
+  padding-bottom: 36px;
   height: 36px;
   margin: 0 auto;
 }

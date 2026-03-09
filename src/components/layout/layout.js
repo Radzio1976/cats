@@ -36,7 +36,7 @@ const Layout = ({ data, catData, litterData, children, pageContext }) => {
       />
       <div className={styles.mainWrapper}>
         <main>
-          <section className={styles.mainLeftColumn}>
+          {/* <section className={styles.mainLeftColumn}>
             <ul>
               {oldMaleCats.map(cat => (
                 <CatCard
@@ -48,9 +48,9 @@ const Layout = ({ data, catData, litterData, children, pageContext }) => {
                 />
               ))}
             </ul>
-          </section>
+          </section> */}
           <section className={styles.mainMiddleColumn}>{children}</section>
-          <section className={styles.mainRightColumn}>
+          {/* <section className={styles.mainRightColumn}>
             <ul>
               {oldFemaleCats.map(cat => (
                 <CatCard
@@ -62,7 +62,7 @@ const Layout = ({ data, catData, litterData, children, pageContext }) => {
                 />
               ))}
             </ul>
-          </section>
+          </section> */}
         </main>
       </div>
       <Footer />

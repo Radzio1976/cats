@@ -61,6 +61,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const oldFemaleCatsTemplate = path.resolve(
     "src/templates/oldFemaleCatsTemplate.js"
   )
+  const availableKittensTemplate = path.resolve(
+    "src/templates/availableKittensTemplate.js"
+  )
+  const faqTemplate = path.resolve("src/templates/faqTemplate.js")
   const contactTemplate = path.resolve("src/templates/contactTemplate.js")
   const littersTemplate = path.resolve("src/templates/littersTemplate.js")
   const catTemplate = path.resolve("src/templates/catTemplate.js")
@@ -75,6 +79,8 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "/o-nas",
       oldMaleCats: "/kocury",
       oldFemaleCats: "/kotki",
+      availableKittens: "/dostepne-kociaki-oraz-w-rezerwacji",
+      faq: "/faq",
       contact: "/kontakt",
     },
     {
@@ -86,6 +92,8 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "/about-us",
       oldMaleCats: "/male-cats",
       oldFemaleCats: "/female-cats",
+      availableKittens: "/available-kittens-and-reserved",
+      faq: "/faq",
       contact: "/contact",
     },
     {
@@ -97,6 +105,8 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "/uber-uns",
       oldMaleCats: "/kater",
       oldFemaleCats: "/katzen",
+      availableKittens: "/verfuegbare-kitten-und-reserviert",
+      faq: "/faq",
       contact: "/kontakt",
     },
     {
@@ -108,6 +118,8 @@ exports.createPages = async ({ graphql, actions }) => {
       aboutUs: "/o-nas",
       oldMaleCats: "/kocouri",
       oldFemaleCats: "/kotky",
+      availableKittens: "/dostupna-kotata-a-rezervace",
+      faq: "/faq",
       contact: "/kontakt",
     },
   ]
@@ -201,6 +213,44 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `${item.litters}`,
       component: littersTemplate,
+      context: {
+        allLanguagesPaths,
+      },
+    })
+  })
+
+  /* =======================
+      STRONA DOSTĘPNE KOCIAKI ORAZ W REZERWACJI
+     ======================= */
+
+  languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.availableKittens}`
+    })
+    createPage({
+      path: `${item.availableKittens}`,
+      component: availableKittensTemplate,
+      context: {
+        allLanguagesPaths,
+      },
+    })
+  })
+
+  /* =======================
+      STRONA DOSTĘPNE FAQ
+     ======================= */
+
+  languages.forEach((item, i, languages) => {
+    const allLanguagesPaths = {}
+
+    languages.forEach(langItem => {
+      allLanguagesPaths[langItem.lang] = `${langItem.faq}`
+    })
+    createPage({
+      path: `${item.faq}`,
+      component: faqTemplate,
       context: {
         allLanguagesPaths,
       },

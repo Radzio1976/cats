@@ -1,0 +1,27 @@
+{
+  "faq": {
+    "h1": "FAQ",
+    "answers_and_questions": [
+      {
+        "question": "Pytanie 1",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lectus quis interdum blandit. Nunc eleifend a libero quis sagittis. Nulla non metus dapibus, fringilla velit ornare, laoreet metus. Vivamus sodales semper nibh nec bibendum. Sed aliquet placerat augue vitae vehicula. Sed efficitur, enim a feugiat viverra, tortor enim pellentesque felis, ac posuere felis mi et mauris. Suspendisse ultrices magna magna, vitae feugiat mauris condimentum sit amet. Nulla tempus, ante at ultrices vehicula, justo arcu tincidunt est, ac aliquam ex sem malesuada quam. Cras quis consequat mauris, quis ultricies ipsum."
+      },
+      {
+        "question": "Pytanie 2",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lectus quis interdum blandit. Nunc eleifend a libero quis sagittis. Nulla non metus dapibus, fringilla velit ornare, laoreet metus. Vivamus sodales semper nibh nec bibendum. Sed aliquet placerat augue vitae vehicula. Sed efficitur, enim a feugiat viverra, tortor enim pellentesque felis, ac posuere felis mi et mauris. Suspendisse ultrices magna magna, vitae feugiat mauris condimentum sit amet. Nulla tempus, ante at ultrices vehicula, justo arcu tincidunt est, ac aliquam ex sem malesuada quam. Cras quis consequat mauris, quis ultricies ipsum."
+      },
+      {
+        "question": "Pytanie 3",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lectus quis interdum blandit. Nunc eleifend a libero quis sagittis. Nulla non metus dapibus, fringilla velit ornare, laoreet metus. Vivamus sodales semper nibh nec bibendum. Sed aliquet placerat augue vitae vehicula. Sed efficitur, enim a feugiat viverra, tortor enim pellentesque felis, ac posuere felis mi et mauris. Suspendisse ultrices magna magna, vitae feugiat mauris condimentum sit amet. Nulla tempus, ante at ultrices vehicula, justo arcu tincidunt est, ac aliquam ex sem malesuada quam. Cras quis consequat mauris, quis ultricies ipsum."
+      },
+      {
+        "question": "Pytanie 4",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lectus quis interdum blandit. Nunc eleifend a libero quis sagittis. Nulla non metus dapibus, fringilla velit ornare, laoreet metus. Vivamus sodales semper nibh nec bibendum. Sed aliquet placerat augue vitae vehicula. Sed efficitur, enim a feugiat viverra, tortor enim pellentesque felis, ac posuere felis mi et mauris. Suspendisse ultrices magna magna, vitae feugiat mauris condimentum sit amet. Nulla tempus, ante at ultrices vehicula, justo arcu tincidunt est, ac aliquam ex sem malesuada quam. Cras quis consequat mauris, quis ultricies ipsum."
+      },
+      {
+        "question": "Pytanie 5",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lectus quis interdum blandit. Nunc eleifend a libero quis sagittis. Nulla non metus dapibus, fringilla velit ornare, laoreet metus. Vivamus sodales semper nibh nec bibendum. Sed aliquet placerat augue vitae vehicula. Sed efficitur, enim a feugiat viverra, tortor enim pellentesque felis, ac posuere felis mi et mauris. Suspendisse ultrices magna magna, vitae feugiat mauris condimentum sit amet. Nulla tempus, ante at ultrices vehicula, justo arcu tincidunt est, ac aliquam ex sem malesuada quam. Cras quis consequat mauris, quis ultricies ipsum."
+      }
+    ]
+  }
+}

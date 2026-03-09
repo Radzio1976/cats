@@ -12,7 +12,9 @@
   "buttons": {
     "prev": "Poprzedni",
     "next": "Następny",
-    "more": "Więcej"
+    "more": "Więcej",
+    "meet_our_cats": "Poznaj nasze koty",
+    "available_kittens": "Dostępne kocięta"
   },
   "availability": {
     "available": "Dostępny",

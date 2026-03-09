@@ -1,0 +1,30 @@
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  border-bottom: 1px solid #ddd;
+}
+
+.faqQuestion {
+  width: 100%;
+  padding: 18px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faqQuestion:hover {
+  color: #6b7cff;
+}
+
+.faqAnswer {
+  padding: 18px 18px;
+  line-height: 1.6;
+  /* color: #555; */
+  background-color: #fff;
+  border-radius: var(--border-radius);
+}

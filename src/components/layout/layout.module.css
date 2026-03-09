@@ -3,9 +3,10 @@
   max-width: 1500px;
 }
 main {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  gap: 24px;
+  gap: 24px; */
+  width: 100%;
 }
 .mainMiddleColumn {
   display: flex;

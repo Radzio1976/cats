@@ -12,7 +12,9 @@
   "buttons": {
     "prev": "Předchozí",
     "next": "Další",
-    "more": "Více"
+    "more": "Více",
+    "meet_our_cats": "Seznamte se s našimi kočkami",
+    "available_kittens": "Dostupná koťata"
   },
   "availability": {
     "available": "Dostupný",

@@ -13,10 +13,33 @@
   object-fit: cover;
   aspect-ratio: 1 / 1;
 }
-.cat-card .cat-name {
+/* .cat-card .cat-name {
   text-align: center;
   padding-top: 25px;
   padding-bottom: 35px;
+} */
+/* Style do strony Home */
+
+/* .catCardHome {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start !important;
+  width: 100%;
+} */
+.catImgHome {
+  object-position: top;
+}
+.catNameHome {
+  display: inline-block;
+  width: 75%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-radius: var(--border-radius);
+  background-color: #263e60;
+  color: #fff;
 }
 /* Style do stron Koty i Kotki */
 .catCardOldCats {
@@ -29,14 +52,4 @@
 }
 .catImageOldCats {
   height: 600px;
-}
-/* Style do layoutu */
-.catCardLayout {
-  display: flex !important;
-  flex-direction: column;
-  align-items: flex-start !important;
-  width: 100%;
-}
-.catImgLayout {
-  object-position: top;
 }

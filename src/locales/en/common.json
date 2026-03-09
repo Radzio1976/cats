@@ -12,7 +12,9 @@
   "buttons": {
     "prev": "Prev",
     "next": "Next",
-    "more": "More"
+    "more": "More",
+    "meet_our_cats": "Meet our cats",
+    "available_kittens": "Available kittens"
   },
   "availability": {
     "available": "Available",

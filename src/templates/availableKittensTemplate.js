@@ -1,19 +1,18 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-
+import AvailableKittens from "../components/AvailableKittens/AvailableKittens"
 import Layout from "../components/layout/layout"
-import Home from "../components/Home/Home"
 import Seo from "../components/seo"
 
-const IndexPage = ({ data, pageContext }) => {
+const AvailableKittensPage = ({ data, pageContext }) => {
   const oldCats = data?.highgraph?.oldCats || []
   const oldMaleCats = oldCats.filter(cat => cat.sex === "male")
   const oldFemaleCats = oldCats.filter(cat => cat.sex === "female")
 
   return (
     <Layout data={{ oldMaleCats, oldFemaleCats }} pageContext={pageContext}>
-      <Home data={{ oldMaleCats, oldFemaleCats }} />
+      <AvailableKittens data={data} />
     </Layout>
   )
 }
@@ -31,11 +30,12 @@ export const Head = () => {
 export const query = graphql`
   query ($language: String!) {
     highgraph {
-      oldCats {
+      youngCats {
         id
         name
         slug
         sex
+        availability
         desc {
           markdown
         }
@@ -68,4 +68,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default AvailableKittensPage

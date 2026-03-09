@@ -10,36 +10,41 @@ const CatCard = ({ cat, urlBase, variant }) => {
     <li
       className={[
         styles.catCard,
-        variant === "layout" && styles.catCardLayout,
+        variant === "home" && styles.catCardHome,
         variant === "oldCats" && styles.catCardOldCats,
       ]
         .filter(Boolean)
         .join(" ")}
     >
+      <div className={styles.imageWrapper}>
+        {imageData && (
+          <GatsbyImage
+            image={imageData}
+            alt={cat.name}
+            className={[
+              styles.catImage,
+              variant === "oldCats" && styles.catImageOldCats,
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            imgClassName={[
+              styles.catImg,
+              variant === "home" && styles.catImgHome,
+              variant === "oldCats" && styles.catImgOldCats,
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          />
+        )}
+      </div>
       <Link to={`${urlBase}${cat.slug}`} className={styles.cardLink}>
-        <div className={styles.imageWrapper}>
-          {imageData && (
-            <GatsbyImage
-              image={imageData}
-              alt={cat.name}
-              className={[
-                styles.catImage,
-                variant === "oldCats" && styles.catImageOldCats,
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              imgClassName={[
-                styles.catImg,
-                variant === "layout" && styles.catImgLayout,
-                variant === "oldCats" && styles.catImgOldCats,
-              ]
-                .filter(Boolean)
-                .join(" ")}
-            />
-          )}
-        </div>
-
-        <h3 className={styles.catName}>{cat.name}</h3>
+        <h3
+          className={[styles.catName, variant === "home" && styles.catNameHome]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          {cat.name}
+        </h3>
       </Link>
     </li>
   )
